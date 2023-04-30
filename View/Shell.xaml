@@ -1,0 +1,78 @@
+﻿<Window x:Class="Calculator.View.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        xmlns:prism ="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        ResizeMode="NoResize"
+        Title="Calculator" Height="450" Width="800" x:Name="CalcWindow">
+
+    
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="MinWidth" Value="50"></Setter>
+            <Setter Property="MinHeight" Value="50"></Setter>
+            <Setter Property="Margin" Value="3"></Setter>
+            <Setter Property="Command" Value="{Binding AddNumberCommand}"></Setter>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="35"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="17"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Text="{Binding CalcText}" Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="1"></TextBox>
+
+        <Button Grid.Row="2" Grid.Column="1" Content="7"></Button>
+        <Button Grid.Row="2" Grid.Column="2" Content="8"></Button>
+        <Button Grid.Row="2" Grid.Column="3" Content="9"></Button>
+        <Button Grid.Row="2" Grid.Column="4" Content="+"></Button>
+        
+        <Button Grid.Row="3" Grid.Column="1" Content="4"></Button>
+        <Button Grid.Row="3" Grid.Column="2" Content="5"></Button>
+        <Button Grid.Row="3" Grid.Column="3" Content="6"></Button>
+        <Button Grid.Row="3" Grid.Column="4" Content="-"></Button>
+        
+        <Button Grid.Row="4" Grid.Column="1" Content="1"></Button>
+        <Button Grid.Row="4" Grid.Column="2" Content="2"></Button>
+        <Button Grid.Row="4" Grid.Column="3" Content="3"></Button>
+        <Button Grid.Row="4" Grid.Column="4" Content="*"></Button>
+
+        <Button Grid.Row="5" Grid.Column="1"  Grid.ColumnSpan="2" Content="0"></Button>
+        <Button Grid.Row="5" Grid.Column="3" Content=","></Button>
+        <Button Grid.Row="5" Grid.Column="4" Content="/"></Button>
+    </Grid>
+</Window>
