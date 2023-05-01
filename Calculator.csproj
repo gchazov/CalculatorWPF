@@ -114,7 +114,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Calculators\ExpressionCalc.cs" />
+    <Compile Include="Model\Calculators\ICalculator.cs" />
     <Compile Include="StartApp\BootStrapper.cs" />
+    <Compile Include="StartApp\UnityConfig.cs" />
     <Compile Include="ViewModel\Base\ViewModelBase.cs" />
     <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="View\Shell.xaml.cs">

@@ -15,7 +15,8 @@
         <Style TargetType="Button">
             <Setter Property="MinWidth" Value="50"></Setter>
             <Setter Property="MinHeight" Value="50"></Setter>
-            <Setter Property="Margin" Value="3"></Setter>
+            <Setter Property="Margin" Value="2"></Setter>
+            <Setter Property="CommandParameter" Value="{Binding Content, RelativeSource={RelativeSource Self}}"></Setter>
             <Setter Property="Command" Value="{Binding AddNumberCommand}"></Setter>
         </Style>
 
@@ -37,6 +38,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
 
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -49,22 +51,27 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
-
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
 
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBox Text="{Binding CalcText}" Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="1"></TextBox>
-
+        <TextBox Text="{Binding Expression}" Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="1"></TextBox>
+        <TextBox Text="{Binding Result}" Grid.Column="5" Grid.Row="1" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
         <Button Grid.Row="2" Grid.Column="1" Content="7"></Button>
         <Button Grid.Row="2" Grid.Column="2" Content="8"></Button>
         <Button Grid.Row="2" Grid.Column="3" Content="9"></Button>
         <Button Grid.Row="2" Grid.Column="4" Content="+"></Button>
+        <Button Grid.Row="2" Grid.Column="5" Command="{Binding ClearCommand}" Content="CE"></Button>
         
         <Button Grid.Row="3" Grid.Column="1" Content="4"></Button>
         <Button Grid.Row="3" Grid.Column="2" Content="5"></Button>
         <Button Grid.Row="3" Grid.Column="3" Content="6"></Button>
         <Button Grid.Row="3" Grid.Column="4" Content="-"></Button>
+        <Button Grid.Row="3" Grid.Column="5" Command="{Binding CalculateCommand}" Content="="></Button>
+
+
         
         <Button Grid.Row="4" Grid.Column="1" Content="1"></Button>
         <Button Grid.Row="4" Grid.Column="2" Content="2"></Button>
