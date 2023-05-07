@@ -1,6 +1,4 @@
-﻿using Calculator.Model.Calculators;
-using Calculator.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Calculator.View
+namespace CalcYouLate.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Shell.xaml
+    /// Логика взаимодействия для DateTimePage.xaml
     /// </summary>
-    public partial class Shell : Window
+    public partial class DateTimePage : Page
     {
-        public Shell()
+        public DateTimePage()
         {
             InitializeComponent();
-            DataContext = new ShellViewModel();
         }
     }
 }

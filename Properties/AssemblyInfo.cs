@@ -7,11 +7,11 @@ using System.Windows;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набор атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("Calculator")]
+[assembly: AssemblyTitle("CalcYouLate")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DEXP")]
-[assembly: AssemblyProduct("Calculator")]
+[assembly: AssemblyProduct("CalcYouLate")]
 [assembly: AssemblyCopyright("Copyright © DEXP 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
