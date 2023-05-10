@@ -12,7 +12,7 @@
         </Style.Resources>
         <Style.Triggers>
             <Trigger Property="IsMouseCaptureWithin" Value="True">
-                <Setter Property="Text" Value=""/>
+                <Setter Property="Text" Value="" />
             </Trigger>
         </Style.Triggers>
     </Style>

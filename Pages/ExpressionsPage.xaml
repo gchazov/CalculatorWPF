@@ -36,14 +36,14 @@
         <TextBox
             x:Name="input"
             Grid.ColumnSpan="9"
-            Text="input"
-            Style="{DynamicResource TextBoxStyle}" />
+            Style="{DynamicResource TextBoxStyle}"
+            Text="input" />
         <TextBox
             x:Name="output"
             Grid.Row="1"
             Grid.ColumnSpan="9"
-            Text="output"
-            Style="{DynamicResource TextBoxStyle}" />
+            Style="{DynamicResource TextBoxStyle}"
+            Text="output" />
 
         <Button
             Grid.Row="2"

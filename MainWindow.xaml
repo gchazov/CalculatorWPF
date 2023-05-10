@@ -8,61 +8,103 @@
     Title="MainWindow"
     Width="750"
     Height="450"
-    mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" AllowDrop="True" MouseDown="Drag">
-    <Grid Background="#b8b8b8">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="11.029" />
-            <ColumnDefinition Width="88.971"/>
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="59*"/>
-        </Grid.ColumnDefinitions>
+    AllowDrop="True"
+    AllowsTransparency="True"
+    Background="LightGray"
+    MouseDown="Drag"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="11.029" />
+                <ColumnDefinition Width="88.971" />
+                <ColumnDefinition Width="15*" />
+                <ColumnDefinition Width="145*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
 
 
 
-        <ListBox
-            x:Name="sidebar"
-            Grid.Column="0"
-            Padding="0"
-            Background="#5c5c5c"
-            BorderBrush="DimGray"
-            BorderThickness="0"
-            Margin="0,0,0,0"
-            SelectionChanged="sidebar_SelectionChanged" 
-            SelectionMode="Single" Grid.ColumnSpan="2">
-            <local:NavButton
-                Width="80"
-                Height="80"
-                Margin="2,10"
-                Image="Images\calculatorIcon.png"
-                NavLink="/Pages/ExpressionsPage.xaml"
-                Text="Expressions" />
-            <local:NavButton
-                Width="80"
-                Height="80"
-                Margin="2,10"
-                Image="Images\calendarIcon.png"
-                NavLink="/Pages/DateTimePage.xaml"
-                Text="Date/Time" />
-            <local:NavButton
-                Width="80"
-                Height="80"
-                Margin="2,10"
-                Image="Images\numberSysIcon.png"
-                NavLink="/Pages/NumberSystemsPage.xaml"
-                Text="Number Systems" />
-            <local:NavButton
-                Width="80"
-                Height="80"
-                Margin="2,10"
-                Image="Images\measuresIcon.png"
-                NavLink="/Pages/MeasurePage.xaml"
-                Text="Measures" />
-        </ListBox>
+            <ListBox
+                x:Name="sidebar"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,30,0,0"
+                Padding="0"
+                Background="#5c5c5c"
+                BorderBrush="DimGray"
+                BorderThickness="0"
+                SelectionChanged="sidebar_SelectionChanged"
+                SelectionMode="Single">
 
-        <Frame BorderBrush="DimGray" BorderThickness="0" x:Name="navFrame" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="2" AllowDrop="False" Margin="0,48,0,0" />
-        <Image Source="/Images/powerButton.png" MouseLeftButtonDown="CloseApp" Cursor="Hand" Grid.Column="3" Margin="545,11,15,406"/>
-        <Image Source="/Images/minimize.png" VerticalAlignment="Bottom" RenderTransformOrigin="0.431,0.501" Grid.Column="3" Margin="499,0,50,407" Height="31" MouseLeftButtonDown="Minimize" Cursor="Hand"/>
+                <local:NavButton
+                    
+                    Width="80"
+                    Height="80"
+                    Margin="2,10"
+                    Background="LightSteelBlue"
+                    FontFamily="Montserrat"
+                    Image="Images\calculatorIcon.png"
+                    NavLink="/Pages/ExpressionsPage.xaml"
+                    Text="Expressions" />
+                <local:NavButton
+                    Width="80"
+                    Height="80"
+                    Margin="2,10"
+                    Background="LightPink"
+                    FontFamily="Montserrat"
+                    Image="Images\calendarIcon.png"
+                    NavLink="/Pages/DateTimePage.xaml"
+                    Text="Date/Time" />
+                <local:NavButton
+                    Width="80"
+                    Height="80"
+                    Margin="2,10"
+                    Background="LightYellow"
+                    FontFamily="Montserrat"
+                    Image="Images\numberSysIcon.png"
+                    NavLink="/Pages/NumberSystemsPage.xaml"
+                    Text="Number Systems" />
+                <local:NavButton
+                    Width="80"
+                    Height="80"
+                    Margin="2,10"
+                    Background="LightCyan"
+                    FontFamily="Montserrat"
+                    Image="Images\measuresIcon.png"
+                    NavLink="/Pages/MeasurePage.xaml"
+                    Text="Measures" />
+            </ListBox>
 
-    </Grid>
+            <Frame
+                x:Name="navFrame"
+                Grid.Column="2"
+                Grid.ColumnSpan="3"
+                Margin="0,30,0,0"
+                AllowDrop="False"
+                BorderBrush="DimGray"
+                Background="#b8b8b8"
+                BorderThickness="0"
+                NavigationUIVisibility="Hidden" />
+            <Image
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Margin="557,4,6,420"
+                Cursor="Hand"
+                MouseLeftButtonDown="CloseApp"
+                Source="/Images/powerButton.png" />
+            <Image
+                Grid.Column="3"
+                Height="23"
+                Margin="523,0,26,420"
+                VerticalAlignment="Bottom"
+                Cursor="Hand"
+                MouseLeftButtonDown="Minimize"
+                RenderTransformOrigin="0.431,0.501"
+                Source="/Images/minimize.png" />
 
+        </Grid>
+    </Border>
 </Window>
