@@ -24,19 +24,32 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
+
+        <TextBox
+            x:Name="input"
+            Grid.ColumnSpan="9"
+            Text="input"
+            Style="{DynamicResource TextBoxStyle}" />
+        <TextBox
+            x:Name="output"
+            Grid.Row="1"
+            Grid.ColumnSpan="9"
+            Text="output"
+            Style="{DynamicResource TextBoxStyle}" />
 
         <Button
             Grid.Row="2"
             Grid.Column="0"
             Background="#d60001"
+            BorderThickness="0"
             Content="C"
             FontSize="40"
             Foreground="#ffffff"
@@ -71,7 +84,7 @@
             Grid.Column="2"
             Content="..."
             Style="{DynamicResource ButtonStyle}" />
-        
+
         <Button
             Grid.Row="4"
             Grid.Column="2"
