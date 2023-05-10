@@ -9,7 +9,7 @@
     Width="750"
     Height="450"
     mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" AllowDrop="True" MouseDown="Drag">
-    <Grid Background="#aaaaaa">
+    <Grid Background="#b8b8b8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11.029" />
             <ColumnDefinition Width="88.971"/>
@@ -23,9 +23,9 @@
             x:Name="sidebar"
             Grid.Column="0"
             Padding="0"
-            Background="#bababa"
+            Background="#5c5c5c"
             BorderBrush="DimGray"
-            BorderThickness="3"
+            BorderThickness="0"
             Margin="0,0,0,0"
             SelectionChanged="sidebar_SelectionChanged" 
             SelectionMode="Single" Grid.ColumnSpan="2">
@@ -59,7 +59,7 @@
                 Text="Measures" />
         </ListBox>
 
-        <Frame BorderBrush="DimGray" BorderThickness="3" x:Name="navFrame" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="2" AllowDrop="False" />
+        <Frame BorderBrush="DimGray" BorderThickness="0" x:Name="navFrame" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="2" AllowDrop="False" Margin="0,48,0,0" />
         <Image Source="/Images/powerButton.png" MouseLeftButtonDown="CloseApp" Cursor="Hand" Grid.Column="3" Margin="545,11,15,406"/>
         <Image Source="/Images/minimize.png" VerticalAlignment="Bottom" RenderTransformOrigin="0.431,0.501" Grid.Column="3" Margin="499,0,50,407" Height="31" MouseLeftButtonDown="Minimize" Cursor="Hand"/>
 

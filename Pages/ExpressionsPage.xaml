@@ -10,11 +10,191 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <Grid Background="LightSlateGray">
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
+    <Grid Background="#b8b8b8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Background="#d60001"
+            Content="C"
             FontSize="40"
-            Text="EXPRESSIONS HERE" />
+            Foreground="#ffffff"
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="3"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="3"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="3"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="4"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="4"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="4"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="4"
+            Content="..."
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="6"
+            Content="1"
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="6"
+            Content="4"
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="6"
+            Content="7"
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="6"
+            Content="="
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="7"
+            Content="2"
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="7"
+            Content="5"
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="7"
+            Content="8"
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="7"
+            Content="0"
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="8"
+            Content="3"
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="8"
+            Content="6"
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="8"
+            Content="9"
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="8"
+            Content=","
+            Style="{DynamicResource ButtonStyle}" />
+
+
     </Grid>
 </Page>
