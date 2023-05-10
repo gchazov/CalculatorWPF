@@ -52,7 +52,6 @@ namespace CalcYouLate
         }
 
 
-
         public Uri NavLink
         {
             get { return (Uri)GetValue(NavLinkProperty); }
