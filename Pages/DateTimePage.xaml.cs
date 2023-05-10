@@ -24,5 +24,10 @@ namespace CalcYouLate.Pages
         {
             InitializeComponent();
         }
+
+		private void result_TextChanged(object sender, TextChangedEventArgs e)
+		{
+
+        }
     }
 }

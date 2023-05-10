@@ -10,14 +10,13 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-	<Page.Resources>
-		<Style TargetType="TextBlock">
-			<Setter Property="FontFamily" Value="Montserrat" />
-		</Style>
-	</Page.Resources>
 
 
-	<Grid Background="LightSlateGray" Margin="-7,4,7,-4">
+	<Grid Background="#b8b8b8">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="41*"/>
+			<RowDefinition Height="4*"/>
+		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="593*"/>
 			<ColumnDefinition Width="207*"/>
@@ -25,54 +24,62 @@
 
 
 
-		<TextBlock
+		<TextBox
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            Text="С" Margin="24,88,0,0" RenderTransformOrigin="-0.157,0.56" 
+            Text="С" Margin="24,61,0,0"
+			Style="{DynamicResource TextBoxStyle}"
 			
 		/>
 
-		<TextBlock
+		<TextBox
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            Text="До" Margin="246,88,0,0" 
+            Text="До" Margin="246,66,0,0"
+			Style="{DynamicResource TextBoxStyle}"
+		/>
+
+
+		<Calendar
+				x:Name="from"
+				Margin="24,141,0,0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				FontSize="40"
+			
 		/>
 
 		<Calendar
-			x:Name="from"
-			Margin="24,0,0,0"
-			HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            FontSize="40"
-			/>
-		<Calendar
 			x:Name="to"
-			Margin="246,0,0,0"
-			HorizontalAlignment="Left"
-			VerticalAlignment="Center"
-			FontSize="40"
-			/>
-
-
-		<Border Background="WhiteSmoke" CornerRadius="10" Margin="471,144,120,146" Grid.ColumnSpan="2">
-			<TextBlock x:Name="result" FontSize="30" Margin="10,0,-9,-35">
-            <Run Language="ru-ru" Text="0 дней"/>
-            <LineBreak/>
-            <Run Language="ru-ru" Text="0 месяцев"/>
-            <LineBreak/>
-            <Run Language="ru-ru" Text="0 лет"/>
-			</TextBlock>
-		</Border>
-
-
-		<TextBlock
+			Margin="246,141,0,0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
 			FontSize="40"
-			Margin="471,91,0,0" 
-			Text="Прошло" Grid.ColumnSpan="2"/>
+			
+			/>
+
+
+		<TextBox x:Name="result" FontSize="30" Margin="472,121,10,76"
+				 Text="0 Дней&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Лет" Grid.ColumnSpan="2"
+				 Style="{DynamicResource TextBoxStyle}" 
+				 TextChanged="result_TextChanged"
+				 />
+
+
+
+
+
+		<TextBox
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			FontSize="40"
+			Margin="472,66,0,0" 
+			Text="Прошло" 
+			Grid.ColumnSpan="2"
+			Style="{DynamicResource TextBoxStyle}" 
+			/>
 
 
 
