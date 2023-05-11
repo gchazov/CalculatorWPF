@@ -164,5 +164,8 @@
   <ItemGroup>
     <Resource Include="Images\powerSign.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\MeasurePages\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

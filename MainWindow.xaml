@@ -40,11 +40,9 @@
                 SelectionMode="Single">
 
                 <local:NavButton
-                    
                     Width="80"
                     Height="80"
                     Margin="2,10"
-                    Background="LightSteelBlue"
                     FontFamily="Montserrat"
                     Image="Images\calculatorIcon.png"
                     NavLink="/Pages/ExpressionsPage.xaml"
@@ -53,7 +51,6 @@
                     Width="80"
                     Height="80"
                     Margin="2,10"
-                    Background="LightPink"
                     FontFamily="Montserrat"
                     Image="Images\calendarIcon.png"
                     NavLink="/Pages/DateTimePage.xaml"
@@ -62,7 +59,6 @@
                     Width="80"
                     Height="80"
                     Margin="2,10"
-                    Background="LightYellow"
                     FontFamily="Montserrat"
                     Image="Images\numberSysIcon.png"
                     NavLink="/Pages/NumberSystemsPage.xaml"
@@ -71,7 +67,6 @@
                     Width="80"
                     Height="80"
                     Margin="2,10"
-                    Background="LightCyan"
                     FontFamily="Montserrat"
                     Image="Images\measuresIcon.png"
                     NavLink="/Pages/MeasurePage.xaml"
@@ -84,8 +79,8 @@
                 Grid.ColumnSpan="3"
                 Margin="0,30,0,0"
                 AllowDrop="False"
-                BorderBrush="DimGray"
                 Background="#b8b8b8"
+                BorderBrush="DimGray"
                 BorderThickness="0"
                 NavigationUIVisibility="Hidden" />
             <Image
