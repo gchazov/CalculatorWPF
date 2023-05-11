@@ -48,5 +48,10 @@ namespace CalcYouLate
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+
+        private void NavButton_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

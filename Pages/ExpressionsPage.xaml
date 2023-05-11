@@ -57,88 +57,99 @@
         <Button
             Grid.Row="2"
             Grid.Column="1"
-            Content="..."
+            Content="x"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="1"
-            Content="..."
+            Content="х²"
+            FontSize="35"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="4"
             Grid.Column="1"
-            Content="..."
+            Content="sin(x)"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="5"
             Grid.Column="1"
-            Content="..."
+            Content="1/x"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="2"
             Grid.Column="2"
-            Content="..."
+            Content="÷"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="2"
-            Content="..."
+            Content="n!"
+            FontSize="35"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="2"
-            Content="..."
+            Content="cos(x)"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="5"
             Grid.Column="2"
-            Content="..."
+            Content="|x|"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="2"
             Grid.Column="3"
-            Content="..."
+            Content="-"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="3"
-            Content="..."
+            Content="log(x)"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="3"
-            Content="..."
+            Content="tg(x)"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="5"
             Grid.Column="3"
-            Content="..."
+            Content="ln(x)"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="2"
             Grid.Column="4"
-            Content="..."
+            Content="+"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="4"
-            Content="..."
+            Content="√х"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="4"
-            Content="..."
+            Content="ctg(x)"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="5"
             Grid.Column="4"
-            Content="..."
+            Content="pi"
+            FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
