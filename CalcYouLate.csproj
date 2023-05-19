@@ -171,5 +171,34 @@
   <ItemGroup>
     <Folder Include="Pages\MeasurePages\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\dimensions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\weight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\temperature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\area.png" />
+    <Resource Include="Images\MeasureIcons\fire.png" />
+    <Resource Include="Images\MeasureIcons\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\angle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\barometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\speedometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\ruler.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

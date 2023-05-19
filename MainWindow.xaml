@@ -21,8 +21,6 @@
                 <ColumnDefinition Width="11.029" />
                 <ColumnDefinition Width="88.971" />
                 <ColumnDefinition Width="15*" />
-                <ColumnDefinition Width="145*" />
-                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
 
 
@@ -84,16 +82,15 @@
                 BorderThickness="0"
                 NavigationUIVisibility="Hidden" />
             <Image
-                Grid.Column="3"
-                Grid.ColumnSpan="2"
-                Margin="557,4,6,420"
+                Grid.Column="2"
+                Margin="579,4,-16,420"
                 Cursor="Hand"
                 MouseLeftButtonDown="CloseApp"
                 Source="/Images/powerButton.png" />
             <Image
-                Grid.Column="3"
+                Grid.Column="2"
                 Height="23"
-                Margin="523,0,26,420"
+                Margin="541,0,8,420"
                 VerticalAlignment="Bottom"
                 Cursor="Hand"
                 MouseLeftButtonDown="Minimize"
