@@ -43,6 +43,7 @@
 
 
 		<Calendar
+			SelectedDatesChanged="FirstDate"
 				x:Name="from"
 				Margin="24,141,0,0"
 				HorizontalAlignment="Left"
@@ -52,19 +53,20 @@
 		/>
 
 		<Calendar
+			SelectedDatesChanged="SecondDate"
 			x:Name="to"
 			Margin="246,141,0,0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			FontSize="40"
+			FontSize="40" 
+			RenderTransformOrigin="3.113,1.518"
 			
 			/>
 
 
-		<TextBox x:Name="result" FontSize="30" Margin="472,121,10,76"
+		<TextBlock x:Name="result" FontSize="30" Margin="472,121,10,76"
 				 Text="0 Дней&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Лет" Grid.ColumnSpan="2"
-				 Style="{DynamicResource TextBoxStyle}" 
-				 TextChanged="result_TextChanged"
+				 Style="{DynamicResource TextBoxStyle}"
 				 />
 
 

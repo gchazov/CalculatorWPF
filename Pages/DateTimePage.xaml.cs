@@ -29,5 +29,19 @@ namespace CalcYouLate.Pages
 		{
 
         }
-    }
+
+		private void FirstDate(object sender,
+	SelectionChangedEventArgs e)
+		{
+			DateTime? selectedDate = from.SelectedDate;
+			MessageBox.Show((selectedDate - to.SelectedDate).ToString());
+		}
+
+		private void SecondDate(object sender,
+	SelectionChangedEventArgs e)
+        {
+            DateTime? selectedDate = to.SelectedDate;
+			MessageBox.Show(selectedDate.ToString());
+        }
+	}
 }
