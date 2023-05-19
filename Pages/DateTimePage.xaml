@@ -24,21 +24,21 @@
 
 
 
-		<TextBox
+		<TextBlock
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
             Text="С" Margin="24,61,0,0"
-			Style="{DynamicResource TextBoxStyle}"
+			Style="{DynamicResource TextBlockStyle}"
 			
 		/>
 
-		<TextBox
+		<TextBlock
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
             Text="До" Margin="246,66,0,0"
-			Style="{DynamicResource TextBoxStyle}"
+			Style="{DynamicResource TextBlockStyle}"
 		/>
 
 
@@ -66,21 +66,21 @@
 
 		<TextBlock x:Name="result" FontSize="30" Margin="472,121,10,76"
 				 Text="0 Дней&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Лет" Grid.ColumnSpan="2"
-				 Style="{DynamicResource TextBoxStyle}"
+				 Style="{DynamicResource TextBlockStyle}"
 				 />
 
 
 
 
 
-		<TextBox
+		<TextBlock
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
 			FontSize="40"
 			Margin="472,66,0,0" 
 			Text="Прошло" 
 			Grid.ColumnSpan="2"
-			Style="{DynamicResource TextBoxStyle}" 
+			Style="{DynamicResource TextBlockStyle}" 
 			/>
 
 
