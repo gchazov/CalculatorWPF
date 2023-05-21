@@ -19,23 +19,13 @@
         
 
 
-        <TextBlock
-	<Grid Background="#b8b8b8">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="41*"/>
-			<RowDefinition Height="4*"/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition Width="0*"/>
-		</Grid.ColumnDefinitions>
-
+        
 		<TextBlock 
 			x:Name="result" 
 			FontSize="30" 
 			Margin="472,121,10,76"
 				 
-			Text="0 Дней&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Лет"
+			Text="0 Лет&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Дней"
 				 
 			Style="{DynamicResource TextBlockStyle}"
 		/>
@@ -69,7 +59,7 @@
 			
 		/>
 
-        <Calendar
+		<Calendar
 			SelectedDatesChanged="SecondDate"
 			SelectionMode="SingleDate"
 			x:Name="to"
@@ -82,24 +72,17 @@
 			/>
 
 
-		<TextBlock x:Name="result" FontSize="30" Margin="472,121,10,76"
-				 Text="0 Дней&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Лет" Grid.ColumnSpan="2"
-				 Style="{DynamicResource TextBlockStyle}"
-				 />
 
 
 
-
-
-        <TextBlock
+		<TextBlock
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
 			FontSize="40"
 			Margin="472,66,0,0" 
 			Text="Разница"
-			Style="{DynamicResource TextBlockStyle}" Height="48" Width="162" 
-			Text="Прошло"
-			Style="{DynamicResource TextBlockStyle}" Height="49" Width="186" 
+			Style="{DynamicResource TextBlockStyle}" Height="49" Width="162" 
+			 
 			/>
 
 
