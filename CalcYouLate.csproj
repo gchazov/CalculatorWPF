@@ -67,6 +67,50 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MeasurePages\AnglePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\AreaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\DataPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\EnergyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\LengthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\PowerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\PressurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\SpeedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\TemperaturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\VolumePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\WeightPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DateTimePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +145,39 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MeasurePages\AnglePage.xaml.cs">
+      <DependentUpon>AnglePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\AreaPage.xaml.cs">
+      <DependentUpon>AreaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\DataPage.xaml.cs">
+      <DependentUpon>DataPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\EnergyPage.xaml.cs">
+      <DependentUpon>EnergyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\LengthPage.xaml.cs">
+      <DependentUpon>LengthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\PowerPage.xaml.cs">
+      <DependentUpon>PowerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\PressurePage.xaml.cs">
+      <DependentUpon>PressurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\SpeedPage.xaml.cs">
+      <DependentUpon>SpeedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\TemperaturePage.xaml.cs">
+      <DependentUpon>TemperaturePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\VolumePage.xaml.cs">
+      <DependentUpon>VolumePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurePages\WeightPage.xaml.cs">
+      <DependentUpon>WeightPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NavButton.cs" />
     <Compile Include="Pages\DateTimePage.xaml.cs">
       <DependentUpon>DateTimePage.xaml</DependentUpon>
@@ -168,9 +245,7 @@
   <ItemGroup>
     <Resource Include="Images\powerSign.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\MeasurePages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\MeasureIcons\dimensions.png" />
   </ItemGroup>

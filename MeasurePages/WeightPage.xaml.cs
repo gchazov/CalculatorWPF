@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CalcYouLate.Pages
+namespace CalcYouLate.MeasurePages
 {
     /// <summary>
-    /// Логика взаимодействия для MeasurePage.xaml
+    /// Логика взаимодействия для WeightPage.xaml
     /// </summary>
-    public partial class MeasurePage : Page
+    public partial class WeightPage : Page
     {
-        public MeasurePage()
+        public WeightPage()
         {
             InitializeComponent();
-        }
-
-        private void sidebarMeasures_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            navMeasureFrame.Navigate((sidebarMeasures.SelectedItem as NavButton).NavLink);
         }
     }
 }

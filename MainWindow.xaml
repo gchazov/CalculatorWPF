@@ -68,7 +68,7 @@
                     FontFamily="Montserrat"
                     Image="Images\measuresIcon.png"
                     NavLink="/Pages/MeasurePage.xaml"
-                    Text="Measures" Selected="NavButton_Selected" />
+                    Text="Measures" />
             </ListBox>
 
             <Frame

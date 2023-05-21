@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CalcYouLate.Pages
+namespace CalcYouLate.MeasurePages
 {
     /// <summary>
-    /// Логика взаимодействия для MeasurePage.xaml
+    /// Логика взаимодействия для PressurePage.xaml
     /// </summary>
-    public partial class MeasurePage : Page
+    public partial class PressurePage : Page
     {
-        public MeasurePage()
+        public PressurePage()
         {
             InitializeComponent();
-        }
-
-        private void sidebarMeasures_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            navMeasureFrame.Navigate((sidebarMeasures.SelectedItem as NavButton).NavLink);
         }
     }
 }

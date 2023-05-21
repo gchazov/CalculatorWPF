@@ -12,61 +12,75 @@
 
     <Grid Background="LightSlateGray" RenderTransformOrigin="0.502,0.508">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <ListBox>
+        <ListBox
+            x:Name="sidebarMeasures"
+            SelectionChanged="sidebarMeasures_SelectionChanged"
+            SelectionMode="Single">
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/area.png"
-                Margin="2"
-                Text="Area"/>
+                NavLink="/MeasurePages/AreaPage.xaml"
+                Text="Area" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/dimensions.png"
-                Margin="2"
-                Text="Volume"/>
+                NavLink="/MeasurePages/VolumePage.xaml"
+                Text="Volume" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/ruler.png"
-                Margin="2"
-                Text="Length"/>
+                NavLink="/MeasurePages/LengthPage.xaml"
+                Text="Length" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/fire.png"
-                Margin="2"
-                Text="Energy"/>
+                NavLink="/MeasurePages/EnergyPage.xaml"
+                Text="Energy" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/weight.png"
-                Margin="2"
-                Text="Weight"/>
+                NavLink="/MeasurePages/WeightPage.xaml"
+                Text="Weight" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/temperature.png"
-                Margin="2"
-                Text="Temperature"/>
+                NavLink="/MeasurePages/TemperaturePage.xaml"
+                Text="Temperature" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/power.png"
-                Margin="2"
-                Text="Power"/>
+                NavLink="/MeasurePages/PowerPage.xaml"
+                Text="Power" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/barometer.png"
-                Margin="2"
-                Text="Pressure"/>
+                NavLink="/MeasurePages/PressurePage.xaml"
+                Text="Pressure" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/data.png"
-                Margin="2"
-                Text="Data"/>
+                NavLink="/MeasurePages/DataPage.xaml"
+                Text="Data" />
             <local:NavButton
+                Margin="2"
                 Image="/Images/MeasureIcons/angle.png"
-                Margin="2"
-                Text="Angle"/>
+                NavLink="/MeasurePages/AnglePage.xaml"
+                Text="Angle" />
             <local:NavButton
-                Image="/Images/MeasureIcons/speedometer.png"
                 Margin="2"
-                Text="Speed"/>
-            
+                Image="/Images/MeasureIcons/speedometer.png"
+                NavLink="/MeasurePages/SpeedPage.xaml"
+                Text="Speed" />
+
         </ListBox>
 
         <Frame
-            x:Name ="navMeasureFrame"
+            x:Name="navMeasureFrame"
             Grid.Column="1"
-            NavigationUIVisibility="Hidden"
-            />
+            AllowDrop="False"
+            NavigationUIVisibility="Hidden" />
     </Grid>
 </Page>
