@@ -3,18 +3,70 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:CalcYouLate.Pages"
+    xmlns:local="clr-namespace:CalcYouLate"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MeasurePage"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <Grid Background="LightSlateGray">
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="40"
-            Text="MEASURES HERE" />
+    <Grid Background="LightSlateGray" RenderTransformOrigin="0.502,0.508">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox>
+            <local:NavButton
+                Image="/Images/MeasureIcons/area.png"
+                Margin="2"
+                Text="Area"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/dimensions.png"
+                Margin="2"
+                Text="Volume"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/ruler.png"
+                Margin="2"
+                Text="Length"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/fire.png"
+                Margin="2"
+                Text="Energy"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/weight.png"
+                Margin="2"
+                Text="Weight"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/temperature.png"
+                Margin="2"
+                Text="Temperature"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/power.png"
+                Margin="2"
+                Text="Power"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/barometer.png"
+                Margin="2"
+                Text="Pressure"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/data.png"
+                Margin="2"
+                Text="Data"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/angle.png"
+                Margin="2"
+                Text="Angle"/>
+            <local:NavButton
+                Image="/Images/MeasureIcons/speedometer.png"
+                Margin="2"
+                Text="Speed"/>
+            
+        </ListBox>
+
+        <Frame
+            x:Name ="navMeasureFrame"
+            Grid.Column="1"
+            NavigationUIVisibility="Hidden"
+            />
     </Grid>
 </Page>
