@@ -10,11 +10,75 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <Grid Background="LightSlateGray">
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="40"
-            Text="NUMBER SYSTEM HERE" />
+    <Grid Background="#b8b8b8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        
+        <TextBox
+            x:Name="inputNum"
+            Grid.ColumnSpan="9"
+            Style="{DynamicResource TextBoxStyle}"
+            Text="input" />
+        <TextBox
+            x:Name="outputNum"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="9"
+            Style="{DynamicResource TextBoxStyle}"
+            Text="output" />
+        <TextBox
+            x:Name="TextInNumsys"
+            Background="#b8b8b8"
+            BorderThickness="0"
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Style="{DynamicResource TextBoxStyle}"
+            TextAlignment="Center"
+            Text="Из СЧ" />
+        <TextBox
+            x:Name="TextOutNumsys"
+            BorderThickness="0"
+            Background="#b8b8b8"
+            Grid.Row="2"
+            Grid.Column="6"
+            Grid.ColumnSpan="2"
+            Style="{DynamicResource TextBoxStyle}"
+            TextAlignment="Center"
+            Text="В СЧ" />
+        <TextBox
+            x:Name="inputNumsys"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Style="{DynamicResource TextBoxStyle}"
+            TextAlignment="Center"
+            Text="input" />
+        <TextBox
+            x:Name="outputNumsys"
+            Grid.Row="3"
+            Grid.Column="5"
+            Grid.ColumnSpan="4"
+            Style="{DynamicResource TextBoxStyle}"
+            TextAlignment="Center"
+            Text="input" />
     </Grid>
 </Page>
