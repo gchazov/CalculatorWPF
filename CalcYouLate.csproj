@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Functionality\Measure\MeasureList.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -100,6 +101,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MeasurePages\TemperaturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeasurePages\TimePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +177,9 @@
     <Compile Include="MeasurePages\TemperaturePage.xaml.cs">
       <DependentUpon>TemperaturePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MeasurePages\TimePage.xaml.cs">
+      <DependentUpon>TimePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MeasurePages\VolumePage.xaml.cs">
       <DependentUpon>VolumePage.xaml</DependentUpon>
     </Compile>
@@ -217,35 +225,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\calendarIcon.png">
+    <Resource Include="Images\TopicIcons\calendarIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\calculatorIcon.png">
+    <Resource Include="Images\TopicIcons\calculatorIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\numberSysIcon.png">
+    <Resource Include="Images\TopicIcons\numberSysIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\measuresIcon.png">
+    <Resource Include="Images\TopicIcons\measuresIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\powerButton.png" />
+    <Resource Include="Images\TopicIcons\powerButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\minimize.png" />
+    <Resource Include="Images\TopicIcons\minimize.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\powerSign.png" />
+    <Resource Include="Images\TopicIcons\powerSign.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\MeasureIcons\time.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MeasureIcons\dimensions.png" />
   </ItemGroup>

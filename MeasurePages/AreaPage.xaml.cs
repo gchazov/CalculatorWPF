@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CalcYouLate.Functionality;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +22,20 @@ namespace CalcYouLate.MeasurePages
     /// </summary>
     public partial class AreaPage : Page
     {
+        public string ConvertArea
+        {
+            get
+            {
+                double meters = MeasureList.areaToMeters[from.Text] * Convert.ToDouble(input.Text);
+                string result = input.Text != "0" ? (meters / MeasureList.areaFromMeters[to.Text]).ToString() : "Ошибка!";
+                return result;
+            }
+        }
+
         public AreaPage()
         {
             InitializeComponent();
+            DataContext = new Functionality.MeasureList();
         }
     }
 }
