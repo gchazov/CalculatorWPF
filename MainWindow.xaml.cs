@@ -52,7 +52,7 @@ namespace CalcYouLate
         private void HelpButton(object sender, EventArgs e)
         {
             //System.Windows.Forms.Help.ShowHelp(this, "Help.chm");
-            string commandText = "Help.chm";
+            string commandText = "C:\\Users\\dimas\\Source\\Repos\\CalculatorWPF\\Help.chm";
             var proc = new System.Diagnostics.Process();
             proc.StartInfo.FileName = commandText;
             proc.StartInfo.UseShellExecute = true;
