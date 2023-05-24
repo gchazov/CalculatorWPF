@@ -95,7 +95,7 @@
                 Cursor="Hand"
                 MouseLeftButtonDown="Minimize"
                 RenderTransformOrigin="0.431,0.501"
-                Source="/Images/minimize.png" />
+                Source="/Images/TopicIcons/minimize.png" />
             <Image
                 Grid.Column="0"
                 Width="20"
@@ -103,8 +103,7 @@
                 Margin="7,4,-16,420"
                 Cursor="Hand"
                 MouseLeftButtonDown="HelpButton"
-                Source="/Images/helpButton.png" />
-                Source="/Images/TopicIcons/minimize.png" />
+                Source="/Images/helpButton.png"/>
 
         </Grid>
     </Border>
