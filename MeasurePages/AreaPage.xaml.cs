@@ -37,5 +37,11 @@ namespace CalcYouLate.MeasurePages
             InitializeComponent();
             DataContext = new Functionality.MeasureList();
         }
+
+        private void input_IsKeyboardFocusedChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            //ТУТ ПОКА ПРОСТО РАБОТОСПОСОБНОСТЬ СМОТРЕТЬ!!! ОНА НИЧЕ НЕ СЧИТАЕТ!!!
+            output.Text = (Convert.ToDouble(input.Text) * Convert.ToDouble(MeasureList.areaToMeters[from.Text])).ToString();
+        }
     }
 }

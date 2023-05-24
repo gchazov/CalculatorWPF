@@ -23,7 +23,7 @@
                 <ColumnDefinition Width="15*" />
             </Grid.ColumnDefinitions>
 
-            
+
 
             <ListBox
                 x:Name="sidebar"
@@ -98,12 +98,25 @@
                 Source="/Images/TopicIcons/minimize.png" />
             <Image
                 Grid.Column="0"
-                Width="20"
+                Grid.ColumnSpan="2"
                 Height="23"
-                Margin="7,4,-16,420"
+                Margin="10,4,70,422"
                 Cursor="Hand"
                 MouseLeftButtonDown="HelpButton"
-                Source="/Images/helpButton.png"/>
+                Source="/Images/helpButton.png" />
+            <TextBlock
+                Grid.Column="1"
+                Width="65"
+                Cursor="Hand"
+                MouseLeftButtonDown="HelpButton"
+                Margin="24,7,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Montserrat"
+                FontSize="14"
+                TextWrapping="Wrap"><Run Language="ru-ru" Text="Помощь" /></TextBlock>
+            
+
 
         </Grid>
     </Border>
