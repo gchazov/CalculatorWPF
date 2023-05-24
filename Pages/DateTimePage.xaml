@@ -9,21 +9,18 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-	<Page.DataContext>
-		<local:GetToday/>
-	</Page.DataContext>
 
 
 
-    <Grid Background="#b8b8b8">
-        
+	<Grid Background="#b8b8b8">
 
 
-        
+
+
 		<TextBlock 
 			x:Name="result" 
 			FontSize="30" 
-			Margin="472,121,10,76"
+			Margin="449,141,33,56"
 				 
 			Text="0 Лет&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Дней"
 				 
@@ -34,21 +31,21 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            Text="С" Margin="24,61,0,0"
-			Style="{DynamicResource TextBlockStyle}" Height="49" Width="39"
+            Text="С" Margin="24,92,0,0"
+			Style="{DynamicResource TextBlockStyle}" Height="44" Width="39"
 			
 		/>
 
-        <TextBlock
+		<TextBlock
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            Text="До" Margin="246,66,0,0"
+            Text="До" Margin="246,87,0,0"
 			Style="{DynamicResource TextBlockStyle}" Height="49" Width="68"
 		/>
 
 
-        <Calendar
+		<Calendar
 			SelectedDatesChanged="FirstDate"
 			
 				x:Name="from"
@@ -79,13 +76,13 @@
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
 			FontSize="40"
-			Margin="472,66,0,0" 
-			Text="Разница"
-			Style="{DynamicResource TextBlockStyle}" Height="49" Width="162" 
+			Margin="449,92,0,0" 
+			Text="Разница между датами"
+			Style="{DynamicResource TextBlockStyle}" Height="49" Width="161" 
 			 
 			/>
 
 
 
-    </Grid>
+	</Grid>
 </Page>
