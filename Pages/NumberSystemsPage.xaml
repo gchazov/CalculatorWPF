@@ -82,13 +82,5 @@
             Style="{DynamicResource TextBoxStyle}"
             TextAlignment="Center"
             Text="input" />
-        <TextBox
-            x:Name="outputResult"
-            Grid.Row="4"
-            Grid.Column="2"
-            Grid.ColumnSpan="5"
-            Style="{DynamicResource TextBoxStyle}"
-            TextAlignment="Center"
-            Text="Посчитать" />
     </Grid>
 </Page>

@@ -25,7 +25,7 @@ namespace CalcYouLate.Pages
             InitializeComponent();
         }
 
-        private void InputNumSys(object sender, TextChangedEventArgs e)
+        private void InputNumSys(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (int.TryParse(inputNumsys.Text, out int res))
                 NumberSystems_Result();
@@ -33,7 +33,7 @@ namespace CalcYouLate.Pages
                 inputNumsys.Text = "Введите число!";
         }
 
-        private void OutputNumSys(object sender, TextChangedEventArgs e)
+        private void OutputNumSys(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (int.TryParse(outputNumsys.Text, out int res))
                 NumberSystems_Result();
@@ -44,6 +44,11 @@ namespace CalcYouLate.Pages
         private void NumberSystems_Result()
         {
             
+        }
+
+        private void outputResult_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
