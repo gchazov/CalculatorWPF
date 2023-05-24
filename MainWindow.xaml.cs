@@ -1,6 +1,8 @@
 ﻿using CalcYouLate.Pages;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace CalcYouLate
 {
@@ -51,12 +54,9 @@ namespace CalcYouLate
 
         private void HelpButton(object sender, EventArgs e)
         {
-            //System.Windows.Forms.Help.ShowHelp(this, "Help.chm");
-            string commandText = "C:\\Users\\dimas\\Source\\Repos\\CalculatorWPF\\Help.chm";
-            var proc = new System.Diagnostics.Process();
-            proc.StartInfo.FileName = commandText;
-            proc.StartInfo.UseShellExecute = true;
-            proc.Start();
+            string path;
+            path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Functionality\Help\Help.chm";
+            Process.Start(path);
         }
     }
 }
