@@ -24,5 +24,26 @@ namespace CalcYouLate.Pages
         {
             InitializeComponent();
         }
+
+        private void InputNumSys(object sender, TextChangedEventArgs e)
+        {
+            if (int.TryParse(inputNumsys.Text, out int res))
+                NumberSystems_Result();
+            else
+                inputNumsys.Text = "Введите число!";
+        }
+
+        private void OutputNumSys(object sender, TextChangedEventArgs e)
+        {
+            if (int.TryParse(outputNumsys.Text, out int res))
+                NumberSystems_Result();
+            else
+                outputNumsys.Text = "Введите число!";
+        }
+
+        private void NumberSystems_Result()
+        {
+            
+        }
     }
 }
