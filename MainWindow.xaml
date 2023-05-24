@@ -42,33 +42,33 @@
                     Height="80"
                     Margin="2,10"
                     FontFamily="Montserrat"
-                    Image="Images\calculatorIcon.png"
+                    Image="Images\TopicIcons\calculatorIcon.png"
                     NavLink="/Pages/ExpressionsPage.xaml"
-                    Text="Expressions" />
+                    Text="Выражения" />
                 <local:NavButton
                     Width="80"
                     Height="80"
                     Margin="2,10"
                     FontFamily="Montserrat"
-                    Image="Images\calendarIcon.png"
+                    Image="Images\TopicIcons\calendarIcon.png"
                     NavLink="/Pages/DateTimePage.xaml"
-                    Text="Date/Time" />
+                    Text="Дата и время" />
                 <local:NavButton
                     Width="80"
                     Height="80"
                     Margin="2,10"
                     FontFamily="Montserrat"
-                    Image="Images\numberSysIcon.png"
+                    Image="Images\TopicIcons\numberSysIcon.png"
                     NavLink="/Pages/NumberSystemsPage.xaml"
-                    Text="Number Systems" />
+                    Text="Системы счисления" />
                 <local:NavButton
                     Width="80"
                     Height="80"
                     Margin="2,10"
                     FontFamily="Montserrat"
-                    Image="Images\measuresIcon.png"
+                    Image="Images\TopicIcons\measuresIcon.png"
                     NavLink="/Pages/MeasurePage.xaml"
-                    Text="Measures" />
+                    Text="Единицы измерения" />
             </ListBox>
 
             <Frame
@@ -86,7 +86,7 @@
                 Margin="579,4,-16,420"
                 Cursor="Hand"
                 MouseLeftButtonDown="CloseApp"
-                Source="/Images/powerButton.png" />
+                Source="/Images/TopicIcons/powerButton.png" />
             <Image
                 Grid.Column="2"
                 Height="23"
@@ -95,7 +95,7 @@
                 Cursor="Hand"
                 MouseLeftButtonDown="Minimize"
                 RenderTransformOrigin="0.431,0.501"
-                Source="/Images/minimize.png" />
+                Source="/Images/TopicIcons/minimize.png" />
             <Image
                 Grid.Column="0"
                 Width="20"
@@ -103,7 +103,7 @@
                 Margin="7,4,-16,420"
                 Cursor="Hand"
                 MouseLeftButtonDown="HelpButton"
-                Source="/Images/helpButton.png" />
+                Source="/Images/helpButton.png"/>
 
         </Grid>
     </Border>
