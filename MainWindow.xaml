@@ -23,7 +23,7 @@
                 <ColumnDefinition Width="15*" />
             </Grid.ColumnDefinitions>
 
-
+            
 
             <ListBox
                 x:Name="sidebar"
@@ -95,6 +95,15 @@
                 Cursor="Hand"
                 MouseLeftButtonDown="Minimize"
                 RenderTransformOrigin="0.431,0.501"
+                Source="/Images/minimize.png" />
+            <Image
+                Grid.Column="0"
+                Width="20"
+                Height="23"
+                Margin="7,4,-16,420"
+                Cursor="Hand"
+                MouseLeftButtonDown="HelpButton"
+                Source="/Images/helpButton.png" />
                 Source="/Images/TopicIcons/minimize.png" />
 
         </Grid>

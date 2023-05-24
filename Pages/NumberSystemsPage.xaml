@@ -65,6 +65,7 @@
             TextAlignment="Center"
             Text="В СЧ" />
         <TextBox
+            DataContextChanged="InputNumSys"
             x:Name="inputNumsys"
             Grid.Row="3"
             Grid.Column="0"
@@ -73,6 +74,7 @@
             TextAlignment="Center"
             Text="input" />
         <TextBox
+            DataContextChanged="OutputNumSys"
             x:Name="outputNumsys"
             Grid.Row="3"
             Grid.Column="5"
