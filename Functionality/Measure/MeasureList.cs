@@ -100,12 +100,12 @@ namespace CalcYouLate.Functionality
             "килоджуоль",
         };
 
-        public string[] Mass
+        public string[] Weight
         {
-            get { return mass; }
+            get { return weight; }
             set { }
         }
-        public string[] mass =
+        public string[] weight =
         {
             "милиграмм мг",
             "грамм г",

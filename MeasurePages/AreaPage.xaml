@@ -58,7 +58,7 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            Text="{Binding ConvertArea}" />
+            Text="0" />
 
         <ComboBox
             x:Name="from"
@@ -73,8 +73,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Area}"
-            SelectedValue="{Binding Area[0]}"
-            />
+            SelectedValue="{Binding Area[0]}" />
 
         <ComboBox
             x:Name="to"
@@ -90,8 +89,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Area}"
-            SelectedValue="{Binding Area[1]}"
-             />
+            SelectedValue="{Binding Area[1]}" />
 
         <Label
             HorizontalAlignment="Right"

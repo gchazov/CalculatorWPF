@@ -71,7 +71,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Data}"
-            SelectedValue="{Binding Data[0]}" />
+            SelectedValue="{Binding Data[2]}" />
 
         <ComboBox
             x:Name="to"
