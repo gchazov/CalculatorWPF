@@ -23,6 +23,7 @@ namespace CalcYouLate.MeasurePages
         public WeightPage()
         {
             InitializeComponent();
+            DataContext = new Functionality.MeasureList();
         }
     }
 }

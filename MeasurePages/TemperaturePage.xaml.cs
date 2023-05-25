@@ -23,6 +23,7 @@ namespace CalcYouLate.MeasurePages
         public TemperaturePage()
         {
             InitializeComponent();
+            DataContext = new Functionality.MeasureList();
         }
     }
 }
