@@ -112,6 +112,7 @@ namespace CalcYouLate.Functionality.Expressions
 				case "ln": return Math.Log(right);
 				case "!": return Factorial(left);
 				case "abs": return Math.Abs(right);
+				case "sqrt": return Math.Sqrt(right);
 				case "+": return left + right;
 				case "-": return left - right;
 				case "*": return left * right;
