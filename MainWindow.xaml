@@ -107,15 +107,15 @@
             <TextBlock
                 Grid.Column="1"
                 Width="65"
-                Cursor="Hand"
-                MouseLeftButtonDown="HelpButton"
                 Margin="24,7,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Cursor="Hand"
                 FontFamily="Montserrat"
                 FontSize="14"
+                MouseLeftButtonDown="HelpButton"
                 TextWrapping="Wrap"><Run Language="ru-ru" Text="Помощь" /></TextBlock>
-            
+
 
 
         </Grid>

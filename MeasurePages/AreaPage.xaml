@@ -42,7 +42,7 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            IsKeyboardFocusedChanged="input_IsKeyboardFocusedChanged"
+            TextChanged="input_TextChanged"
             Text="0" />
 
         <TextBox

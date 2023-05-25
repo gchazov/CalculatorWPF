@@ -48,14 +48,14 @@ namespace CalcYouLate
 
         private void Drag(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
                 this.DragMove();
         }
 
         private void HelpButton(object sender, EventArgs e)
         {
             string path;
-            path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Functionality\Help\Help.chm";
+            path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Functionality\Help\Help_new.chm";
             Process.Start(path);
         }
     }
