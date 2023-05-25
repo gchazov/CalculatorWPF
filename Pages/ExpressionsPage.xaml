@@ -37,7 +37,7 @@
             x:Name="input"
             Grid.ColumnSpan="9"
             Style="{DynamicResource TextBoxStyle}"
-            Text="input" />
+            Text="" />
         <TextBox
             x:Name="output"
             Grid.Row="1"
@@ -156,17 +156,20 @@
             Grid.Row="2"
             Grid.Column="6"
             Content="1"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="6"
             Content="4"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="6"
             Content="7"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
@@ -178,39 +181,46 @@
             Grid.Row="2"
             Grid.Column="7"
             Content="2"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="7"
             Content="5"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="7"
             Content="8"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="5"
             Grid.Column="7"
             Content="0"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="2"
             Grid.Column="8"
             Content="3"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="8"
             Content="6"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="8"
             Content="9"
+            Click="NumBtn_Click"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button

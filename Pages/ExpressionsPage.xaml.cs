@@ -24,5 +24,10 @@ namespace CalcYouLate.Pages
         {
             InitializeComponent();
         }
+
+        private void NumBtn_Click(object sender, RoutedEventArgs e)
+        {
+            input.Text += ((Button)sender).Content.ToString();
+        }
     }
 }
