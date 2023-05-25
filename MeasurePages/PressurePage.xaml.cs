@@ -22,6 +22,7 @@ namespace CalcYouLate.MeasurePages
         public PressurePage()
         {
             InitializeComponent();
+            DataContext = new Functionality.MeasureList();
         }
     }
 }
