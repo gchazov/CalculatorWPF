@@ -223,6 +223,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Functionality\Help\Help.chm" />
+    <None Include="Functionality\Help\Helpidr.chm" />
     <None Include="Functionality\Help\Help_old.chm" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -298,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Functionality\Help\helpid.h" />
+    <Content Include="Functionality\Help\helpidr.h" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
