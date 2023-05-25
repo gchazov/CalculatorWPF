@@ -54,7 +54,6 @@ namespace CalcYouLate
 
         private void HelpButton(object sender, EventArgs e)
         {
-            
             string path;
             path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Functionality\Help\Helpidr.chm";
             Process.Start(path);

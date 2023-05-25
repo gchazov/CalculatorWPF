@@ -11,12 +11,12 @@
     AllowDrop="True"
     AllowsTransparency="True"
     Background="LightGray"
+    Keyboard.KeyDown="OpenHelpidr"
     MouseDown="Drag"
     ResizeMode="NoResize"
     Tag="20"
     WindowStyle="None"
-    mc:Ignorable="d"
-    Keyboard.KeyDown="OpenHelpidr">
+    mc:Ignorable="d">
     <Border BorderBrush="Black" BorderThickness="1">
         <Grid>
             <Grid.ColumnDefinitions>
