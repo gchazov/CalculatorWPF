@@ -218,6 +218,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Functionality\Help\Help.chm" />
+    <None Include="Functionality\Help\Help_old.chm" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -289,6 +290,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MeasureIcons\ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Functionality\Help\helpid.h" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
