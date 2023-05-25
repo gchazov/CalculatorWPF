@@ -23,6 +23,7 @@ namespace CalcYouLate.MeasurePages
         public EnergyPage()
         {
             InitializeComponent();
+            DataContext = new Functionality.MeasureList();
         }
     }
 }

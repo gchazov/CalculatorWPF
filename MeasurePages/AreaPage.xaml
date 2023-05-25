@@ -11,9 +11,9 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <Grid Background="White">
+    <Grid Background="LightSteelBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="28*" />
+            <ColumnDefinition Width="128*" />
             <ColumnDefinition Width="239*" />
             <ColumnDefinition Width="133*" />
             <ColumnDefinition Width="133*" />
@@ -23,12 +23,13 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
+
 
         <TextBox
             x:Name="input"
@@ -42,8 +43,8 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            TextChanged="input_TextChanged"
-            Text="0" />
+            Text="0"
+            TextChanged="input_TextChanged" />
 
         <TextBox
             x:Name="output"
@@ -72,7 +73,8 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Area}"
-            SelectedValue="{Binding Area[0]}" />
+            SelectedValue="{Binding Area[0]}"
+            />
 
         <ComboBox
             x:Name="to"
@@ -88,6 +90,24 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Area}"
-            SelectedValue="{Binding Area[1]}" />
+            SelectedValue="{Binding Area[1]}"
+             />
+
+        <Label
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Background="LightGray"
+            Content="Из:"
+            FontFamily="Montserrat"
+            FontSize="25" />
+
+        <Label
+            Grid.Row="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Background="LightGray"
+            Content="В:"
+            FontFamily="Montserrat"
+            FontSize="25" />
     </Grid>
 </Page>

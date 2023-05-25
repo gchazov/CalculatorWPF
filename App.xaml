@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="/Themes/Buttons.xaml" />
                 <ResourceDictionary Source="/Themes/TextBox.xaml" />
                 <ResourceDictionary Source="/Themes/TextBlock.xaml" />
+                <ResourceDictionary Source="/Themes/ComboBox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
