@@ -8,6 +8,7 @@
     Title="ExpressionsPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Tag="21"
     mc:Ignorable="d">
 
     <Grid Background="#b8b8b8">
@@ -155,21 +156,21 @@
         <Button
             Grid.Row="2"
             Grid.Column="6"
-            Content="1"
             Click="NumBtn_Click"
+            Content="1"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="6"
-            Content="4"
             Click="NumBtn_Click"
+            Content="4"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="6"
-            Content="7"
             Click="NumBtn_Click"
+            Content="7"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
@@ -180,47 +181,47 @@
         <Button
             Grid.Row="2"
             Grid.Column="7"
-            Content="2"
             Click="NumBtn_Click"
+            Content="2"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="7"
-            Content="5"
             Click="NumBtn_Click"
+            Content="5"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="7"
-            Content="8"
             Click="NumBtn_Click"
+            Content="8"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="5"
             Grid.Column="7"
-            Content="0"
             Click="NumBtn_Click"
+            Content="0"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="2"
             Grid.Column="8"
-            Content="3"
             Click="NumBtn_Click"
+            Content="3"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
             Grid.Column="8"
-            Content="6"
             Click="NumBtn_Click"
+            Content="6"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="4"
             Grid.Column="8"
-            Content="9"
             Click="NumBtn_Click"
+            Content="9"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button

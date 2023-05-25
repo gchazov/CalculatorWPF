@@ -1,88 +1,89 @@
-﻿<Page xmlns:da="namespace:CalcYouLate.Pages"
+﻿<Page
     x:Class="CalcYouLate.Pages.DateTimePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:da="namespace:CalcYouLate.Pages"
     xmlns:local="clr-namespace:CalcYouLate.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="DateTimePage"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Tag="22"
     mc:Ignorable="d">
 
 
 
-	<Grid Background="#b8b8b8">
+    <Grid Background="#b8b8b8">
 
 
 
 
-		<TextBlock 
-			x:Name="result" 
-			FontSize="30" 
-			Margin="449,141,33,56"
-				 
-			Text="0 Лет&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Дней"
-				 
-			Style="{DynamicResource TextBlockStyle}"
-		/>
+        <TextBlock
+            x:Name="result"
+            Margin="449,141,33,56"
+            FontSize="30"
+            Style="{DynamicResource TextBlockStyle}"
+            Text="0 Лет&#xD;&#xA;0 Месяцев&#xD;&#xA;0 Дней" />
 
-		<TextBlock
+        <TextBlock
+            Width="39"
+            Height="44"
+            Margin="24,92,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            Text="С" Margin="24,92,0,0"
-			Style="{DynamicResource TextBlockStyle}" Height="44" Width="39"
-			
-		/>
+            Style="{DynamicResource TextBlockStyle}"
+            Text="С" />
 
-		<TextBlock
+        <TextBlock
+            Width="68"
+            Height="49"
+            Margin="246,87,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            Text="До" Margin="246,87,0,0"
-			Style="{DynamicResource TextBlockStyle}" Height="49" Width="68"
-		/>
+            Style="{DynamicResource TextBlockStyle}"
+            Text="До" />
 
 
-		<Calendar
-			SelectedDatesChanged="FirstDate"
-			
-				x:Name="from"
-				Margin="24,141,0,0"
-				HorizontalAlignment="Left"
-				VerticalAlignment="Top"
-				FontSize="40" Height="168" Width="179"
-			
-		/>
+        <Calendar
+            x:Name="from"
+            Width="179"
+            Height="168"
+            Margin="24,141,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="40"
+            SelectedDatesChanged="FirstDate" />
 
-		<Calendar
-			SelectedDatesChanged="SecondDate"
-			SelectionMode="SingleDate"
-			x:Name="to"
-			Margin="246,141,0,0"
-			HorizontalAlignment="Left"
-			VerticalAlignment="Top"
-			FontSize="40" 
-			RenderTransformOrigin="3.113,1.518" Height="168" Width="179"
-			
-			/>
+        <Calendar
+            x:Name="to"
+            Width="179"
+            Height="168"
+            Margin="246,141,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="40"
+            RenderTransformOrigin="3.113,1.518"
+            SelectedDatesChanged="SecondDate"
+            SelectionMode="SingleDate" />
 
 
 
 
 
-		<TextBlock
-			HorizontalAlignment="Left"
-			VerticalAlignment="Top"
-			FontSize="40"
-			Margin="449,92,0,0" 
-			Text="Разница между датами"
-			Style="{DynamicResource TextBlockStyle}" Height="49" Width="161" 
-			 
-			/>
+        <TextBlock
+            Width="437"
+            Height="49"
+            Margin="449,92,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="40"
+            Style="{DynamicResource TextBlockStyle}"
+            Text="Разница:" />
 
 
 
-	</Grid>
+    </Grid>
 </Page>

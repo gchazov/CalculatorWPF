@@ -8,6 +8,7 @@
     Title="NumberSystemsPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Tag="23"
     mc:Ignorable="d">
 
     <Grid Background="#b8b8b8">
@@ -31,7 +32,7 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-        
+
         <TextBox
             x:Name="inputNum"
             Grid.ColumnSpan="9"
@@ -46,41 +47,43 @@
             Text="output" />
         <TextBox
             x:Name="TextInNumsys"
-            Background="#b8b8b8"
-            BorderThickness="0"
             Grid.Row="2"
             Grid.Column="1"
             Grid.ColumnSpan="2"
+            Background="#b8b8b8"
+            BorderThickness="0"
+            FontSize="30"
             Style="{DynamicResource TextBoxStyle}"
-            TextAlignment="Center"
-            Text="Из СЧ" />
+            Text="Из СЧ"
+            TextAlignment="Center" />
         <TextBox
             x:Name="TextOutNumsys"
-            BorderThickness="0"
-            Background="#b8b8b8"
             Grid.Row="2"
             Grid.Column="6"
             Grid.ColumnSpan="2"
+            Background="#b8b8b8"
+            BorderThickness="0"
+            FontSize="30"
             Style="{DynamicResource TextBoxStyle}"
-            TextAlignment="Center"
-            Text="В СЧ" />
+            Text="В СЧ"
+            TextAlignment="Center" />
         <TextBox
-            DataContextChanged="InputNumSys"
             x:Name="inputNumsys"
             Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="4"
+            DataContextChanged="InputNumSys"
             Style="{DynamicResource TextBoxStyle}"
-            TextAlignment="Center"
-            Text="input" />
+            Text="input"
+            TextAlignment="Center" />
         <TextBox
-            DataContextChanged="OutputNumSys"
             x:Name="outputNumsys"
             Grid.Row="3"
             Grid.Column="5"
             Grid.ColumnSpan="4"
+            DataContextChanged="OutputNumSys"
             Style="{DynamicResource TextBoxStyle}"
-            TextAlignment="Center"
-            Text="input" />
+            Text="input"
+            TextAlignment="Center" />
     </Grid>
 </Page>

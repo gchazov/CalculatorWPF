@@ -13,8 +13,10 @@
     Background="LightGray"
     MouseDown="Drag"
     ResizeMode="NoResize"
+    Tag="20"
     WindowStyle="None"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Keyboard.KeyDown="OpenHelpidr">
     <Border BorderBrush="Black" BorderThickness="1">
         <Grid>
             <Grid.ColumnDefinitions>
