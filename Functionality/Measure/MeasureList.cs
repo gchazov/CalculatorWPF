@@ -1,14 +1,18 @@
 ﻿using CalcYouLate.MeasurePages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace CalcYouLate.Functionality
 {
     public class MeasureList
     {
+        
         #region Lists of measures
         public string[] Area
         {
@@ -269,5 +273,6 @@ namespace CalcYouLate.Functionality
             {"квадратный ярд²", 1.1959900463},
             {"квадратная миля²", 0.0000003861},
         };
+
     }
 }

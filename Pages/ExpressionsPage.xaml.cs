@@ -92,5 +92,10 @@ namespace CalcYouLate.Pages
 			input.Text = String.Empty;
             output.Text = String.Empty;
         }
+
+		private void output_TextChanged(object sender, TextChangedEventArgs e)
+		{
+
+		}
 	}
 }

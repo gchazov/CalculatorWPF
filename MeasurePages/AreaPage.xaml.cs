@@ -22,12 +22,25 @@ namespace CalcYouLate.MeasurePages
     /// </summary>
     public partial class AreaPage : Page
     {
+        public string FromText { get { return from.Text; } }
+        public string ToText { get { return to.Text; } }
+        public string InputTextInfo { get { return input.Text; } }
+        public string OutputTextInfo { get { return output.Text; } }
+
+        public AreaPage CurrentPage
+        {
+            get
+            {
+                return this;
+            }
+        }
+
         public string ConvertArea
         {
             get
             {
-                double meters = MeasureList.areaToMeters[from.Text] * Convert.ToDouble(input.Text);
-                string result = input.Text != "0" ? (meters / MeasureList.areaFromMeters[to.Text]).ToString() : "Ошибка!";
+                double meters = CalcYouLate.Functionality.MeasureList.areaToMeters[from.Text] * Convert.ToDouble(input.Text);
+                string result = input.Text != "0" ? (meters / CalcYouLate.Functionality.MeasureList.areaFromMeters[to.Text]).ToString() : "Ошибка!";
                 return result;
             }
         }
