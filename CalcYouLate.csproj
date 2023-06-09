@@ -358,6 +358,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram2.cd" />
     <None Include="Functionality\Help\Help.chm" />
     <None Include="Functionality\Help\Helpidr.chm" />
     <None Include="Functionality\Help\Help_old.chm" />

@@ -31,7 +31,7 @@ namespace CalcYouLate.Pages
             input.Text += ((Button)sender).Content.ToString();
 			try
 			{
-				output.Text = Evaluator.Calculate(input.Text).ToString();
+				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
 			}
 			catch (Exception ex)
 			{
@@ -67,7 +67,7 @@ namespace CalcYouLate.Pages
 			input.Text += realInput;
 			try
 			{
-				output.Text = Evaluator.Calculate(input.Text).ToString();
+				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
 			}
 			catch (Exception ex)
 			{
@@ -79,7 +79,7 @@ namespace CalcYouLate.Pages
 		{
 			try
 			{
-				output.Text = Evaluator.Calculate(input.Text).ToString();
+				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
 			}
 			catch (Exception ex)
 			{
