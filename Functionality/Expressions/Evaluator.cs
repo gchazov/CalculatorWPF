@@ -2,134 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CalcYouLate.Functionality.Expressions
 {
 	public static class Evaluator
 	{
-		private const string numberChars = "01234567890,";
-		private static string[] operatorChars = new string[] { "sin", "cos", "log", "ln", "tg", "!", "sqrt", "abs", "^", "*", "/", "+", "-" };
-		// "sin", "cos", "log", "ln", 
-
-		public static double Calculate(string expression)
-		{
-			if (string.IsNullOrEmpty(expression))
-				throw new ArgumentException("Пустое выражение недопустимо", nameof(expression));
-			expression = expression.Replace("sin", "1sin")
-								   .Replace("cos", "1cos")
-								   .Replace("log", "1log")
-								   .Replace("ln", "1ln")
-								   .Replace("tg", "1tg")
-								   .Replace("!", "!1")
-								   .Replace("sqrt", "1sqrt")
-								   .Replace("abs", "1abs");
-			CheckParenthesis(expression);
-
-			return EvaluateParenthesis(expression);
-		}
-
-		private static double EvaluateParenthesis(string expression)
-		{
-			string planarExpression = expression;
-			while (planarExpression.Contains('('))
-			{
-				int clauseStart = planarExpression.IndexOf('(') + 1;
-				int clauseEnd = IndexOfRightParenthesis(planarExpression, clauseStart);
-				string clause = planarExpression.Substring(clauseStart, clauseEnd - clauseStart);
-				planarExpression = planarExpression.Replace("(" + clause + ")", EvaluateParenthesis(clause).ToString());
-			}
-			return Evaluate(planarExpression);
-		}
-
-		private static int IndexOfRightParenthesis(string expression, int start)
-		{
-			int c = 1;
-			for (int i = start; i < expression.Length; i++)
-			{
-				switch (expression[i])
-				{
-					case '(': c++; break;
-					case ')': c--; break;
-				}
-				if (c == 0) return i;
-			}
-			return -1;
-		}
-
-		private static void CheckParenthesis(string expression)
-		{
-			int i = 0;
-			foreach (char c in expression)
-			{
-				switch (c)
-				{
-					case '(': i++; break;
-					case ')': i--; break;
-				}
-				if (i < 0)
-					throw new ArgumentException("Не хватает '('", nameof(expression));
-			}
-			if (i > 0)
-				throw new ArgumentException("Не хватает ')'", nameof(expression));
-		}
-
-		private static double Evaluate(string expression)
-		{
-			string normalExpression = expression.Replace(" ", "");
-			List<string> operators = normalExpression.Split(numberChars.ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(x => x).ToList();
-			List<double> numbers = normalExpression.Split(operatorChars, StringSplitOptions.RemoveEmptyEntries).Select(x => double.Parse(x)).ToList();
-
-
-
-			if (operators.Count + 1 != numbers.Count)
-				throw new ArgumentException($"Неверный синтаксис в выражении '{expression}'", nameof(expression));
-
-			foreach (string o in operatorChars)
-			{
-				for (int i = 0; i < operators.Count; i++)
-				{
-					if (operators[i] == o)
-					{
-						double result = Calc(numbers[i], numbers[i + 1], o);
-						numbers[i] = result;
-						numbers.RemoveAt(i + 1);
-						operators.RemoveAt(i);
-						i--;
-					}
-				}
-			}
-			return numbers[0];
-		}
-
-		private static double Calc(double left, double right, string oper)
-		{
-			switch (oper)
-			{
-				case "sin": return Math.Sin(right);
-				case "cos": return Math.Cos(right);
-				case "tg": return Math.Tan(right);
-				case "ln": return Math.Log(right);
-				case "!":
-					if (!int.TryParse(left.ToString(), out int buf))
-						throw new ArgumentException("Факториал нельзя вычислить от нецелого числа");
-					else
-					{
-						long longLeft = (long)left;
-						return Factorial(longLeft);
-					}
-				case "abs": return Math.Abs(right);
-				case "sqrt": return Math.Sqrt(right);
-				case "+": return left + right;
-				case "-": return left - right;
-				case "*": return left * right;
-				case "/": return left / right;
-				case "^": return Math.Pow(left, right);
-
-				default: throw new ArgumentException("Неподдерживаемый оператор", nameof(oper));
-			}
-		}
-
 		private static double Factorial(long num)
 		{
 			int result = 1;
@@ -138,6 +18,204 @@ namespace CalcYouLate.Functionality.Expressions
 				result *= i;
 			}
 			return result;
+		}
+
+		// Определение приоритета операций
+		static int GetPriority(string op)
+		{
+			switch (op)
+			{
+				case "+":
+				case "-":
+					return 1;
+				case "*":
+				case "/":
+					return 2;
+				case "^": // Добавляем новый оператор с приоритетом 3
+					return 3;
+				case "sin":
+				case "cos":
+				case "tg":
+				case "log":
+				case "ln":
+				case "abs":
+				case "sqrt":
+				case "!":
+					return 4;
+				default:
+					return 0;
+			}
+		}
+
+		// Вычисление результата бинарной операции
+		static double Calculate(double x, double y, string op)
+		{
+			switch (op)
+			{
+				case "+":
+					return x + y;
+				case "-":
+					return x - y;
+				case "*":
+					return x * y;
+				case "/":
+					return x / y;
+				case "^": // Добавляем новый оператор для возведения в степень
+					return Math.Pow(x, y);
+				case "!":
+					return Factorial(Convert.ToInt64(x));
+
+
+
+				default:
+					throw new ArgumentException("Неверный оператор");
+			}
+		}
+
+		// Вычисление результата унарной операции
+		static double Calculate(double x, string op)
+		{
+			switch (op)
+			{
+				case "sin":
+					return Math.Sin(x);
+				case "cos":
+					return Math.Cos(x);
+				case "tg":
+					return Math.Tan(x);
+				case "log":
+					return Math.Log10(x);
+				case "ln":
+					return Math.Log(x);
+				case "abs":
+					return Math.Abs(x);
+				case "sqrt":
+					return Math.Sqrt(x);
+				default:
+					throw new ArgumentException("Неверный оператор");
+			}
+		}
+
+		// Преобразование выражения в обратную польскую запись
+		static List<string> ToPostfix(string expression)
+		{
+			expression = expression.Replace("(-", "(0-")
+								   .Replace(".", ",")
+								   .Replace("!", "!1");
+
+			// Разбиение выражения на токены по регулярному выражению
+			var tokens = Regex.Split(expression, @"(\+|-|\*|/|\(|\)|sin|cos|tan|\^|log|ln|abs|!|sqrt)").Where(t => !string.IsNullOrEmpty(t)).ToList(); // Добавляем новый оператор в регулярное выражение
+
+			// Стек для хранения операторов
+			var stack = new Stack<string>();
+
+			// Список для хранения результата
+			var result = new List<string>();
+
+			foreach (var token in tokens)
+			{
+				// Если токен - число, добавляем его в результат
+				if (double.TryParse(token, out _))
+				{
+					result.Add(token);
+				}
+				// Если токен - открывающая скобка, добавляем ее в стек
+				else if (token == "(")
+				{
+					stack.Push(token);
+				}
+				// Если токен - закрывающая скобка, выталкиваем из стека все операторы до открывающей скобки и добавляем их в результат
+				else if (token == ")")
+				{
+					while (stack.Count > 0 && stack.Peek() != "(")
+					{
+						result.Add(stack.Pop());
+					}
+					if (stack.Count == 0)
+					{
+						throw new ArgumentException("Незакрытые скобки");
+					}
+					stack.Pop(); // Удаляем открывающую скобку из стека
+				}
+				// Если токен - оператор, выталкиваем из стека все операторы с большим или равным приоритетом и добавляем их в результат, затем добавляем токен в стек
+				else
+				{
+					while (stack.Count > 0 && GetPriority(stack.Peek()) >= GetPriority(token))
+					{
+						result.Add(stack.Pop());
+					}
+					stack.Push(token);
+				}
+			}
+
+			// Выталкиваем из стека все оставшиеся операторы и добавляем их в результат
+			while (stack.Count > 0)
+			{
+				var op = stack.Pop();
+				if (op == "(" || op == ")")
+				{
+					throw new ArgumentException("Незакрытые скобки");
+				}
+				result.Add(op);
+			}
+
+			return result;
+		}
+
+		// Вычисление результата выражения в обратной польской записи
+		static double Evaluate(List<string> postfix)
+		{
+			// Стек для хранения промежуточных результатов
+			var stack = new Stack<double>();
+
+			foreach (var token in postfix)
+			{
+				// Если токен - число, добавляем его в стек
+				if (double.TryParse(token, out double value))
+				{
+					stack.Push(value);
+				}
+				// Если токен - бинарный оператор, выталкиваем из стека два числа, вычисляем результат операции и добавляем его в стек
+				else if (token == "+" || token == "-" || token == "*" || token == "/" || token == "^" || token == "!") // Добавляем новый оператор в условие
+				{
+					if (stack.Count < 1)
+					{
+						throw new ArgumentException("Ошибка в выражении");
+					}
+					var y = stack.Pop();
+					var x = stack.Pop();
+					var result = Calculate(x, y, token);
+					stack.Push(result);
+				}
+				// Если токен - унарный оператор, выталкиваем из стека одно число, вычисляем результат операции и добавляем его в стек
+				else if ((new string[] { "sin", "cos", "tg", "abs", "sqrt", "log", "ln" }).Contains(token))
+				{
+					if (stack.Count < 1)
+					{
+						throw new ArgumentException("Ошибка в выражении");
+					}
+					var x = stack.Pop();
+					var result = Calculate(x, token);
+					stack.Push(result);
+				}
+				else
+				{
+					throw new ArgumentException("Ошибка в выражении");
+				}
+			}
+
+			// В стеке должно остаться одно число - результат выражения
+			if (stack.Count != 1)
+			{
+				throw new ArgumentException("Ошибка в выражении");
+			}
+
+			return stack.Pop();
+		}
+
+		public static double MakeCalculation(string expression)
+		{
+			return Evaluate(ToPostfix(expression));
 		}
 	}
 }

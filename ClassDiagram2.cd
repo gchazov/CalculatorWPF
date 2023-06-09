@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CalcYouLate.Functionality.Expressions.Evaluator">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAQAEAAAAAAACAiAAACAAAAAAAAASAAAAAAA=</HashCode>
+      <FileName>Functionality\Expressions\Evaluator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.Functionality.MeasureList" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABAAAAAAAAYAAEAEAABBACEAARAjAEYQAwBGAQE=</HashCode>
+      <FileName>Functionality\Measure\MeasureList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MainWindow" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAACAAAAAAAwAAAAAAgA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.NavButton">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAABgAEAAACAAAIAA=</HashCode>
+      <FileName>NavButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.AnglePage" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\AnglePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.AreaPage" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\AreaPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.DataPage" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\DataPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.EnergyPage" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\EnergyPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.LenghtPage" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\LengthPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.PowerPage" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\PowerPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.PressurePage" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\PressurePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.SpeedPage" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\SpeedPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.TemperaturePage" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\TemperaturePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.TimePage" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\TimePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.VolumePage" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\VolumePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.MeasurePages.WeightPage" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeasurePages\WeightPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.Pages.DateTimePage" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAQAIAAAAAAAAAAAAAgAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Pages\DateTimePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.Pages.ExpressionsPage" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Pages\ExpressionsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.Pages.MeasurePage" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Pages\MeasurePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.Pages.NumberSystemsPage" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAMAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\NumberSystemsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.Properties.Resources" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalcYouLate.Properties.Settings" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
