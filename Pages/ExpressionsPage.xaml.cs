@@ -86,5 +86,11 @@ namespace CalcYouLate.Pages
 				output.Text = ex.Message;
 			}
 		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			input.Text = String.Empty;
+            output.Text = String.Empty;
+        }
 	}
 }

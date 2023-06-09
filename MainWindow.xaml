@@ -33,7 +33,7 @@
                 Grid.ColumnSpan="2"
                 Margin="0,30,0,0"
                 Padding="0"
-                Background="#5c5c5c"
+                Background="White"
                 BorderBrush="DimGray"
                 BorderThickness="0"
                 SelectionChanged="sidebar_SelectionChanged"

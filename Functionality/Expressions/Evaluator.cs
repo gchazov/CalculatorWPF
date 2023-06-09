@@ -110,7 +110,14 @@ namespace CalcYouLate.Functionality.Expressions
 				case "cos": return Math.Cos(right);
 				case "tg": return Math.Tan(right);
 				case "ln": return Math.Log(right);
-				case "!": return Factorial(left);
+				case "!":
+					if (!int.TryParse(left.ToString(), out int buf))
+						throw new ArgumentException("Факториал нельзя вычислить от нецелого числа");
+					else
+					{
+						long longLeft = (long)left;
+						return Factorial(longLeft);
+					}
 				case "abs": return Math.Abs(right);
 				case "sqrt": return Math.Sqrt(right);
 				case "+": return left + right;
@@ -123,11 +130,10 @@ namespace CalcYouLate.Functionality.Expressions
 			}
 		}
 
-		private static double Factorial(double num)
+		private static double Factorial(long num)
 		{
-			int numInt = Convert.ToInt32(num);
 			int result = 1;
-			for (int i = 1; i <= numInt; i++)
+			for (int i = 1; i <= num; i++)
 			{
 				result *= i;
 			}

@@ -13,11 +13,14 @@
 
     <Grid Background="LightSlateGray" RenderTransformOrigin="0.502,0.508">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="48.733" />
+            <ColumnDefinition Width="51.267" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <ListBox
             x:Name="sidebarMeasures"
+            Grid.ColumnSpan="2"
+            BorderThickness="0"
             SelectionChanged="sidebarMeasures_SelectionChanged"
             SelectionMode="Single">
             <local:NavButton
@@ -85,7 +88,7 @@
 
         <Frame
             x:Name="navMeasureFrame"
-            Grid.Column="1"
+            Grid.Column="2"
             AllowDrop="False"
             NavigationUIVisibility="Hidden" />
     </Grid>

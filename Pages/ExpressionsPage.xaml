@@ -54,7 +54,7 @@
             Content="C"
             FontSize="40"
             Foreground="#ffffff"
-            Style="{DynamicResource ButtonStyle}" />
+            Style="{DynamicResource ButtonStyle}" Click="Button_Click" />
         <Button
             Grid.Row="2"
             Grid.Column="1"

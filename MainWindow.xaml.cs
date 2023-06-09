@@ -55,7 +55,7 @@ namespace CalcYouLate
         private void HelpButton(object sender, EventArgs e)
         {
             string path;
-            path = Path.Combine(Environment.CurrentDirectory, @"Functionality\Help\Helpidr.chm");
+            path = Path.Combine(Environment.CurrentDirectory, @"..\..\Functionality\Help\Helpidr.chm");
             Process.Start(path);
         }
 
@@ -64,7 +64,7 @@ namespace CalcYouLate
             if (e.Key == Key.F1)
             {
                 string path;
-                path = Path.Combine(Environment.CurrentDirectory, @"Functionality\Help\Helpidr.chm");
+                path = Path.Combine(Environment.CurrentDirectory, @"..\..\Functionality\Help\Helpidr.chm");
                 Process.Start(path);
             }
         }
