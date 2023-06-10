@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,9 +9,42 @@ using System.Windows;
 
 namespace CalcYouLate.Functionality.Expressions
 {
-	public static class Evaluator
+	public class Evaluator : INotifyPropertyChanged
 	{
-		private static double Factorial(long num)
+		string _input;
+		public string InputValue
+		{
+			get
+			{
+				return _input;
+			}
+			set
+			{
+				_input = value;
+				OnPropertyChanged("OutputValue");
+			}
+		}
+		string _output;
+		public string OutputValue
+		{
+			get
+			{
+				return MakeCalculation(_input).ToString();
+			}
+			set
+			{
+				_output = value;
+			}
+		
+		}
+
+		public void OnPropertyChanged(string propertyName)
+		{
+			PropertyChanged.DynamicInvoke(this, new PropertyChangedEventArgs(propertyName));
+		}
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private static double Factorial(long num)
 		{
 			int result = 1;
 			for (int i = 1; i <= num; i++)
@@ -96,7 +130,7 @@ namespace CalcYouLate.Functionality.Expressions
 			}
 		}
 
-		// Преобразование выражения в обратную польскую запись
+		// Преобразование выражения в обратную польскую запись	//сам писал??
 		static List<string> ToPostfix(string expression)
 		{
 			expression = expression.Replace("(-", "(0-")
@@ -182,10 +216,17 @@ namespace CalcYouLate.Functionality.Expressions
 					{
 						throw new ArgumentException("Ошибка в выражении");
 					}
-					var y = stack.Pop();
-					var x = stack.Pop();
-					var result = Calculate(x, y, token);
-					stack.Push(result);
+					try 
+					{
+                        var y = stack.Pop();
+                        var x = stack.Pop();
+                        var result = Calculate(x, y, token);
+                        stack.Push(result);
+                    }
+					catch(Exception e)
+					{
+                        throw new ArgumentException("Неоконченное выражение");
+                    }
 				}
 				// Если токен - унарный оператор, выталкиваем из стека одно число, вычисляем результат операции и добавляем его в стек
 				else if ((new string[] { "sin", "cos", "tg", "abs", "sqrt", "log", "ln" }).Contains(token))

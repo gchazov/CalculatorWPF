@@ -29,14 +29,14 @@ namespace CalcYouLate.Pages
         private void NumBtn_Click(object sender, RoutedEventArgs e)
         {
             input.Text += ((Button)sender).Content.ToString();
-			try
-			{
-				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
-			}
-			catch (Exception ex)
-			{
-				output.Text = ex.Message;
-			}
+			//try
+			//{
+			//	output.Text = Evaluator.MakeCalculation(input.Text).ToString();
+			//}
+			//catch (Exception ex)
+			//{
+			//	output.Text = ex.Message;
+			//}
 		}
 
 		private void FuncBtn_Click(object sender, RoutedEventArgs e)
@@ -65,26 +65,26 @@ namespace CalcYouLate.Pages
 				realInput= functions[function];
 			}
 			input.Text += realInput;
-			try
-			{
-				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
-			}
-			catch (Exception ex)
-			{
-				output.Text = ex.Message;
-			}
+			//try
+			//{
+			//	output.Text = Evaluator.MakeCalculation(input.Text).ToString();
+			//}
+			//catch (Exception ex)
+			//{
+			//	output.Text = ex.Message;
+			//}
 		}
 
 		private void EqualBtn_Click(object sender, RoutedEventArgs e )
 		{
-			try
-			{
-				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
-			}
-			catch (Exception ex)
-			{
-				output.Text = ex.Message;
-			}
+			//try
+			//{
+			//	output.Text = Evaluator.MakeCalculation(input.Text).ToString();
+			//}
+			//catch (Exception ex)
+			//{
+			//	output.Text = ex.Message;
+			//}
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -93,9 +93,29 @@ namespace CalcYouLate.Pages
             output.Text = String.Empty;
         }
 
-		private void output_TextChanged(object sender, TextChangedEventArgs e)
-		{
-
+        private void input_TextChanged(object sender, TextChangedEventArgs e)
+        {
+			try
+			{
+				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
+			}
+			catch (Exception ex)
+			{
+				output.Text = ex.Message;
+			}
 		}
-	}
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+			input.Text += ",";
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+			if (input.Text.Length > 0)
+			{
+				input.Text = input.Text.Remove(input.Text.Length - 1, 1);
+			}
+        }
+    }
 }

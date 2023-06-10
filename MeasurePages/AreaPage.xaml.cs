@@ -1,6 +1,7 @@
 ﻿using CalcYouLate.Functionality;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -21,40 +22,68 @@ namespace CalcYouLate.MeasurePages
     /// Логика взаимодействия для AreaPage.xaml
     /// </summary>
     public partial class AreaPage : Page
-    {
-        public string FromText { get { return from.Text; } }
-        public string ToText { get { return to.Text; } }
-        public string InputTextInfo { get { return input.Text; } }
-        public string OutputTextInfo { get { return output.Text; } }
-
-        public AreaPage CurrentPage
-        {
-            get
-            {
-                return this;
-            }
-        }
-
-        public string ConvertArea
-        {
-            get
-            {
-                double meters = CalcYouLate.Functionality.MeasureList.areaToMeters[from.Text] * Convert.ToDouble(input.Text);
-                string result = input.Text != "0" ? (meters / CalcYouLate.Functionality.MeasureList.areaFromMeters[to.Text]).ToString() : "Ошибка!";
-                return result;
-            }
-        }
-
+    {     
         public AreaPage()
         {
             InitializeComponent();
             DataContext = new Functionality.MeasureList();
         }
 
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private void input_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //ТУТ ПОКА ПРОСТО РАБОТОСПОСОБНОСТЬ СМОТРЕТЬ!!! ОНА НИЧЕ НЕ СЧИТАЕТ!!!
-            
+
+            AreaCalc();
+
         }
+
+        private void from_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AreaCalc();
+        }
+
+        private void to_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AreaCalc();
+        }
+        private void from_DropDownClosed(object sender, EventArgs e)
+        {
+            AreaCalc();
+        }
+
+        private void to_DropDownClosed(object sender, EventArgs e)
+        {
+            AreaCalc();
+        }
+
+        public void AreaCalc()
+        {
+            if (from.Text == to.Text) output.Text = input.Text;
+            try
+            {
+                if (from.Text == to.Text)
+                {
+                    if (double.TryParse(input.Text, out double res))
+                        output.Text = input.Text;
+                    else output.Text = "Недопустимый ввод!";
+                    return;
+                }
+                double meters = CalcYouLate.Functionality.MeasureList.areaToMeters[from.Text] * Convert.ToDouble(input.Text);
+                string result = input.Text != "0" ? (meters * CalcYouLate.Functionality.MeasureList.areaFromMeters[to.Text]).ToString() : "Недопустимый ввод!";
+                output.Text = result;
+            }
+            catch (Exception ex)
+            {
+                if (input.Text == string.Empty) output.Text = "0";
+                else output.Text = "Недопустимый ввод!";
+            }
+        }
+
+       
     }
 }
