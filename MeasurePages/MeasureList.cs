@@ -508,5 +508,65 @@ namespace CalcYouLate.Functionality
             {"драконический год", 1.0 / 8760 },
             {"век", 1.0 / 876000 }
         };
+
+        public static Dictionary<string, double> angleToDegree = new Dictionary<string, double>()
+        {
+            {"градус", 1 },
+            {"радиан",1.0 *180 / Math.PI},
+            {"минута",1.0 * 1/60 },
+            {"секунда",1.0 * 1/3600 }
+        };
+
+        public static Dictionary<string, double> angleFromDegree = new Dictionary<string, double>()
+        {
+            {"градус", 1.0 },
+            {"радиан", Math.PI / 180.0},
+            {"минута", 60.0 },
+            {"секунда", 3600.0 }
+        };
+
+        public static Dictionary<string, double> dataToByte = new Dictionary<string, double>()
+        {
+            {"бит", 0.125},
+            {"байт", 1},
+            {"килобайт", 1024},
+            {"мегабайт", 1048576},
+            {"гигабайт", 1073741824},
+            {"терабайт", 1099511627776},
+            {"петабайт", 1125899906842624},
+            {"эксабайт", 1152921504606846976}
+        };
+
+        public static Dictionary<string, double> dataFromByte = new Dictionary<string, double>()
+        {
+            {"бит", 8},
+            {"байт", 1},
+            {"килобайт", 0.0009765625},
+            {"мегабайт", 0.00000095367431640625},
+            {"гигабайт", 0.0000000009313225746154785},
+            {"терабайт", 0.0000000000009094947017729282},
+            {"петабайт", 0.0000000000000008881784197001252},
+            {"эксабайт", 0.0000000000000008673617379884035}
+        };
+
+        public static Dictionary<string, double> pressureToPascal = new Dictionary<string, double>()
+        {
+            {"бар", 100000},
+            {"паскаль", 1},
+            {"килопаскаль", 1000},
+            {"миллиметры ртутного столба", 133.322},
+            {"фунт/дюйм²", 6894.76},
+            {"атмосфера", 101325}
+        };
+
+        public static Dictionary<string, double> pressureFromPascal = new Dictionary<string, double>()
+        {
+            {"бар", 0.00001},
+            {"паскаль", 1},
+            {"килопаскаль", 0.001},
+            {"миллиметры ртутного столба", 0.0075},
+            {"фунт/дюйм²", 0.00015},
+            {"атмосфера", 0.0000099}
+        };
     }
 }

@@ -11,12 +11,12 @@
     mc:Ignorable="d">
     <Grid Background="LightSteelBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="114*" />
-            <ColumnDefinition Width="213*" />
-            <ColumnDefinition Width="118*" />
-            <ColumnDefinition Width="118*" />
-            <ColumnDefinition Width="118.354" />
-            <ColumnDefinition Width="118*" />
+            <ColumnDefinition Width="128*" />
+            <ColumnDefinition Width="239*" />
+            <ColumnDefinition Width="133*" />
+            <ColumnDefinition Width="133*" />
+            <ColumnDefinition Width="133*" />
+            <ColumnDefinition Width="133*" />
 
         </Grid.ColumnDefinitions>
 
@@ -41,7 +41,9 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}" TextChanged="input_TextChanged" />
+            Style="{DynamicResource TextBoxStyle}"
+            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="input_TextChanged" />
 
         <TextBox
             x:Name="output"
@@ -56,6 +58,7 @@
             FontFamily="Montserrat"
             FontSize="25"
             IsReadOnly="True"
+            Style="{DynamicResource TextBoxStyle}"
             Text="0" />
 
         <ComboBox
@@ -68,10 +71,12 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="from_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Pressure}"
-            SelectedValue="{Binding Pressure[0]}" DropDownClosed="from_DropDownClosed" SelectionChanged="from_SelectionChanged" />
+            SelectedValue="{Binding Pressure[0]}"
+            SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
             x:Name="to"
@@ -84,26 +89,35 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="to_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Pressure}"
-            SelectedValue="{Binding Pressure[5]}" SelectionChanged="to_SelectionChanged" DropDownClosed="to_DropDownClosed" />
+            SelectedValue="{Binding Pressure[5]}"
+            SelectionChanged="to_SelectionChanged" />
 
         <Label
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
+            Width="52"
+            Margin="0,18,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Background="LightGray"
             Content="Из:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
 
         <Label
             Grid.Row="2"
-            HorizontalAlignment="Right"
+            Width="52"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="LightGray"
-            Content="В:"
+            Content=" В:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
     </Grid>
 </Page>

@@ -37,12 +37,13 @@
             Grid.Column="1"
             Grid.ColumnSpan="4"
             Width="340"
-            Height="50"
+            Height="50" 
             Margin="18,0,0,0"
             HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
+            Style="{DynamicResource TextBoxStyle}"
             Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
             TextChanged="input_TextChanged" />
 
@@ -59,6 +60,7 @@
             FontFamily="Montserrat"
             FontSize="25"
             IsReadOnly="True"
+            Style="{DynamicResource TextBoxStyle}"
             Text="0" />
 
         <ComboBox
@@ -97,20 +99,25 @@
             SelectionChanged="to_SelectionChanged" />
 
         <Label
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
+            Width="52" FontWeight="Bold"
+            Margin="0,18,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Background="LightGray"
             Content="Из:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            Style="{DynamicResource LabelStyle}" />
 
         <Label
-            Grid.Row="2"
-            HorizontalAlignment="Right"
+            Grid.Row="2" FontWeight="Bold"
+            Width="52"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="LightGray"
-            Content="В:"
+            Content=" В:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            Style="{DynamicResource LabelStyle}" />
     </Grid>
 </Page>

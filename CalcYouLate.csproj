@@ -278,6 +278,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Label.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\TextBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -438,6 +442,7 @@
   <ItemGroup>
     <Content Include="Functionality\Help\helpid.h" />
     <Content Include="Functionality\Help\helpidr.h" />
+    <Resource Include="Images\spartak.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Functionality\Measure\" />

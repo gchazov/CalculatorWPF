@@ -103,7 +103,7 @@
             Grid.Column="1"
             Click="FuncBtn_Click"
             Content="sin(x)"
-            FontSize="27"
+            FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="5"
@@ -131,7 +131,7 @@
             Grid.Column="2"
             Click="FuncBtn_Click"
             Content="cos(x)"
-            FontSize="27"
+            FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
@@ -152,7 +152,7 @@
             Grid.Column="3"
             Click="FuncBtn_Click"
             Content="log(x)"
-            FontSize="27"
+            FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
@@ -160,7 +160,7 @@
             Grid.Column="3"
             Click="FuncBtn_Click"
             Content="tg(x)"
-            FontSize="27"
+            FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
@@ -188,7 +188,7 @@
             Grid.Column="4"
             Click="FuncBtn_Click"
             Content="ctg(x)"
-            FontSize="27"
+            FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button

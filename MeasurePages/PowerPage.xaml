@@ -42,7 +42,9 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}" TextChanged="input_TextChanged" />
+            Style="{DynamicResource TextBoxStyle}"
+            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="input_TextChanged" />
 
         <TextBox
             x:Name="output"
@@ -57,6 +59,7 @@
             FontFamily="Montserrat"
             FontSize="25"
             IsReadOnly="True"
+            Style="{DynamicResource TextBoxStyle}"
             Text="0" />
 
         <ComboBox
@@ -69,10 +72,12 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="from_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Power}"
-            SelectedValue="{Binding Power[0]}" DropDownClosed="from_DropDownClosed" SelectionChanged="from_SelectionChanged" />
+            SelectedValue="{Binding Power[0]}"
+            SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
             x:Name="to"
@@ -85,26 +90,35 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="to_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Power}"
-            SelectedValue="{Binding Power[1]}" SelectionChanged="to_SelectionChanged" DropDownClosed="to_DropDownClosed" />
+            SelectedValue="{Binding Power[1]}"
+            SelectionChanged="to_SelectionChanged" />
 
         <Label
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
+            Width="52"
+            Margin="0,18,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Background="LightGray"
             Content="Из:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
 
         <Label
             Grid.Row="2"
-            HorizontalAlignment="Right"
+            Width="52"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="LightGray"
-            Content="В:"
+            Content=" В:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
     </Grid>
 </Page>
