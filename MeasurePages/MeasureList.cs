@@ -407,5 +407,62 @@ namespace CalcYouLate.Functionality
             {"карат", 5000}
         };
 
+        public static Dictionary<string, double> tempatureToCelsius = new Dictionary<string, double>()
+        {
+            {"градус Цельсия", 1},
+            {"градус Фаренгейта", -17.22},
+            {"градус Кельвина", -272.15},
+            {"градус Реомюра", 1.25}
+        };
+        
+        public static Dictionary<string, double> tempatureFromCelsius = new Dictionary<string, double>()
+        {
+            {"градус Цельсия", 1},
+            {"градус Фаренгейта", 33.8},
+            {"градус Кельвина", 274.15},
+            {"градус Реомюра", 0.8}
+        };
+
+        public static Dictionary<string, double> powerToWatt = new Dictionary<string, double>()
+        {
+            {"ватт", 1},
+            {"киловатт", 1000},
+            {"мегаватт", 1000000},
+            {"лошадиная сила", 735.5},
+            {"вольт-ампер", 1},
+            {"фут-фунты/мин", 0.0225969658},
+            {"БТЕ/мин", 17.5842667}
+        };
+
+        public static Dictionary<string, double> powerFromWatt = new Dictionary<string, double>()
+        {
+            {"ватт", 1},
+            {"киловатт", 0.001},
+            {"мегаватт", 0.000001},
+            {"лошадиная сила", 0.0014},
+            {"вольт-ампер", 1},
+            {"фут-фунты/мин", 1423.8216274234},
+            {"БТЕ/мин", 3.414425}
+        };
+
+        public static Dictionary<string, double> pressureToPascal = new Dictionary<string, double>()
+        {
+            {"бар", 100000},
+            {"паскаль", 1},
+            {"килопаскаль", 1000},
+            {"миллиметры ртутного столба", 133.322},
+            {"фунт/дюйм²", 6894.76},
+            {"атмосфера", 101325}
+        };
+
+        public static Dictionary<string, double> pressureFromPascal = new Dictionary<string, double>()
+        {
+            {"бар", 0.00001},
+            {"паскаль", 1},
+            {"килопаскаль", 0.001},
+            {"миллиметры ртутного столба", 0.0075},
+            {"фунт/дюйм²", 0.00015},
+            {"атмосфера", 0.0000099}
+        };
     }
 }

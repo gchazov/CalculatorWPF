@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:CalcYouLate.Functionality"
+    xmlns:local="clr-namespace:CalcYouLate.MeasurePages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="PressurePage"
     d:DesignHeight="450"
@@ -11,12 +11,12 @@
     mc:Ignorable="d">
     <Grid Background="LightSteelBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="128*" />
-            <ColumnDefinition Width="239*" />
-            <ColumnDefinition Width="133*" />
-            <ColumnDefinition Width="133*" />
-            <ColumnDefinition Width="133*" />
-            <ColumnDefinition Width="133*" />
+            <ColumnDefinition Width="114*" />
+            <ColumnDefinition Width="213*" />
+            <ColumnDefinition Width="118*" />
+            <ColumnDefinition Width="118*" />
+            <ColumnDefinition Width="118.354" />
+            <ColumnDefinition Width="118*" />
 
         </Grid.ColumnDefinitions>
 
@@ -41,7 +41,7 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            Text="0" />
+            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}" TextChanged="input_TextChanged" />
 
         <TextBox
             x:Name="output"
@@ -55,6 +55,7 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
+            IsReadOnly="True"
             Text="0" />
 
         <ComboBox
@@ -70,7 +71,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Pressure}"
-            SelectedValue="{Binding Pressure[0]}" />
+            SelectedValue="{Binding Pressure[0]}" DropDownClosed="from_DropDownClosed" SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
             x:Name="to"
@@ -86,7 +87,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Pressure}"
-            SelectedValue="{Binding Pressure[5]}" />
+            SelectedValue="{Binding Pressure[5]}" SelectionChanged="to_SelectionChanged" DropDownClosed="to_DropDownClosed" />
 
         <Label
             HorizontalAlignment="Right"
