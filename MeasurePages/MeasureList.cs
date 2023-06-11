@@ -97,7 +97,6 @@ namespace CalcYouLate.Functionality
             "ватт/секунда",
             "киловатт/час",
             "электрон-вольт",
-            "квад",
             "терм",
             "килограмм тротила",
             "джоуль",
@@ -111,7 +110,7 @@ namespace CalcYouLate.Functionality
         }
         public string[] weight =
         {
-            "милиграмм мг",
+            "миллиграмм мг",
             "грамм г",
             "килограмм кг",
             "центнер",
@@ -352,45 +351,101 @@ namespace CalcYouLate.Functionality
             {"парсек", 3.24078E-17}
         };
 
-        public static Dictionary<string, double> dataToByte = new Dictionary<string, double>()
+        public static Dictionary<string, double> energyToJoules = new Dictionary<string, double>()
         {
-            {"бит", 0.125},
-            {"байт", 1},
-            {"килобайт", 1024},
-            {"мегабайт", 1048576},
-            {"гигабайт", 1073741824},
-            {"терабайт", 1099511627776},
-            {"петабайт", 1125899906842624},
-            {"эксабайт", 1152921504606846976}
+            {"калория", 4.184},
+            {"килокалория", 4184},
+            {"мегакалория", 4184000},
+            {"ватт/секунда", 1},
+            {"киловатт/час", 3600000},
+            {"электрон-вольт", 1.602e-19},
+            {"терм", 105505600},
+            {"килограмм тротила", 4612070},
+            {"джоуль", 1},
+            {"килоджоуль", 1000}
         };
 
-        public static Dictionary<string, double> dataFromByte = new Dictionary<string, double>()
+        public static Dictionary<string, double> energyFromJoules = new Dictionary<string, double>()
         {
-            {"бит", 8},
-            {"байт", 1},
-            {"килобайт", 0.0009765625},
-            {"мегабайт", 0.00000095367431640625},
-            {"гигабайт", 0.0000000009313225746154785},
-            {"терабайт", 0.0000000000009094947017729282},
-            {"петабайт", 0.0000000000000008881784197001252},
-            {"эксабайт", 0.0000000000000008673617379884035}
+            {"калория", 0.239},
+            {"килокалория", 0.000239},
+            {"мегакалория", 0.000000239},
+            {"ватт/секунда", 1},
+            {"киловатт/час", 0.000278},
+            {"электрон-вольт", 6.242e+18},
+            {"терм", 0.00000947},
+            {"килограмм тротила", 0.000000217},
+            {"джоуль", 1},
+            {"килоджоуль", 0.001}
         };
 
-        public static Dictionary<string, double> angleToDegree = new Dictionary<string, double>()
+        public static Dictionary<string, double> weightToKilograms = new Dictionary<string, double>()
         {
-            {"градус", 1 },
-            {"радиан",1.0 *180 / Math.PI},
-            {"минута",1.0 * 1/60 },
-            {"секунда",1.0 * 1/3600 }
+            {"миллиграмм мг", 0.000001},
+            {"грамм г", 0.001},
+            {"килограмм кг", 1},
+            {"центнер", 100},
+            {"тонна", 1000},
+            {"стоун", 6.35029},
+            {"фунт", 0.453592},
+            {"унция", 0.0283495},
+            {"гран", 0.0000647989},
+            {"карат", 0.0002}
         };
 
-        public static Dictionary<string, double> angleFromDegree = new Dictionary<string, double>()
+        public static Dictionary<string, double> weightFromKilograms = new Dictionary<string, double>()
         {
-            {"градус", 1.0 },
-            {"радиан", Math.PI / 180.0},
-            {"минута", 60.0 },
-            {"секунда", 3600.0 }
+            {"миллиграмм мг", 1000000},
+            {"грамм г", 1000},
+            {"килограмм кг", 1},
+            {"центнер", 0.01},
+            {"тонна", 0.001},
+            {"стоун", 0.157473},
+            {"фунт", 2.20462},
+            {"унция", 35.2739},
+            {"гран", 15432.3584},
+            {"карат", 5000}
         };
+
+        public static Dictionary<string, double> tempatureToCelsius = new Dictionary<string, double>()
+        {
+            {"градус Цельсия", 1},
+            {"градус Фаренгейта", -17.22},
+            {"градус Кельвина", -272.15},
+            {"градус Реомюра", 1.25}
+        };
+
+        public static Dictionary<string, double> tempatureFromCelsius = new Dictionary<string, double>()
+        {
+            {"градус Цельсия", 1},
+            {"градус Фаренгейта", 33.8},
+            {"градус Кельвина", 274.15},
+            {"градус Реомюра", 0.8}
+        };
+
+        public static Dictionary<string, double> powerToWatt = new Dictionary<string, double>()
+        {
+            {"ватт", 1},
+            {"киловатт", 1000},
+            {"мегаватт", 1000000},
+            {"лошадиная сила", 735.5},
+            {"вольт-ампер", 1},
+            {"фут-фунты/мин", 0.0225969658},
+            {"БТЕ/мин", 17.5842667}
+        };
+
+        public static Dictionary<string, double> powerFromWatt = new Dictionary<string, double>()
+        {
+            {"ватт", 1},
+            {"киловатт", 0.001},
+            {"мегаватт", 0.000001},
+            {"лошадиная сила", 0.0014},
+            {"вольт-ампер", 1},
+            {"фут-фунты/мин", 1423.8216274234},
+            {"БТЕ/мин", 3.414425}
+        };
+
+
 
         public static Dictionary<string, double> speedToKmPh = new Dictionary<string, double>()
         {

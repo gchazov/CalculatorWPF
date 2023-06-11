@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:CalcYouLate.Functionality"
+    xmlns:local="clr-namespace:CalcYouLate.MeasurePages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="TemperaturePage"
     d:DesignHeight="450"
@@ -42,7 +42,7 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            Text="0" />
+            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}" TextChanged="input_TextChanged" />
 
         <TextBox
             x:Name="output"
@@ -56,6 +56,7 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
+            IsReadOnly="True"
             Text="0" />
 
         <ComboBox
@@ -71,7 +72,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Temperature}"
-            SelectedValue="{Binding Temperature[0]}" />
+            SelectedValue="{Binding Temperature[0]}" DropDownClosed="from_DropDownClosed" SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
             x:Name="to"
@@ -87,7 +88,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Temperature}"
-            SelectedValue="{Binding Temperature[1]}" />
+            SelectedValue="{Binding Temperature[1]}" SelectionChanged="to_SelectionChanged" DropDownClosed="to_DropDownClosed" />
 
         <Label
             HorizontalAlignment="Right"
