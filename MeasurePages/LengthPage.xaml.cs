@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,59 @@ namespace CalcYouLate.MeasurePages
         {
             InitializeComponent();
             DataContext = new Functionality.MeasureList();
+        }
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void LengthCalc()
+        {
+            if (from.Text == to.Text) output.Text = input.Text;
+            try
+            {
+                if (from.Text == to.Text)
+                {
+                    if (double.TryParse(input.Text, out double res))
+                        output.Text = input.Text;
+                    else output.Text = "Недопустимый ввод!";
+                    return;
+                }
+                double meters = CalcYouLate.Functionality.MeasureList.lengthToMeters[from.Text] * Convert.ToDouble(input.Text);
+                string result = input.Text != "0" ? (meters * CalcYouLate.Functionality.MeasureList.lengthFromMeters[to.Text]).ToString() : "Недопустимый ввод!";
+                output.Text = result;
+            }
+            catch (Exception ex)
+            {
+                if (input.Text == string.Empty) output.Text = "0";
+                else output.Text = "Недопустимый ввод!";
+            }
+        }
+
+        private void from_DropDownClosed(object sender, EventArgs e)
+        {
+            LengthCalc();
+        }
+
+        private void from_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LengthCalc();
+        }
+
+        private void input_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            LengthCalc();
+        }
+
+        private void to_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LengthCalc();
+        }
+
+        private void to_DropDownClosed(object sender, EventArgs e)
+        {
+            LengthCalc();
         }
     }
 }
