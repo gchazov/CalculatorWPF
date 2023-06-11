@@ -42,7 +42,8 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}" TextChanged="input_TextChanged" />
+            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="input_TextChanged" />
 
         <TextBox
             x:Name="output"
@@ -68,10 +69,12 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="from_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Data}"
-            SelectedValue="{Binding Data[2]}" SelectionChanged="from_SelectionChanged" DropDownClosed="from_DropDownClosed" />
+            SelectedValue="{Binding Data[2]}"
+            SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
             x:Name="to"
@@ -84,10 +87,12 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="to_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Data}"
-            SelectedValue="{Binding Data[1]}" SelectionChanged="to_SelectionChanged" DropDownClosed="to_DropDownClosed" />
+            SelectedValue="{Binding Data[1]}"
+            SelectionChanged="to_SelectionChanged" />
 
         <Label
             HorizontalAlignment="Right"
