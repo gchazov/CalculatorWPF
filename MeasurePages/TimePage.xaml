@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:CalcYouLate.MeasurePages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="TimePage"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="418"
+    d:DesignWidth="548"
     mc:Ignorable="d">
 
     <Grid Background="LightSteelBlue">
@@ -75,7 +75,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Time}"
-            SelectedValue="{Binding Time[7]}"
+            SelectedValue="{Binding Time[3]}"
             SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
@@ -93,11 +93,11 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Time}"
-            SelectedValue="{Binding Time[6]}"
+            SelectedValue="{Binding Time[2]}"
             SelectionChanged="to_SelectionChanged" />
 
         <Label
-            Width="52"
+            Width="58"
             Margin="0,18,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
@@ -114,7 +114,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="LightGray"
-            Content=" В:"
+            Content="В:"
             FontFamily="Montserrat"
             FontSize="25"
             FontWeight="Bold"

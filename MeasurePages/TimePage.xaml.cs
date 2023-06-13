@@ -44,8 +44,8 @@ namespace CalcYouLate.MeasurePages
                     else output.Text = "Недопустимый ввод!";
                     return;
                 }
-                double meters = CalcYouLate.Functionality.MeasureList.timeToHrs[from.Text] * Convert.ToDouble(input.Text);
-                string result = input.Text != "0" ? (meters * CalcYouLate.Functionality.MeasureList.timeFromHours[to.Text]).ToString() : "Недопустимый ввод!";
+                double meters = CalcYouLate.Functionality.MeasureList.timeToSec[from.Text] * Convert.ToDouble(input.Text);
+                string result = input.Text != "0" ? (meters * CalcYouLate.Functionality.MeasureList.timeFromSec[to.Text]).ToString() : "Недопустимый ввод!";
                 output.Text = result;
             }
             catch (Exception ex)

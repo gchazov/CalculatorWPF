@@ -81,5 +81,16 @@ namespace CalcYouLate.MeasurePages
             AngleCalc();
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            object item1 = from.SelectedItem;
+            object item2 = to.SelectedItem;
+
+            from.SelectedItem = item2;
+            to.SelectedItem = item1;
+
+            AngleCalc();
+        }
     }
 }

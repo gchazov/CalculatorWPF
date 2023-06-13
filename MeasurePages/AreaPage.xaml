@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="areaPage"
     Title="AreaPage"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="418"
+    d:DesignWidth="548"
     mc:Ignorable="d">
 
     <Grid Background="LightSteelBlue">
@@ -37,7 +37,7 @@
             Grid.Column="1"
             Grid.ColumnSpan="4"
             Width="340"
-            Height="50" 
+            Height="50"
             Margin="18,0,0,0"
             HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
@@ -99,7 +99,7 @@
             SelectionChanged="to_SelectionChanged" />
 
         <Label
-            Width="52" FontWeight="Bold"
+            Width="58"
             Margin="0,18,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
@@ -107,17 +107,19 @@
             Content="Из:"
             FontFamily="Montserrat"
             FontSize="25"
+            FontWeight="Bold"
             Style="{DynamicResource LabelStyle}" />
 
         <Label
-            Grid.Row="2" FontWeight="Bold"
+            Grid.Row="2"
             Width="52"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="LightGray"
-            Content=" В:"
+            Content="В:"
             FontFamily="Montserrat"
             FontSize="25"
+            FontWeight="Bold"
             Style="{DynamicResource LabelStyle}" />
     </Grid>
 </Page>
