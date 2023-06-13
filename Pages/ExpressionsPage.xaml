@@ -187,7 +187,7 @@
             Grid.Row="4"
             Grid.Column="4"
             Click="FuncBtn_Click"
-            Content="ctg(x)"
+            Content="xʸ"
             FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 

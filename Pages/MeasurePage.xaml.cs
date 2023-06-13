@@ -29,5 +29,10 @@ namespace CalcYouLate.Pages
         {
             navMeasureFrame.Navigate((sidebarMeasures.SelectedItem as NavButton).NavLink);
         }
-    }
+
+		private void NavButton_Selected(object sender, RoutedEventArgs e)
+		{
+
+		}
+	}
 }

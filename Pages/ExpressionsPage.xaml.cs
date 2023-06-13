@@ -58,7 +58,8 @@ namespace CalcYouLate.Pages
 			{"ln(x)", "ln("},
 			{"pi", $"{Math.PI}"},
 			{"x", "*" },
-			{"÷", "/" }
+			{"÷", "/" },
+			{"xʸ", "^" }
 			};
 			if (functions.ContainsKey(function) ) 
 			{ 
