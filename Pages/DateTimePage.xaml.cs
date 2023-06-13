@@ -134,11 +134,6 @@ namespace CalcYouLate.Pages
 
 		}
 
-		private void sidebarDateTime_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			navDateTimeFrame.Navigate((sidebarDateTime.SelectedItem as NavButton).NavLink);
-			
-		}
 
 		private void NavButton_Selected(object sender, RoutedEventArgs e)
 		{
@@ -224,7 +219,7 @@ namespace CalcYouLate.Pages
 
 			//DateTime newDate = new DateTime(newYear, newMonth, currentDate.Day);
 			//newDate += timeSpan;
-			MessageBox.Show(newDate.ToString());
+			// MessageBox.Show(newDate.ToString());
 			to.SelectedDate = newDate;
 		}
 	}
