@@ -3,11 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:CalcYouLate.Functionality"
+    xmlns:local="clr-namespace:CalcYouLate.MeasurePages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="TimePage"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="418"
+    d:DesignWidth="548"
     mc:Ignorable="d">
 
     <Grid Background="LightSteelBlue">
@@ -42,7 +42,9 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            Text="0" />
+            Style="{DynamicResource TextBoxStyle}"
+            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="input_TextChanged" />
 
         <TextBox
             x:Name="output"
@@ -56,6 +58,7 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
+            Style="{DynamicResource TextBoxStyle}"
             Text="0" />
 
         <ComboBox
@@ -68,10 +71,12 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="from_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Time}"
-            SelectedValue="{Binding Time[7]}" />
+            SelectedValue="{Binding Time[3]}"
+            SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
             x:Name="to"
@@ -84,26 +89,35 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="to_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Time}"
-            SelectedValue="{Binding Time[6]}" />
+            SelectedValue="{Binding Time[2]}"
+            SelectionChanged="to_SelectionChanged" />
 
         <Label
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
+            Width="58"
+            Margin="0,18,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Background="LightGray"
             Content="Из:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
 
         <Label
             Grid.Row="2"
-            HorizontalAlignment="Right"
+            Width="52"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="LightGray"
             Content="В:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
     </Grid>
 </Page>

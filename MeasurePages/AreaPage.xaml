@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="areaPage"
     Title="AreaPage"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="418"
+    d:DesignWidth="548"
     mc:Ignorable="d">
 
     <Grid Background="LightSteelBlue">
@@ -43,6 +43,7 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
+            Style="{DynamicResource TextBoxStyle}"
             Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
             TextChanged="input_TextChanged" />
 
@@ -59,6 +60,7 @@
             FontFamily="Montserrat"
             FontSize="25"
             IsReadOnly="True"
+            Style="{DynamicResource TextBoxStyle}"
             Text="0" />
 
         <ComboBox
@@ -97,20 +99,27 @@
             SelectionChanged="to_SelectionChanged" />
 
         <Label
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
+            Width="58"
+            Margin="0,18,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Background="LightGray"
             Content="Из:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
 
         <Label
             Grid.Row="2"
-            HorizontalAlignment="Right"
+            Width="52"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="LightGray"
             Content="В:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
     </Grid>
 </Page>

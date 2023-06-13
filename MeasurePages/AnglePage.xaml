@@ -6,10 +6,9 @@
     xmlns:local="clr-namespace:CalcYouLate.Functionality"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="AnglePage"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="418"
+    d:DesignWidth="548"
     mc:Ignorable="d">
-
     <Grid Background="LightSteelBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="128*" />
@@ -42,7 +41,9 @@
             VerticalContentAlignment="Center"
             FontFamily="Montserrat"
             FontSize="25"
-            Text="0" />
+            Style="{DynamicResource TextBoxStyle}"
+            Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
+            TextChanged="input_TextChanged" />
 
         <TextBox
             x:Name="output"
@@ -57,6 +58,7 @@
             FontFamily="Montserrat"
             FontSize="25"
             IsReadOnly="True"
+            Style="{DynamicResource TextBoxStyle}"
             Text="0" />
 
         <ComboBox
@@ -69,10 +71,13 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="from_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
+            IsSynchronizedWithCurrentItem="False"
             ItemsSource="{Binding Angle}"
-            SelectedValue="{Binding Angle[0]}" />
+            SelectedValue="{Binding Angle[0]}"
+            SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
             x:Name="to"
@@ -85,26 +90,46 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
+            DropDownClosed="to_DropDownClosed"
             FontFamily="Montserrat"
             FontSize="20"
+            IsSynchronizedWithCurrentItem="False"
             ItemsSource="{Binding Angle}"
-            SelectedValue="{Binding Angle[1]}" />
+            SelectedValue="{Binding Angle[1]}"
+            SelectionChanged="to_SelectionChanged" />
 
         <Label
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
+            Width="58"
+            Margin="0,18,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Background="LightGray"
             Content="Из:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
 
         <Label
             Grid.Row="2"
-            HorizontalAlignment="Right"
+            Width="52"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Background="LightGray"
             Content="В:"
             FontFamily="Montserrat"
-            FontSize="25" />
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
+        <Button
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="5"
+            Width="71"
+            Height="139"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Click="Button_Click"
+            Content="ЧПОК" />
     </Grid>
 </Page>

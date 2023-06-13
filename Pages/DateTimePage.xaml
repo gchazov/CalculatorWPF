@@ -6,8 +6,8 @@
 	xmlns:local="clr-namespace:CalcYouLate"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="DateTimePage"
-    d:DesignHeight="420"
-    d:DesignWidth="650"
+    d:DesignHeight="418"
+    d:DesignWidth="648"
     Tag="22"
     mc:Ignorable="d">
 
