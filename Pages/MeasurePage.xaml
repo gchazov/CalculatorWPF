@@ -27,7 +27,7 @@
                 Margin="2"
                 Image="/Images/MeasureIcons/area.png"
                 NavLink="/MeasurePages/AreaPage.xaml"
-                Text="Площадь" />
+                Text="Площадь" Selected="NavButton_Selected" />
             <local:NavButton
                 Margin="2"
                 Image="/Images/MeasureIcons/dimensions.png"

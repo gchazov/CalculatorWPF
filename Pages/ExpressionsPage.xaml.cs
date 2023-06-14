@@ -59,7 +59,8 @@ namespace CalcYouLate.Pages
 			{"π", $"π"},
 			{"e", "e" },
 			{"x", "*" },
-			{"÷", "/" }
+			{"÷", "/" },
+			{"xʸ", "^" }
 			};
 			if (functions.ContainsKey(function) ) 
 			{ 

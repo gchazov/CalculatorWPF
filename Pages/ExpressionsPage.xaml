@@ -199,14 +199,7 @@
             Grid.Column="4"
             Click="FuncBtn_Click"
             Content="ctg(x)"
-            FontSize="21"
-            Style="{DynamicResource ButtonStyle}" />
-
-        <Button
-            Grid.Row="2"
-            Click="FuncBtn_Click"
-            Content="π"
-            FontSize="27"
+            FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
