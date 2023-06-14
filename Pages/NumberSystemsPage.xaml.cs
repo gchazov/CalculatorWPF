@@ -55,14 +55,33 @@ namespace CalcYouLate.Pages
 				int temp = 0;
 				switch (inputNum[i])
 				{
-					case 'A': temp = 10; break;
-					case 'B': temp = 11; break;
-					case 'C': temp = 12; break;
-					case 'D': temp = 13; break;
-					case 'E': temp = 14; break;
-					case 'F': temp = 15; break;
-					case 'G': temp = 15; break;
-					default: temp = -48 + (int) inputNum[i]; break; // -48 because of ASCII
+                    case 'A': temp = 10; break;
+                    case 'B': temp = 11; break;
+                    case 'C': temp = 12; break;
+                    case 'D': temp = 13; break;
+                    case 'E': temp = 14; break;
+                    case 'F': temp = 15; break;
+                    case 'G': temp = 16; break;
+                    case 'H': temp = 17; break;
+                    case 'I': temp = 18; break;
+                    case 'J': temp = 19; break;
+                    case 'K': temp = 20; break;
+                    case 'L': temp = 21; break;
+                    case 'M': temp = 22; break;
+                    case 'N': temp = 23; break;
+                    case 'O': temp = 24; break;
+                    case 'P': temp = 25; break;
+                    case 'Q': temp = 26; break;
+                    case 'R': temp = 27; break;
+                    case 'S': temp = 28; break;
+                    case 'T': temp = 29; break;
+                    case 'U': temp = 30; break;
+                    case 'V': temp = 31; break;
+                    case 'W': temp = 32; break;
+                    case 'X': temp = 33; break;
+                    case 'Y': temp = 34; break;
+                    case 'Z': temp = 35; break;
+                    default: temp = -48 + (int) inputNum[i]; break; // -48 because of ASCII
 				}
 
 				result += temp * (int) (Math.Pow(fromSystem, count));
