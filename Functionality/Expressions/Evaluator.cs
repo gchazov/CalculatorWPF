@@ -256,6 +256,8 @@ namespace CalcYouLate.Functionality.Expressions
 
 		public static double MakeCalculation(string expression)
 		{
+			expression = expression.Replace("π", $"{Math.PI}")
+				.Replace("e", $"{Math.E}");
 			return Evaluate(ToPostfix(expression));
 		}
 	}

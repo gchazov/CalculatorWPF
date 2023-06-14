@@ -56,7 +56,8 @@ namespace CalcYouLate.Pages
 			{ "1/x", "^(-1)"},
 			{"|x|", "abs("},
 			{"ln(x)", "ln("},
-			{"pi", $"{Math.PI}"},
+			{"π", $"π"},
+			{"e", "e" },
 			{"x", "*" },
 			{"÷", "/" }
 			};
@@ -77,14 +78,14 @@ namespace CalcYouLate.Pages
 
 		private void EqualBtn_Click(object sender, RoutedEventArgs e )
 		{
-			//try
-			//{
-			//	output.Text = Evaluator.MakeCalculation(input.Text).ToString();
-			//}
-			//catch (Exception ex)
-			//{
-			//	output.Text = ex.Message;
-			//}
+			try
+			{
+				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
+			}
+			catch (Exception ex)
+			{
+				output.Text = ex.Message;
+			}
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)

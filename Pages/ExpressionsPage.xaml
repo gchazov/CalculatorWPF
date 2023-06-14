@@ -15,6 +15,7 @@
         <local:Evaluator x:Key="eval" />
     </Page.Resources>
     <Grid Background="#b8b8b8" DataContext="{StaticResource eval}">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -29,17 +30,25 @@
 
         <Grid.RowDefinitions>
 
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-
+        <Border Grid.RowSpan="6" Grid.ColumnSpan="9">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
+                    <GradientStop Offset="0.5" Color="AliceBlue" />
+                    <GradientStop Offset="1.4" Color="Gray" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
         <TextBox
             x:Name="input"
             Grid.ColumnSpan="9"
+            FontSize="25"
             Style="{DynamicResource TextBoxStyle}"
             Text="{Binding InputValue}"
             TextChanged="input_TextChanged" />
@@ -53,7 +62,7 @@
 
         <Button
             Grid.Row="2"
-            Grid.Column="0"
+            Grid.Column="5"
             Background="#d60001"
             BorderThickness="0"
             Click="Button_Click"
@@ -63,7 +72,7 @@
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="3"
-            Grid.Column="0"
+            Grid.Column="5"
             Background="#8a8284"
             BorderThickness="0"
             Click="Button_Click_2"
@@ -85,15 +94,15 @@
             FontSize="35"
             Style="{DynamicResource ButtonStyle}" />
         <Button
-            Grid.Row="4"
-            Grid.Column="0"
+            Grid.Row="3"
+            Grid.Column="3"
             Click="FuncBtn_Click"
             Content="("
             FontSize="35"
             Style="{DynamicResource ButtonStyle}" />
         <Button
-            Grid.Row="5"
-            Grid.Column="0"
+            Grid.Row="3"
+            Grid.Column="4"
             Click="FuncBtn_Click"
             Content=")"
             FontSize="35"
@@ -103,7 +112,7 @@
             Grid.Column="1"
             Click="FuncBtn_Click"
             Content="sin(x)"
-            FontSize="25"
+            FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="5"
@@ -131,7 +140,7 @@
             Grid.Column="2"
             Click="FuncBtn_Click"
             Content="cos(x)"
-            FontSize="25"
+            FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
@@ -148,11 +157,11 @@
             Content="-"
             Style="{DynamicResource ButtonStyle}" />
         <Button
-            Grid.Row="3"
-            Grid.Column="3"
+            Grid.Row="6"
+            Grid.Column="0"
             Click="FuncBtn_Click"
             Content="log(x)"
-            FontSize="25"
+            FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
@@ -160,15 +169,16 @@
             Grid.Column="3"
             Click="FuncBtn_Click"
             Content="tg(x)"
-            FontSize="25"
+            FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
-            Grid.Row="5"
-            Grid.Column="3"
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="3,3,3,3"
             Click="FuncBtn_Click"
             Content="ln(x)"
-            FontSize="27"
+            FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="2"
@@ -177,10 +187,11 @@
             Content="+"
             Style="{DynamicResource ButtonStyle}" />
         <Button
-            Grid.Row="3"
-            Grid.Column="4"
+            Grid.Row="6"
+            Grid.Column="3"
             Click="FuncBtn_Click"
             Content="√х"
+            FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
@@ -188,14 +199,20 @@
             Grid.Column="4"
             Click="FuncBtn_Click"
             Content="ctg(x)"
-            FontSize="25"
+            FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
 
         <Button
-            Grid.Row="5"
-            Grid.Column="4"
+            Grid.Row="2"
             Click="FuncBtn_Click"
-            Content="pi"
+            Content="π"
+            FontSize="27"
+            Style="{DynamicResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="3"
+            Click="FuncBtn_Click"
+            Content="e"
             FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalcYouLate.Functionality;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -56,41 +57,67 @@ namespace CalcYouLate.MeasurePages
             }
         }
 
+        public void FormulaTip()
+        {
+            string fromText = from.Text;
+            string toText = to.Text;
+            if (from.Text == String.Empty || to.Text == String.Empty)
+            {
+                fromText = "градус";
+                toText = "радиан";
+                double multiple = MeasureList.angleToDegree[fromText] * MeasureList.angleFromDegree[toText];
+                if (multiple > 1)
+                    formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
+                else
+                    formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(1.0 / multiple, 2)}";
+            }
+            else
+            {
+                double multiple = MeasureList.angleToDegree[fromText] * MeasureList.angleFromDegree[toText];
+                if (multiple > 1)
+                    formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
+                else
+                    formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(1.0 / multiple, 2)}";
+            }
+        }
+
         private void from_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AngleCalc();
+            FormulaTip();
         }
 
         private void to_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AngleCalc();
+            FormulaTip();
         }
 
         private void from_DropDownClosed(object sender, EventArgs e)
         {
+            FormulaTip();
             AngleCalc();
         }
 
         private void to_DropDownClosed(object sender, EventArgs e)
         {
             AngleCalc();
+            FormulaTip();
         }
 
         private void input_TextChanged(object sender, TextChangedEventArgs e)
         {
             AngleCalc();
-
+            FormulaTip();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            object item1 = from.SelectedItem;
-            object item2 = to.SelectedItem;
-
-            from.SelectedItem = item2;
-            to.SelectedItem = item1;
-
+            int indexFrom = Array.IndexOf(MeasureList.Angle, from.SelectedItem);
+            from.SelectedItem = MeasureList.Angle[Array.IndexOf(MeasureList.Angle, to.SelectedItem)];
+            to.SelectedItem = MeasureList.Angle[indexFrom];
             AngleCalc();
         }
+
     }
 }

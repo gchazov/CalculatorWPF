@@ -14,12 +14,12 @@ namespace CalcYouLate.Functionality
     {
         
         #region Lists of measures
-        public string[] Area
+        public static string[] Area
         {
             get { return area; }
             set { }
         }
-        public string[] area = {
+        public static string[] area = {
             "ар",
             "гектар",
             "тауншип",
@@ -35,12 +35,12 @@ namespace CalcYouLate.Functionality
             "квадратная миля²",
         };
 
-        public string[] Volume
+        public static string[] Volume
         {
             get { return volume; }
             set { }
         }
-        public string[] volume =
+        public static string[] volume =
         {
             "кубический миллиметр мм³",
             "кубический сантиметр см³",
@@ -57,12 +57,12 @@ namespace CalcYouLate.Functionality
             "баррель",
         };
 
-        public string[] Length
+        public static string[] Length
         {
             get { return length; }
             set { }
         }
-        public string[] length =
+        public static string[] length =
         {
             "миллиметр",
             "сантиметр",
@@ -84,12 +84,12 @@ namespace CalcYouLate.Functionality
             "парсек",
         };
 
-        public string[] Energy
+        public static string[] Energy
         {
             get { return energy; }
             set { }
         }
-        public string[] energy =
+        public static string[] energy =
         {
             "калория",
             "килокалория",
@@ -103,12 +103,12 @@ namespace CalcYouLate.Functionality
             "килоджуоль",
         };
 
-        public string[] Weight
+        public static string[] Weight
         {
             get { return weight; }
             set { }
         }
-        public string[] weight =
+        public static string[] weight =
         {
             "миллиграмм мг",
             "грамм г",
@@ -123,12 +123,12 @@ namespace CalcYouLate.Functionality
             "карат",
         };
 
-        public string[] Temperature
+        public static string[] Temperature
         {
             get { return temperature; }
             set { }
         }
-        public string[] temperature =
+        public static string[] temperature =
         {
             "градус Цельсия",
             "градус Фаренгейта",
@@ -136,12 +136,12 @@ namespace CalcYouLate.Functionality
             "градус Реомюра",
         };
 
-        public string[] Power
+        public static string[] Power
         {
             get { return power; }
             set { }
         }
-        public string[] power =
+        public static string[] power =
         {
             "ватт",
             "киловатт",
@@ -152,12 +152,12 @@ namespace CalcYouLate.Functionality
             "БТЕ/мин",
         };
 
-        public string[] Pressure
+        public static string[] Pressure
         {
             get { return pressure; }
             set { }
         }
-        public string[] pressure =
+        public static string[] pressure =
         {
             "бар",
             "паскаль",
@@ -167,12 +167,12 @@ namespace CalcYouLate.Functionality
             "атмосфера",
         };
 
-        public string[] Data
+        public static string[] Data
         {
             get { return data; }
             set { }
         }
-        public string[] data =
+        public static string[] data =
         {
             "бит",
             "байт",
@@ -184,12 +184,13 @@ namespace CalcYouLate.Functionality
             "эксабайт",
         };
 
-        public string[] Angle
+
+        public static string[] Angle
         {
             get { return angle; }
             set { }
         }
-        public string[] angle =
+        public static string[] angle =
         {
             "градус",
             "радиан",
@@ -197,12 +198,12 @@ namespace CalcYouLate.Functionality
             "секунда",
         };
 
-        public string[] Speed
+        public static string[] Speed
         {
             get { return speed; }
             set { }
         }
-        public string[] speed =
+        public static string[] speed =
         {
             "метр/сек",
             "метр/мин",
@@ -218,12 +219,12 @@ namespace CalcYouLate.Functionality
             "Мах",
         };
 
-        public string[] Time
+        public static string[] Time
         {
             get { return time; }
             set { }
         }
-        public string[] time =
+        public static string[] time =
         {
             "наносекунда",
             "миллисекунда",

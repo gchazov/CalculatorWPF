@@ -11,7 +11,7 @@
     mc:Ignorable="d">
     <Grid Background="LightSteelBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="128*" />
+            <ColumnDefinition Width="133*" />
             <ColumnDefinition Width="239*" />
             <ColumnDefinition Width="133*" />
             <ColumnDefinition Width="133*" />
@@ -28,7 +28,14 @@
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
-
+        <Border Grid.RowSpan="5" Grid.ColumnSpan="6">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
+                    <GradientStop Offset="0.4" Color="AliceBlue" />
+                    <GradientStop Offset="1.5" Color="Gray" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
         <TextBox
             x:Name="input"
             Grid.Row="1"
@@ -109,12 +116,22 @@
             Style="{DynamicResource LabelStyle}" />
 
         <Label
+            Width="58"
+            Margin="0,18,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Из:"
+            FontFamily="Montserrat"
+            FontSize="25"
+            FontWeight="Bold"
+            Style="{DynamicResource LabelStyle}" />
+
+        <Label
             Grid.Row="2"
             Width="52"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Background="LightGray"
-            Content="В:"
+            Content=" В:"
             FontFamily="Montserrat"
             FontSize="25"
             FontWeight="Bold"
