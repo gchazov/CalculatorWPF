@@ -136,6 +136,10 @@ namespace CalcYouLate.Functionality.Expressions
 			expression = expression.Replace("(-", "(0-")
 								   .Replace(".", ",")
 								   .Replace("!", "!1");
+			if (expression[0] == '-')
+			{
+				expression = "0" + expression;
+			}
 
 			// Разбиение выражения на токены по регулярному выражению
 			var tokens = Regex.Split(expression, @"(\+|-|\*|/|\(|\)|sin|cos|tan|\^|log|ln|abs|!|sqrt)").Where(t => !string.IsNullOrEmpty(t)).ToList(); // Добавляем новый оператор в регулярное выражение
@@ -258,7 +262,7 @@ namespace CalcYouLate.Functionality.Expressions
 		{
 			expression = expression.Replace("π", $"{Math.PI}")
 				.Replace("e", $"{Math.E}");
-			return Evaluate(ToPostfix(expression));
+			return Math.Round(Evaluate(ToPostfix(expression)), 8);
 		}
 	}
 }
