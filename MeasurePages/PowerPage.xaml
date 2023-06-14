@@ -125,5 +125,34 @@
             FontSize="25"
             FontWeight="Bold"
             Style="{DynamicResource LabelStyle}" />
+        <Label
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Width="139"
+            Height="39"
+            Margin="14,4,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="White"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Content="Формула:"
+            FontFamily="Montserrat"
+            FontSize="23"
+            Style="{DynamicResource LabelStyle}" />
+
+        <TextBlock
+            x:Name="formula"
+            Grid.Row="4"
+            Grid.ColumnSpan="6"
+            Width="508"
+            Height="83"
+            Margin="18,50,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"
+            FontSize="23"
+            Text="Место для формулы"
+            TextWrapping="Wrap" />
     </Grid>
 </Page>

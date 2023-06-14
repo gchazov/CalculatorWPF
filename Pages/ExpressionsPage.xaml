@@ -201,6 +201,12 @@
             Content="ctg(x)"
             FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
+        <Button
+            Grid.Row="2"
+            Click="FuncBtn_Click"
+            Content="π"
+            FontSize="27"
+            Style="{DynamicResource ButtonStyle}" />
 
         <Button
             Grid.Row="3"
