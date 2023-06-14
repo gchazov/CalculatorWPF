@@ -37,7 +37,9 @@
             x:Name="inputNum"
             Grid.ColumnSpan="9"
             Style="{DynamicResource TextBoxStyle}"
-            Text="input" />
+            Text="0"
+			TextChanged="ParametersChanged"
+			/>
         <TextBox
             x:Name="outputNum"
             Grid.Row="1"
@@ -45,7 +47,7 @@
             Grid.ColumnSpan="9"
             Style="{DynamicResource TextBoxStyle}"
             IsReadOnly="True"
-            Text="output" />
+            Text="0"/>
         <TextBox
             x:Name="TextInNumsys"
             Grid.Row="2"
@@ -67,24 +69,26 @@
             FontSize="30"
             Style="{DynamicResource TextBoxStyle}"
             Text="В СЧ"
-            TextAlignment="Center" />
+            TextAlignment="Center"
+			/>
         <TextBox
             x:Name="inputNumsys"
             Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="4"
-            DataContextChanged="InputNumSys"
             Style="{DynamicResource TextBoxStyle}"
-            Text="input"
-            TextAlignment="Center" />
+            Text="10"
+            TextAlignment="Center" 
+			TextChanged="ParametersChanged"
+			/>
         <TextBox
             x:Name="outputNumsys"
             Grid.Row="3"
             Grid.Column="5"
             Grid.ColumnSpan="4"
-            DataContextChanged="OutputNumSys"
             Style="{DynamicResource TextBoxStyle}"
-            Text="input"
-            TextAlignment="Center" />
+            Text="10"
+            TextAlignment="Center" 
+			TextChanged="ParametersChanged"/>
     </Grid>
 </Page>

@@ -30,6 +30,7 @@ namespace CalcYouLate.Pages
 			InitializeComponent();
 			to.SelectedDate = DateTime.Today;
 		}
+
 		private void FirstDate(object sender,
 	SelectionChangedEventArgs e)
 		{
@@ -55,7 +56,9 @@ namespace CalcYouLate.Pages
 			}
 
 			int Months = (to.SelectedDate.Value.Year - from.SelectedDate.Value.Year) * 12 + (to.SelectedDate.Value.Month - from.SelectedDate.Value.Month);
-			if (to.SelectedDate.Value.Day < from.SelectedDate.Value.Day && to.SelectedDate.Value > from.SelectedDate.Value) // Если день первой даты меньше дня второй даты, то вычитаем один месяц
+
+			// Если день первой даты меньше дня второй даты, то вычитаем один месяц
+			if (to.SelectedDate.Value.Day < from.SelectedDate.Value.Day && to.SelectedDate.Value > from.SelectedDate.Value) 
 			{
 				--Months;
 			}
@@ -170,8 +173,9 @@ namespace CalcYouLate.Pages
 
 			DateTime currentDate = from.SelectedDate.Value;
 			DateTime newDate = currentDate.AddDays(newDays);
-
+			
 			to.SelectedDate = newDate;
+			to.DisplayDate = newDate;
 		}
 
 		private void WeaksBox_TextChanged(object sender, TextChangedEventArgs e)

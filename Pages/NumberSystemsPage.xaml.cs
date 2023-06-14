@@ -25,59 +25,98 @@ namespace CalcYouLate.Pages
             InitializeComponent();
         }
 
-        private void InputNumSys(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (int.TryParse(inputNumsys.Text, out int res))
-                NumberSystems_Result();
-            else
-                inputNumsys.Text = "Введите число!";
-        }
+		public static string DecToSystem(int inputNum, int newSystem)
+		{
+			string result = "";
+			string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			while (inputNum != 0)
+			{
+				if ((inputNum % newSystem) < 10)
+					result = inputNum % newSystem + result;
+				else
+				{
+					string temp = alphabet[inputNum % newSystem-10].ToString();
 
-        private void OutputNumSys(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (int.TryParse(outputNumsys.Text, out int res))
-                NumberSystems_Result();
-            else
-                outputNumsys.Text = "Введите число!";
-        }
+					result = temp + result;
+				}
 
-        private void NumberSystems_Result()
-        {
-            int fromSS = int.Parse(inputNumsys.Text);
-            int toSS = int.Parse(outputNumsys.Text);
-            string res = FromTenToSS(toSS, FromSSToTen(fromSS));
-            outputNum.Text = res;
-        }
+				inputNum /= newSystem;
+			}
 
-        private int FromSSToTen(int fromSS)
+			return result;
+		}
+
+		public static int SystemToDec(string inputNum, int fromSystem)
+		{
+			int result = 0;
+			int count = inputNum.Length - 1;
+			for (int i = 0; i < inputNum.Length; i++)
+			{
+				int temp = 0;
+				switch (inputNum[i])
+				{
+					case 'A': temp = 10; break;
+					case 'B': temp = 11; break;
+					case 'C': temp = 12; break;
+					case 'D': temp = 13; break;
+					case 'E': temp = 14; break;
+					case 'F': temp = 15; break;
+					case 'G': temp = 15; break;
+					default: temp = -48 + (int) inputNum[i]; break; // -48 because of ASCII
+				}
+
+				result += temp * (int) (Math.Pow(fromSystem, count));
+				count--;
+			}
+
+			return result;
+		}
+
+		public static bool IsSuitableSystem(string inputNum, int system)
+		{
+			char[] alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+			char[] sysAlphabet = alphabet.Take(system).ToArray();
+			foreach (char letter in inputNum)
+			{
+				if (!sysAlphabet.Contains(letter))
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+
+        private void ParametersChanged(object sender, RoutedEventArgs e)
         {
-            int res = 0;
-            string alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            string input = inputNum.Text;
-            for (int i = 0; i < input.Length; i++)
+            int fromSystem, toSystem;
+            string fromSystemNum;
+
+			try
             {
-                char c = input[i];
-                string symbol = c.ToString();
-                if (alphabet.IndexOf(symbol) != -1)
+                fromSystemNum = inputNum.Text;
+                if (inputNumsys is null)
                 {
-                    res += alphabet.IndexOf(symbol)*(int)Math.Pow(fromSS, 36 - i);
-                }
-            }
-            return res;
-        }
-
-        private string FromTenToSS(int toSS, int input)
-        {
-            int inputNum = input;
-            string res = "";
-            while (inputNum > 0)
+					inputNumsys = new TextBox();
+					outputNumsys = new TextBox();
+				}
+                fromSystem = Convert.ToInt32(inputNumsys.Text);
+				toSystem = Convert.ToInt32(outputNumsys.Text);
+			}
+            catch
             {
-                res += (inputNum % toSS).ToString();
-                inputNum = inputNum / toSS;
+                return;
             }
-            return res;
+			if (IsSuitableSystem(fromSystemNum, fromSystem))
+			{
+				string toNum = DecToSystem(SystemToDec(fromSystemNum, fromSystem), toSystem);
+				outputNum.Text = toNum;
+			}
+			else
+			{
+				outputNum.Text = "Число не в заданной системе";
+			}
+            
         }
-
-        
     }
 }
