@@ -106,18 +106,23 @@ namespace CalcYouLate.Pages
 		}
 
 
-        private void ParametersChanged(object sender, RoutedEventArgs e)
-        {
-            int fromSystem, toSystem;
-            string fromSystemNum;
+		private void ParametersChanged(object sender, RoutedEventArgs e)
+		{
+			int fromSystem, toSystem;
+			string fromSystemNum;
 
 			try
-            {
-                fromSystemNum = inputNum.Text;
-                if (inputNumsys is null)
-                {
+			{
+				fromSystemNum = inputNum.Text;
+				if (inputNumsys is null)
+				{
 					inputNumsys = new TextBox();
 					outputNumsys = new TextBox();
+					return;
+				}
+				if (inputNumsys.Text.Length == 0 || inputNumsys.Text.Length == 0 || fromSystemNum.Length == 0)
+				{
+					return;
 				}
                 fromSystem = Convert.ToInt32(inputNumsys.Text);
 				toSystem = Convert.ToInt32(outputNumsys.Text);

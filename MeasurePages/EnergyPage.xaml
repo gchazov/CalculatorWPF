@@ -83,7 +83,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Energy}"
-            SelectedValue="{Binding Energy[0]}"
+            SelectedValue="{Binding Energy[1]}"
             SelectionChanged="from_SelectionChanged" />
 
         <ComboBox
@@ -101,7 +101,7 @@
             FontFamily="Montserrat"
             FontSize="20"
             ItemsSource="{Binding Energy}"
-            SelectedValue="{Binding Energy[1]}"
+            SelectedValue="{Binding Energy[3]}"
             SelectionChanged="to_SelectionChanged" />
 
         <Label

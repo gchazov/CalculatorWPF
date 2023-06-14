@@ -445,7 +445,7 @@
     <Resource Include="Images\spartak.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Functionality\Measure\" />
+    <Folder Include="Functionality\MeasureFunc\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('packages\Fody.6.5.5\build\Fody.targets')" />

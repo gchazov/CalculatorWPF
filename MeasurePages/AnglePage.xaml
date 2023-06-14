@@ -36,6 +36,7 @@
                     <GradientStop Offset="1.5" Color="Gray" />
                 </LinearGradientBrush>
             </Border.Background>
+
         </Border>
 
         <TextBox

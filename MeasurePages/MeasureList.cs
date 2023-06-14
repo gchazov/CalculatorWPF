@@ -368,16 +368,16 @@ namespace CalcYouLate.Functionality
 
         public static Dictionary<string, double> energyFromJoules = new Dictionary<string, double>()
         {
-            {"калория", 0.239},
-            {"килокалория", 0.000239},
-            {"мегакалория", 0.000000239},
+            {"калория", 1.0 / 4.184},
+            {"килокалория",1.0 / 4184},
+            {"мегакалория",1.0 / 4184000},
             {"ватт/секунда", 1},
-            {"киловатт/час", 0.000278},
-            {"электрон-вольт", 6.242e+18},
-            {"терм", 0.00000947},
-            {"килограмм тротила", 0.000000217},
+            {"киловатт/час", 1.0 /3600000},
+            {"электрон-вольт",1.0 / 1.602e-19},
+            {"терм", 1.0 /105505600},
+            {"килограмм тротила",1.0 / 4612070},
             {"джоуль", 1},
-            {"килоджоуль", 0.001}
+            {"килоджоуль",1.0 / 1000}
         };
 
         public static Dictionary<string, double> weightToKilograms = new Dictionary<string, double>()
@@ -408,21 +408,6 @@ namespace CalcYouLate.Functionality
             {"карат", 5000}
         };
 
-        public static Dictionary<string, double> tempatureToCelsius = new Dictionary<string, double>()
-        {
-            {"градус Цельсия", 1},
-            {"градус Фаренгейта", -17.22},
-            {"градус Кельвина", -272.15},
-            {"градус Реомюра", 1.25}
-        };
-
-        public static Dictionary<string, double> tempatureFromCelsius = new Dictionary<string, double>()
-        {
-            {"градус Цельсия", 1},
-            {"градус Фаренгейта", 33.8},
-            {"градус Кельвина", 274.15},
-            {"градус Реомюра", 0.8}
-        };
 
         public static Dictionary<string, double> powerToWatt = new Dictionary<string, double>()
         {
@@ -432,18 +417,18 @@ namespace CalcYouLate.Functionality
             {"лошадиная сила", 735.5},
             {"вольт-ампер", 1},
             {"фут-фунты/мин", 0.0225969658},
-            {"БТЕ/мин", 17.5842667}
+            {"БТЕ/мин", 0.293}
         };
 
         public static Dictionary<string, double> powerFromWatt = new Dictionary<string, double>()
         {
             {"ватт", 1},
-            {"киловатт", 0.001},
-            {"мегаватт", 0.000001},
-            {"лошадиная сила", 0.0014},
+            {"киловатт", 1.0/1000},
+            {"мегаватт",  1.0/1000000},
+            {"лошадиная сила",  1.0/735.5},
             {"вольт-ампер", 1},
-            {"фут-фунты/мин", 1423.8216274234},
-            {"БТЕ/мин", 3.414425}
+            {"фут-фунты/мин",  1.0/0.0225969658},
+            {"БТЕ/мин",  1.0/0.293}
         };
 
 
@@ -562,12 +547,12 @@ namespace CalcYouLate.Functionality
 
         public static Dictionary<string, double> pressureFromPascal = new Dictionary<string, double>()
         {
-            {"бар", 0.00001},
+            {"бар", 1.0/100000},
             {"паскаль", 1},
-            {"килопаскаль", 0.001},
-            {"миллиметры ртутного столба", 0.0075},
-            {"фунт/дюйм²", 0.00015},
-            {"атмосфера", 0.0000099}
+            {"килопаскаль", 1.0/1000},
+            {"миллиметры ртутного столба", 1.0/133.322},
+            {"фунт/дюйм²", 1.0/6894.76},
+            {"атмосфера", 1.0/101325}
         };
     }
 }
