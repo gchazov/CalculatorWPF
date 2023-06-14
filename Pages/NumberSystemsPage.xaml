@@ -44,6 +44,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="9"
             Style="{DynamicResource TextBoxStyle}"
+            IsReadOnly="True"
             Text="output" />
         <TextBox
             x:Name="TextInNumsys"
