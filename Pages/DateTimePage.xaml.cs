@@ -30,11 +30,6 @@ namespace CalcYouLate.Pages
 			InitializeComponent();
 			to.SelectedDate = DateTime.Today;
 		}
-
-		public DateTime GetToday()
-		{
-			return DateTime.Today;
-		}
 		private void FirstDate(object sender,
 	SelectionChangedEventArgs e)
 		{
@@ -59,19 +54,20 @@ namespace CalcYouLate.Pages
 				from.SelectedDate = DateTime.Today;
 			}
 
-			string isNegative = "";
-			if (from.SelectedDate > to.SelectedDate)
-			{
-				isNegative = "";
-				
-			}
 
 			int Years = to.SelectedDate.Value.Year - from.SelectedDate.Value.Year;
+			if (to.SelectedDate.Value.Month < from.SelectedDate.Value.Month && to.SelectedDate.Value > from.SelectedDate.Value)
+			{
+				--Years;
+			}
+
 			int Months = (to.SelectedDate.Value.Year - from.SelectedDate.Value.Year) * 12 + (to.SelectedDate.Value.Month - from.SelectedDate.Value.Month);
 			if (to.SelectedDate.Value.Day < from.SelectedDate.Value.Day && to.SelectedDate.Value > from.SelectedDate.Value) // Если день первой даты меньше дня второй даты, то вычитаем один месяц
 			{
 				--Months;
 			}
+			
+
 			int Days = (to.SelectedDate.Value - from.SelectedDate.Value).Days;
 
 			string yearsText = "Лет";
@@ -116,17 +112,18 @@ namespace CalcYouLate.Pages
 					daysText = "Дня";
 				}
 			}
-			monthsBox.Text = isNegative + Months.ToString();
-			
-			weaksBox.Text = isNegative + (Days / 7).ToString();
-			daysBox.Text = isNegative + Days.ToString();
 
-			daysBox.SelectionStart = monthsBox.Text.Length;
-			weaksBox.SelectionStart = monthsBox.Text.Length;
+			yearsBox.Text = Years.ToString();
+			monthsBox.Text = Months.ToString();
+			weaksBox.Text = (Days / 7).ToString();
+			daysBox.Text = Days.ToString();
+
+			daysBox.SelectionStart = daysBox.Text.Length;
+			weaksBox.SelectionStart = weaksBox.Text.Length;
 			monthsBox.SelectionStart = monthsBox.Text.Length;
+			yearsBox.SelectionStart = yearsBox.Text.Length;
 
-
-			resultAppendix.Text = $"{daysText}\nНедель\n{monthText}";
+			resultAppendix.Text = $"{daysText}\nНедель\n{monthText}\n{yearsText}";
 		}
 
 		private void DaysBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -149,8 +146,10 @@ namespace CalcYouLate.Pages
 			{
 				weaksBox = new TextBox();
 				monthsBox = new TextBox();
+				yearsBox = new TextBox();
 				weaksBox.Text = "0";
 				monthsBox.Text = "0";
+				yearsBox.Text = "0";
 			}
 
 			if (daysBox.Text.Length == 0 || weaksBox.Text.Length == 0 || monthsBox.Text.Length == 0)
@@ -176,8 +175,9 @@ namespace CalcYouLate.Pages
 			DateTime currentDate = from.SelectedDate.Value;
 			DateTime newDate = currentDate.AddDays(newDays);
 
-			to.SelectedDate = newDate;
+			MessageBox.Show(newDate.ToString());
 
+			to.SelectedDate = newDate;
 		}
 
 		private void WeaksBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -186,8 +186,10 @@ namespace CalcYouLate.Pages
 			{
 				weaksBox = new TextBox();
 				monthsBox = new TextBox();
+				yearsBox = new TextBox();
 				weaksBox.Text = "0";
 				monthsBox.Text = "0";
+				yearsBox.Text = "0";
 			}
 
 			if (daysBox.Text.Length == 0 || weaksBox.Text.Length == 0 || monthsBox.Text.Length == 0)
@@ -219,8 +221,10 @@ namespace CalcYouLate.Pages
 			{
 				weaksBox = new TextBox();
 				monthsBox = new TextBox();
+				yearsBox = new TextBox();
 				weaksBox.Text = "0";
 				monthsBox.Text = "0";
+				yearsBox.Text = "0";
 			}
 
 			if (daysBox.Text.Length == 0 || weaksBox.Text.Length == 0 || monthsBox.Text.Length == 0)
@@ -240,7 +244,33 @@ namespace CalcYouLate.Pages
 			DateTime currentDate = from.SelectedDate.Value;
 
 			DateTime newDate = currentDate.AddMonths(newMonths);
-			TimeSpan daysDelta = newDate - currentDate;
+			to.SelectedDate = newDate;
+		}
+		private void YearsBox_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			if (weaksBox is null || monthsBox is null)
+			{
+				weaksBox = new TextBox();
+				monthsBox = new TextBox();
+				yearsBox = new TextBox();
+				weaksBox.Text = "0";
+				monthsBox.Text = "0";
+				yearsBox.Text = "0";
+			}
+
+			int newYears;
+			try
+			{
+				newYears = Convert.ToInt32(yearsBox.Text);
+			}
+			catch
+			{
+				return;
+			}
+
+			DateTime currentDate = from.SelectedDate.Value;
+
+			DateTime newDate = currentDate.AddYears(newYears);
 			to.SelectedDate = newDate;
 		}
 	}

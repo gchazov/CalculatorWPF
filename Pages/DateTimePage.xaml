@@ -16,97 +16,100 @@
 
 	<Grid Background="#b8b8b8">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="43*"/>
-			<RowDefinition Height="167*"/>
 		</Grid.RowDefinitions>
 
 		<TextBox
 			x:Name="daysBox"
-			Margin="226,115,343,188"
+			Margin="219,125,350,256"
             FontSize="30"
 			Text="0"
 			TextAlignment="Right"
-            Style="{DynamicResource TextBoxStyle}" 
-			Grid.Row="1"
+            Style="{DynamicResource TextBoxStyle}"
 			TextChanged="DaysBox_TextChanged"
 			/>
 
 		<TextBox
 			x:Name="weaksBox"
-			Margin="226,156,343,149"
+			Margin="219,162,350,217"
             FontSize="30"
 			Text="0"
 			TextAlignment="Right"
-            Style="{DynamicResource TextBoxStyle}" 
-			Grid.Row="1"
+            Style="{DynamicResource TextBoxStyle}"
 			TextChanged="WeaksBox_TextChanged"
 			/>
 
 		<TextBox
 			x:Name="monthsBox"
-			Margin="226,195,343,109"
+			Margin="219,198,350,182"
             FontSize="30"
 			Text="0"
 			TextAlignment="Right"
-            Style="{DynamicResource TextBoxStyle}" 
-			Grid.Row="1"
+            Style="{DynamicResource TextBoxStyle}"
 			TextChanged="MonthsBox_TextChanged"
 			/>
-		
+		<TextBox
+			x:Name="yearsBox"
+			Margin="219,234,350,146"
+            FontSize="30"
+			Text="0"
+			TextAlignment="Right"
+            Style="{DynamicResource TextBoxStyle}"
+			TextChanged="YearsBox_TextChanged"
+			/>
+
 		<Calendar
             x:Name="from"
             Width="174"
             Height="168"
-            Margin="27,103,0,0"
+            Margin="23,108,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            SelectedDatesChanged="FirstDate" Grid.Row="1" />
+            SelectedDatesChanged="FirstDate" />
 
 		<Calendar
             x:Name="to"
             Width="188"
             Height="168"
-            Margin="439,99,0,0"
+            Margin="435,104,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
             RenderTransformOrigin="3.113,1.518"
             SelectedDatesChanged="SecondDate"
-            SelectionMode="SingleDate" Grid.Row="1" />
+            SelectionMode="SingleDate" />
 
 
 		<TextBlock
             x:Name="resultAppendix"
-            Margin="307,120,209,109"
+            Margin="303,125,213,146"
             FontSize="30"
-            Style="{DynamicResource TextBlockStyle}"
-            Grid.Row="1" ><Run Text="Дней"/><Run Text="&#xA;Недель"/><Run Text="&#xA;Месяцев"/></TextBlock>
+            Style="{DynamicResource TextBlockStyle}" ><Run Text="Дней"/><Run Text="&#xA;Недель"/><Run Text="&#xA;Месяцев"/><Run Text="&#xA;Лет"/></TextBlock>
 
-		
+
 
 		<TextBlock
             Width="39"
             Height="44"
-            Margin="27,54,0,0"
+            Margin="23,59,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
             Style="{DynamicResource TextBlockStyle}"
-            Text="С" Grid.Row="1" />
+            Text="С" />
 
 		<TextBlock
             Width="94"
             Height="50"
-            Margin="439,53,0,0"
+            Margin="435,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
             Style="{DynamicResource TextBlockStyle}"
-            Text="До" Grid.Row="1" />
+            Text="До" />
 
 
-		
+
 
 
 
@@ -115,19 +118,12 @@
 		<TextBlock
             Width="170"
             Height="49"
-            Margin="217,54,0,0"
+            Margin="213,59,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
             Style="{DynamicResource TextBlockStyle}"
-            Text="Разница:" Grid.Row="1" />
-
-		<Frame
-            x:Name="navDateTimeFrame"
-            AllowDrop="False"
-            NavigationUIVisibility="Hidden" 
-			Grid.RowSpan="2"
-			/>
+            Text="Разница:" />
 
 	</Grid>
 </Page>
