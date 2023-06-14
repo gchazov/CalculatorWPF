@@ -1,4 +1,5 @@
 ﻿using CalcYouLate.Functionality;
+using CalcYouLate.Functionality.Expressions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,9 +37,20 @@ namespace CalcYouLate.MeasurePages
 
         public void TemperatureCalc()
         {
-            string textForCalculating;
+            string textForCalculating = input.Text;
+            if (textForCalculating == "") textForCalculating += "0";
+            try
+            {
+                textForCalculating = Evaluator.MakeCalculation(textForCalculating).ToString();
+            }
+            catch (Exception)
+            {
+                output.Text = "Недопустимый ввод!";
+                return;
+            }
             if (input.Text == string.Empty) textForCalculating = "0";
             else textForCalculating = input.Text;
+            textForCalculating = textForCalculating.Replace(".", ",");
             try
             {
                 //ДЛЯ ПЕРЕВОДА ИЗ ГРАДУСОВ ЦЕЛЬСИЯ

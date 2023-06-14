@@ -1,4 +1,5 @@
 ﻿using CalcYouLate.Functionality;
+using CalcYouLate.Functionality.Expressions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,23 +37,34 @@ namespace CalcYouLate.MeasurePages
 
         public void EnergyCalc()
         {
-            if (from.Text == to.Text) output.Text = input.Text;
+            string inputText = input.Text;
+            if (inputText == "") inputText += "0";
+            try
+            {
+                inputText = Evaluator.MakeCalculation(inputText).ToString();
+            }
+            catch (Exception)
+            {
+                output.Text = "Недопустимый ввод!";
+                return;
+            }
+            if (from.Text == to.Text) output.Text = inputText;
             try
             {
                 if (from.Text == to.Text)
                 {
                     if (double.TryParse(input.Text, out double res))
-                        output.Text = input.Text;
+                        output.Text = inputText;
                     else output.Text = "Недопустимый ввод!";
                     return;
                 }
-                double meters = CalcYouLate.Functionality.MeasureList.energyToJoules[from.Text] * Convert.ToDouble(input.Text);
-                string result = input.Text != "0" ? (meters * CalcYouLate.Functionality.MeasureList.energyFromJoules[to.Text]).ToString() : "Недопустимый ввод!";
+                double meters = CalcYouLate.Functionality.MeasureList.energyToJoules[from.Text] * Convert.ToDouble(inputText);
+                string result = inputText != "0" ? (meters * CalcYouLate.Functionality.MeasureList.energyFromJoules[to.Text]).ToString() : "0";
                 output.Text = result;
             }
             catch (Exception)
             {
-                if (input.Text == string.Empty) output.Text = "0";
+                if (inputText == string.Empty) output.Text = "0";
                 else output.Text = "Недопустимый ввод!";
             }
         }
@@ -67,7 +79,7 @@ namespace CalcYouLate.MeasurePages
         public void FormulaFunc(string from, string to)
         {
             double multiple = MeasureList.energyToJoules[from] * MeasureList.energyFromJoules[to];
-            if (multiple > 1)
+            if (multiple < 1)
                 formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
             else if (multiple == 1)
                 formula.Text = $"Выражение величины является тождеством";

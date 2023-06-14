@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CalcYouLate.Functionality.Expressions;
 
 namespace CalcYouLate.MeasurePages
 {
@@ -39,23 +40,34 @@ namespace CalcYouLate.MeasurePages
 
         public void VolumeCalc()
         {
-            if (from.Text == to.Text) output.Text = input.Text;
+            string inputText = input.Text;
+            if (inputText == "") inputText += "0";
+            try
+            {
+                inputText = Evaluator.MakeCalculation(inputText).ToString();
+            }
+            catch (Exception)
+            {
+                output.Text = "Недопустимый ввод!";
+                return;
+            }
+            if (from.Text == to.Text) output.Text = inputText;
             try
             {
                 if (from.Text == to.Text)
                 {
-                    if (double.TryParse(input.Text, out double res))
-                        output.Text = input.Text;
+                    if (double.TryParse(inputText, out double res))
+                        output.Text = inputText;
                     else output.Text = "Недопустимый ввод!";
                     return;
                 }
-                double meters = CalcYouLate.Functionality.MeasureList.volumeToMeters3[from.Text] * Convert.ToDouble(input.Text);
-                string result = input.Text != "0" ? (meters * CalcYouLate.Functionality.MeasureList.volumeFromMeters3[to.Text]).ToString() : "Недопустимый ввод!";
+                double meters = CalcYouLate.Functionality.MeasureList.volumeToMeters3[from.Text] * Convert.ToDouble(inputText);
+                string result = inputText != "0" ? (meters * CalcYouLate.Functionality.MeasureList.volumeFromMeters3[to.Text]).ToString() : "Недопустимый ввод!";
                 output.Text = result;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                if (input.Text == string.Empty) output.Text = "0";
+                if (inputText == string.Empty) output.Text = "0";
                 else output.Text = "Недопустимый ввод!";
             }
         }
@@ -71,7 +83,7 @@ namespace CalcYouLate.MeasurePages
         public void FormulaFunc(string from, string to)
         {
             double multiple = MeasureList.volumeFromMeters3[from] * MeasureList.volumeToMeters3[to];
-            if (multiple > 1)
+            if (multiple < 1)
                 formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
             else if (multiple == 1)
                 formula.Text = $"Выражение величины является тождеством";
