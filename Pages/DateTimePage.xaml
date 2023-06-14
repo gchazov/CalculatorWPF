@@ -39,7 +39,7 @@
 			TextAlignment="Right"
             Style="{DynamicResource TextBoxStyle}" 
 			Grid.Row="1"
-			TextChanged="DaysBox_TextChanged"
+			TextChanged="WeaksBox_TextChanged"
 			/>
 
 		<TextBox
@@ -50,7 +50,7 @@
 			TextAlignment="Right"
             Style="{DynamicResource TextBoxStyle}" 
 			Grid.Row="1"
-			TextChanged="DaysBox_TextChanged"
+			TextChanged="MonthsBox_TextChanged"
 			/>
 		
 		<Calendar

@@ -16,25 +16,25 @@ using System.Windows.Shapes;
 
 namespace CalcYouLate.Pages
 {
-    
-    
-    /// <summary>
-    /// Логика взаимодействия для DateTimePage.xaml
-    /// </summary>
-    public partial class DateTimePage : Page
-    {
-		
+
+
+	/// <summary>
+	/// Логика взаимодействия для DateTimePage.xaml
+	/// </summary>
+	public partial class DateTimePage : Page
+	{
+
 		public DateTimePage()
-        {
-			
+		{
+
 			InitializeComponent();
 			to.SelectedDate = DateTime.Today;
 		}
 
-        public DateTime GetToday()
-        {
-            return DateTime.Today;
-        }
+		public DateTime GetToday()
+		{
+			return DateTime.Today;
+		}
 		private void FirstDate(object sender,
 	SelectionChangedEventArgs e)
 		{
@@ -43,39 +43,32 @@ namespace CalcYouLate.Pages
 
 		private void SecondDate(object sender,
 	SelectionChangedEventArgs e)
-        {
-            DateTime_Result();
-        }
+		{
+			DateTime_Result();
+		}
 
 
-        private void DateTime_Result()
-        {
-            if (to.SelectedDate is null)
-            {
-                to.SelectedDate = DateTime.Today;
-            }
+		private void DateTime_Result()
+		{
+			if (to.SelectedDate is null)
+			{
+				to.SelectedDate = DateTime.Today;
+			}
 			if (from.SelectedDate is null)
 			{
 				from.SelectedDate = DateTime.Today;
 			}
 
 			string isNegative = "";
-			TimeSpan? delta = to.SelectedDate - from.SelectedDate;
 			if (from.SelectedDate > to.SelectedDate)
 			{
 				isNegative = "";
-				delta = -delta;
-			}
-			if (delta is null)
-			{
-				resultAppendix.Text = "Ребяты что-то не так пошло";
-				return;
+				
 			}
 
-			// Так как минимальное значение - это 1.1.1, то надо везде вычесть 1
 			int Years = to.SelectedDate.Value.Year - from.SelectedDate.Value.Year;
 			int Months = (to.SelectedDate.Value.Year - from.SelectedDate.Value.Year) * 12 + (to.SelectedDate.Value.Month - from.SelectedDate.Value.Month);
-			if (to.SelectedDate.Value.Day < from.SelectedDate.Value.Day) // Если день первой даты меньше дня второй даты, то вычитаем один месяц
+			if (to.SelectedDate.Value.Day < from.SelectedDate.Value.Day && to.SelectedDate.Value > from.SelectedDate.Value) // Если день первой даты меньше дня второй даты, то вычитаем один месяц
 			{
 				--Months;
 			}
@@ -93,9 +86,7 @@ namespace CalcYouLate.Pages
 					yearsText = "Года";
 				}
 			}
-				
 
-			
 
 			string monthText = "Месяцев";
 			if (Months < 10 || Months > 20)
@@ -109,9 +100,9 @@ namespace CalcYouLate.Pages
 					monthText = "Месяца";
 				}
 			}
-			
 
-			
+
+
 			string daysText = "Дней";
 			if (Days < 10 || Days > 20)
 			{
@@ -125,24 +116,17 @@ namespace CalcYouLate.Pages
 					daysText = "Дня";
 				}
 			}
-			daysBox.Text = isNegative + Days.ToString();
-			weaksBox.Text = isNegative + (Days /7).ToString();
 			monthsBox.Text = isNegative + Months.ToString();
 			
+			weaksBox.Text = isNegative + (Days / 7).ToString();
+			daysBox.Text = isNegative + Days.ToString();
+
+			daysBox.SelectionStart = monthsBox.Text.Length;
+			weaksBox.SelectionStart = monthsBox.Text.Length;
+			monthsBox.SelectionStart = monthsBox.Text.Length;
+
+
 			resultAppendix.Text = $"{daysText}\nНедель\n{monthText}";
-
-
-		}
-
-
-		private void NavButton_Selected(object sender, RoutedEventArgs e)
-		{
-
-		}
-
-		private void navDateTimeFrame_Navigated(object sender, NavigationEventArgs e)
-		{
-
 		}
 
 		private void DaysBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -161,7 +145,6 @@ namespace CalcYouLate.Pages
 				from.SelectedDate = DateTime.Today;
 			}
 
-			
 			if (weaksBox is null || monthsBox is null)
 			{
 				weaksBox = new TextBox();
@@ -170,7 +153,7 @@ namespace CalcYouLate.Pages
 				monthsBox.Text = "0";
 			}
 
-			if(daysBox.Text.Length == 0 || weaksBox.Text.Length == 0 || monthsBox.Text.Length == 0)
+			if (daysBox.Text.Length == 0 || weaksBox.Text.Length == 0 || monthsBox.Text.Length == 0)
 			{
 				return;
 			}
@@ -179,47 +162,85 @@ namespace CalcYouLate.Pages
 				return;
 			}
 
-			// Считывание добавляемых дней, недель, месяцев
+			int newDays;
+			try
+			{
+				newDays = Convert.ToInt32(daysBox.Text);
+			}
+			catch
+			{
+				return;
+			}
 
-			int newInputDays = Convert.ToInt32(daysBox.Text);
-			int newWeaks = newInputDays / 7;
+
 			DateTime currentDate = from.SelectedDate.Value;
-			TimeSpan timeSpan = new TimeSpan(newInputDays, 0, 0, 0);
-			DateTime newDate = currentDate + timeSpan;
+			DateTime newDate = currentDate.AddDays(newDays);
 
+			to.SelectedDate = newDate;
 
+		}
 
-			//int newInputWeaks = Convert.ToInt32(weaksBox.Text);
-			//int newInputMonths = Convert.ToInt32(monthsBox.Text);
+		private void WeaksBox_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			if (weaksBox is null || monthsBox is null)
+			{
+				weaksBox = new TextBox();
+				monthsBox = new TextBox();
+				weaksBox.Text = "0";
+				monthsBox.Text = "0";
+			}
 
-			//if (newInputDays == 0 && newInputWeaks == 0 && newInputMonths == 0)
-			//{
-			//	return;
-			//}
-			//DateTime currentDate = from.SelectedDate.Value;
+			if (daysBox.Text.Length == 0 || weaksBox.Text.Length == 0 || monthsBox.Text.Length == 0)
+			{
+				return;
+			}
+			if (daysBox.Text == "-")
+			{
+				return;
+			}
 
-			//int newDays = newInputDays + newInputWeaks * 7;
-			//TimeSpan timeSpan = new TimeSpan(newDays, 0, 0, 0);
-			//// Если месяцев больше 12, то сразу добавляем новые года
-			//int newYear = currentDate.Year + newInputMonths / 12;
-			//newInputMonths = newInputMonths % 12;
+			int newWeeks;
+			try
+			{
+				newWeeks = Convert.ToInt32(weaksBox.Text);
+			}
+			catch
+			{
+				return;
+			}
 
-			//int newMonth = currentDate.Month;
+			DateTime newDate = from.SelectedDate.Value.AddDays(newWeeks*7);
+			to.SelectedDate= newDate;
+		}
 
-			//// Если после добавления месяцев добавляется больше года, то добавляем еще один год и остаток месяцев
-			//if (currentDate.Month + newInputMonths > 12)
-			//{
-			//	newYear += 1;
-			//	newMonth = newInputMonths - (12 - currentDate.Month);
-			//}
-			//else
-			//{
-			//	newMonth += newInputMonths;
-			//}
+		private void MonthsBox_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			if (weaksBox is null || monthsBox is null)
+			{
+				weaksBox = new TextBox();
+				monthsBox = new TextBox();
+				weaksBox.Text = "0";
+				monthsBox.Text = "0";
+			}
 
-			//DateTime newDate = new DateTime(newYear, newMonth, currentDate.Day);
-			//newDate += timeSpan;
-			// MessageBox.Show(newDate.ToString());
+			if (daysBox.Text.Length == 0 || weaksBox.Text.Length == 0 || monthsBox.Text.Length == 0)
+			{
+				return;
+			}
+			int newMonths;
+			try
+			{
+				newMonths = Convert.ToInt32(monthsBox.Text);
+			}
+			catch
+			{
+				return;
+			}
+			
+			DateTime currentDate = from.SelectedDate.Value;
+
+			DateTime newDate = currentDate.AddMonths(newMonths);
+			TimeSpan daysDelta = newDate - currentDate;
 			to.SelectedDate = newDate;
 		}
 	}
