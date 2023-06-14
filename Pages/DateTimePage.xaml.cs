@@ -54,18 +54,13 @@ namespace CalcYouLate.Pages
 				from.SelectedDate = DateTime.Today;
 			}
 
-
-			int Years = to.SelectedDate.Value.Year - from.SelectedDate.Value.Year;
-			if (to.SelectedDate.Value.Month < from.SelectedDate.Value.Month && to.SelectedDate.Value > from.SelectedDate.Value)
-			{
-				--Years;
-			}
-
 			int Months = (to.SelectedDate.Value.Year - from.SelectedDate.Value.Year) * 12 + (to.SelectedDate.Value.Month - from.SelectedDate.Value.Month);
 			if (to.SelectedDate.Value.Day < from.SelectedDate.Value.Day && to.SelectedDate.Value > from.SelectedDate.Value) // Если день первой даты меньше дня второй даты, то вычитаем один месяц
 			{
 				--Months;
 			}
+
+			int Years = Months / 12;
 			
 
 			int Days = (to.SelectedDate.Value - from.SelectedDate.Value).Days;
@@ -113,8 +108,9 @@ namespace CalcYouLate.Pages
 				}
 			}
 
-			yearsBox.Text = Years.ToString();
+			
 			monthsBox.Text = Months.ToString();
+			yearsBox.Text = Years.ToString();
 			weaksBox.Text = (Days / 7).ToString();
 			daysBox.Text = Days.ToString();
 
@@ -175,8 +171,6 @@ namespace CalcYouLate.Pages
 			DateTime currentDate = from.SelectedDate.Value;
 			DateTime newDate = currentDate.AddDays(newDays);
 
-			MessageBox.Show(newDate.ToString());
-
 			to.SelectedDate = newDate;
 		}
 
@@ -231,6 +225,7 @@ namespace CalcYouLate.Pages
 			{
 				return;
 			}
+
 			int newMonths;
 			try
 			{
@@ -246,6 +241,8 @@ namespace CalcYouLate.Pages
 			DateTime newDate = currentDate.AddMonths(newMonths);
 			to.SelectedDate = newDate;
 		}
+
+
 		private void YearsBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			if (weaksBox is null || monthsBox is null)
