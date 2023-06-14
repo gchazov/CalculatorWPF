@@ -60,29 +60,53 @@ namespace CalcYouLate.MeasurePages
             }
         }
 
+        public void FormulaTip()
+        {
+            if (from.Text == String.Empty || to.Text == String.Empty)
+                FormulaFunc("кубический метр м³", "кубический сантиметр см³");
+            else
+                FormulaFunc(from.Text, to.Text);
+        }
+
+        public void FormulaFunc(string from, string to)
+        {
+            double multiple = MeasureList.volumeFromMeters3[from] * MeasureList.volumeToMeters3[to];
+            if (multiple > 1)
+                formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
+            else if (multiple == 1)
+                formula.Text = $"Выражение величины является тождеством";
+            else
+                formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(1.0 / multiple, 2)}";
+        }
+
         private void to_DropDownClosed(object sender, EventArgs e)
         {
             VolumeCalc();
+            FormulaTip();
         }
 
         private void to_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             VolumeCalc();
+            FormulaTip();
         }
 
         private void from_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             VolumeCalc();
+            FormulaTip();
         }
 
         private void from_DropDownClosed(object sender, EventArgs e)
         {
             VolumeCalc();
+            FormulaTip();
         }
 
         private void input_TextChanged(object sender, TextChangedEventArgs e)
         {
             VolumeCalc();
+            FormulaTip();
         }
     }
 }

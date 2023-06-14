@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalcYouLate.Functionality;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -35,25 +36,111 @@ namespace CalcYouLate.MeasurePages
 
         public void TemperatureCalc()
         {
-            if (from.Text == to.Text) output.Text = input.Text;
+            string textForCalculating;
+            if (input.Text == string.Empty) textForCalculating = "0";
+            else textForCalculating = input.Text;
             try
             {
-                if (from.Text == to.Text)
+                //ДЛЯ ПЕРЕВОДА ИЗ ГРАДУСОВ ЦЕЛЬСИЯ
+                if (from.Text == "градус Цельсия" && to.Text == "градус Цельсия")
                 {
-                    if (double.TryParse(input.Text, out double res))
-                        output.Text = input.Text;
-                    else output.Text = "Недопустимый ввод!";
-                    return;
+                    output.Text = input.Text;
+                    FormulaTip($"Выражение величины является тождеством");
                 }
-                double meters = CalcYouLate.Functionality.MeasureList.tempatureToCelsius[from.Text] * Convert.ToDouble(input.Text);
-                string result = input.Text != "0" ? (meters * CalcYouLate.Functionality.MeasureList.tempatureFromCelsius[to.Text]).ToString() : "Недопустимый ввод!";
-                output.Text = result;
+                else if (from.Text == "градус Цельсия" && to.Text == "градус Фаренгейта")
+                {
+                    output.Text = (Convert.ToInt32(textForCalculating) * 1.8 + 32).ToString();
+                    FormulaTip("Для перевода градусов Цельсия в Фаренгейта умножьте исходную величину на 1.8 и прибавьте 32");
+                }
+                else if (from.Text == "градус Цельсия" && to.Text == "градус Кельвина")
+                {
+                    output.Text = (Convert.ToInt32(textForCalculating)  + 273.15).ToString();
+                    FormulaTip($"Для перевода градусов Цельсия в Кельвина прибавьте к исходной величине 273,15");
+                }
+                else if (from.Text == "градус Цельсия" && to.Text == "градус Реомюра")
+                {
+                    output.Text = (Convert.ToInt32(textForCalculating) * 0.8).ToString();
+                    FormulaTip($"Для перевода градусов Цельсия в Реомюра умножьте исходную величину на 0,8");
+                }
+
+                //ДЛЯ ПЕРЕВОДА ИЗ ГРАДУСОВ ФАРЕНГЕЙТА
+                if (from.Text == "градус Фаренгейта" && to.Text == "градус Фаренгейта")
+                {
+                    output.Text = input.Text;
+                    FormulaTip($"Выражение величины является тождеством");
+                }
+                else if (from.Text == "градус Фаренгейта" && to.Text == "градус Цельсия")
+                {
+                    output.Text = ((Convert.ToInt32(textForCalculating) - 32) * 5 / 9).ToString();
+                    FormulaTip("Для перевода градусов Фаренгейта в Цельсия отнимите от исходной величины 32 и поделите на 1,8");
+                }
+                else if (from.Text == "градус Фаренгейта" && to.Text == "градус Кельвина")
+                {
+                    output.Text = ((Convert.ToInt32(textForCalculating) + 459.67) * 5 / 9).ToString();
+                    FormulaTip($"Для перевода градусов Фаренгейта в Кельвина прибавьте к исходной величине 459,67 и поделите на 1,8");
+                }
+                else if (from.Text == "градус Фаренгейта" && to.Text == "градус Реомюра")
+                {
+                    output.Text = (Convert.ToInt32(textForCalculating) * 9 / 4).ToString();
+                    FormulaTip($"Для перевода градусов Фаренгейта в Реомюра умножьте исходную величину на 9/4");
+                }
+
+                //ДЛЯ ПЕРЕВОДА ИЗ ГРАДУСОВ КЕЛЬВИНА
+                if (from.Text == "градус Кельвина" && to.Text == "градус Кельвина")
+                {
+                    output.Text = input.Text;
+                    FormulaTip($"Выражение величины является тождеством");
+                }
+                else if (from.Text == "градус Кельвина" && to.Text == "градус Цельсия")
+                {
+                    output.Text = (Convert.ToInt32(textForCalculating) - 273.15).ToString();
+                    FormulaTip("Для перевода градусов Кельвина в Цельсия отнимите от исходной величины 273,15");
+                }
+                else if (from.Text == "градус Кельвина" && to.Text == "градус Фаренгейта")
+                {
+                    output.Text = ((Convert.ToInt32(textForCalculating) * 1.8) - 459.67).ToString();
+                    FormulaTip($"Для перевода градусов Кельвина в Фаренгейта умножьте исходную величина на 1.8 и отнимите 459,67");
+                }
+                else if (from.Text == "градус Кельвина" && to.Text == "градус Реомюра")
+                {
+                    output.Text = ((Convert.ToInt32(textForCalculating) * 0.8) - 218).ToString();
+                    FormulaTip($"Для перевода градусов Кельвина в Реомюра умножьте исходную величину на 0,8 и отнимите 218");
+                }
+
+                //ДЛЯ ПЕРЕВОДА ИЗ ГРАДУСОВ РЕОМЮРА
+                if (from.Text == "градус Реомюра" && to.Text == "градус Реомюра")
+                {
+                    output.Text = input.Text;
+                    FormulaTip($"Выражение величины является тождеством");
+                }
+                else if (from.Text == "градус Реомюра" && to.Text == "градус Цельсия")
+                {
+                    output.Text = (Convert.ToInt32(textForCalculating) * 1.25).ToString();
+                    FormulaTip("Для перевода градусов Реомюра в Цельсия умножьте исходную величину на 1.25");
+                }
+                else if (from.Text == "градус Реомюра" && to.Text == "градус Фаренгейта")
+                {
+                    output.Text = ((Convert.ToInt32(textForCalculating) * 2.25) + 32).ToString();
+                    FormulaTip($"Для перевода градусов Реомюра в Фаренгейта умножьте исходную величина на 2.25 и отнимите 32");
+                }
+                else if (from.Text == "градус Реомюра" && to.Text == "градус Кельвина")
+                {
+                    output.Text = ((Convert.ToInt32(textForCalculating) * 1.25) + 273.15).ToString();
+                    FormulaTip($"Для перевода градусов Реомюра в Кельвина умножьте исходную величину на 1.25 и прибавьте 273.15");
+                }
+
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (input.Text == string.Empty) output.Text = "0";
                 else output.Text = "Недопустимый ввод!";
             }
+        }
+
+        void FormulaTip(string info)
+        {
+            formula.Text = info;
         }
 
         private void from_DropDownClosed(object sender, EventArgs e)

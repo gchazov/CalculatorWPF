@@ -27,7 +27,8 @@
                 Margin="2"
                 Image="/Images/MeasureIcons/area.png"
                 NavLink="/MeasurePages/AreaPage.xaml"
-                Text="Площадь" Selected="NavButton_Selected" />
+                Selected="NavButton_Selected"
+                Text="Площадь" />
             <local:NavButton
                 Margin="2"
                 Image="/Images/MeasureIcons/dimensions.png"
@@ -86,6 +87,15 @@
 
         </ListBox>
 
+        <Border Grid.Column="2">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
+                    <GradientStop Offset="0.4" Color="AliceBlue" />
+                    <GradientStop Offset="1.5" Color="Gray" />
+                </LinearGradientBrush>
+            </Border.Background>
+
+        </Border>
         <Frame
             x:Name="navMeasureFrame"
             Grid.Column="2"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalcYouLate.Functionality;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -56,29 +57,53 @@ namespace CalcYouLate.MeasurePages
             }
         }
 
+        public void FormulaTip()
+        {
+            if (from.Text == String.Empty || to.Text == String.Empty)
+                FormulaFunc("ватт", "киловатт");
+            else
+                FormulaFunc(from.Text, to.Text);
+        }
+
+        public void FormulaFunc(string from, string to)
+        {
+            double multiple = MeasureList.powerFromWatt[from] * MeasureList.powerToWatt[to];
+            if (multiple > 1)
+                formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
+            else if (multiple == 1)
+                formula.Text = $"Выражение величины является тождеством";
+            else
+                formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(1.0 / multiple, 2)}";
+        }
+
         private void from_DropDownClosed(object sender, EventArgs e)
         {
             PowerCalc();
+            FormulaTip();
         }
 
         private void from_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             PowerCalc();
+            FormulaTip();
         }
 
         private void to_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             PowerCalc();
+            FormulaTip();
         }
 
         private void to_DropDownClosed(object sender, EventArgs e)
         {
             PowerCalc();
+            FormulaTip();
         }
 
         private void input_TextChanged(object sender, TextChangedEventArgs e)
         {
             PowerCalc();
+            FormulaTip();
         }
     }
 }

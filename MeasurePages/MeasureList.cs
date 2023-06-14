@@ -368,16 +368,16 @@ namespace CalcYouLate.Functionality
 
         public static Dictionary<string, double> energyFromJoules = new Dictionary<string, double>()
         {
-            {"калория", 0.239},
-            {"килокалория", 0.000239},
-            {"мегакалория", 0.000000239},
+            {"калория", 1.0 / 4.184},
+            {"килокалория",1.0 / 4184},
+            {"мегакалория",1.0 / 4184000},
             {"ватт/секунда", 1},
-            {"киловатт/час", 0.000278},
-            {"электрон-вольт", 6.242e+18},
-            {"терм", 0.00000947},
-            {"килограмм тротила", 0.000000217},
+            {"киловатт/час", 1.0 /3600000},
+            {"электрон-вольт",1.0 / 1.602e-19},
+            {"терм", 1.0 /105505600},
+            {"килограмм тротила",1.0 / 4612070},
             {"джоуль", 1},
-            {"килоджоуль", 0.001}
+            {"килоджоуль",1.0 / 1000}
         };
 
         public static Dictionary<string, double> weightToKilograms = new Dictionary<string, double>()
@@ -408,21 +408,6 @@ namespace CalcYouLate.Functionality
             {"карат", 5000}
         };
 
-        public static Dictionary<string, double> tempatureToCelsius = new Dictionary<string, double>()
-        {
-            {"градус Цельсия", 1},
-            {"градус Фаренгейта", -17.22},
-            {"градус Кельвина", -272.15},
-            {"градус Реомюра", 1.25}
-        };
-
-        public static Dictionary<string, double> tempatureFromCelsius = new Dictionary<string, double>()
-        {
-            {"градус Цельсия", 1},
-            {"градус Фаренгейта", 33.8},
-            {"градус Кельвина", 274.15},
-            {"градус Реомюра", 0.8}
-        };
 
         public static Dictionary<string, double> powerToWatt = new Dictionary<string, double>()
         {

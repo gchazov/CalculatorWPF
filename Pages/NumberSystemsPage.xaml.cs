@@ -78,9 +78,6 @@ namespace CalcYouLate.Pages
             return res;
         }
 
-        private void outputResult_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

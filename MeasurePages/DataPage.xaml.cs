@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalcYouLate.Functionality;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -49,36 +50,60 @@ namespace CalcYouLate.MeasurePages
                 string result = input.Text != "0" ? (meters * CalcYouLate.Functionality.MeasureList.dataFromByte[to.Text]).ToString() : "Недопустимый ввод!";
                 output.Text = result;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (input.Text == string.Empty) output.Text = "0";
                 else output.Text = "Недопустимый ввод!";
             }
         }
 
+        public void FormulaTip()
+        {
+            if (from.Text == String.Empty || to.Text == String.Empty)
+                FormulaFunc("килобайт", "байт");
+            else
+                FormulaFunc(from.Text, to.Text);
+        }
+
+        public void FormulaFunc(string from, string to)
+        {
+            double multiple = MeasureList.dataToByte[from] * MeasureList.dataFromByte[to];
+            if (multiple > 1)
+                formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
+            else if (multiple == 1)
+                formula.Text = $"Выражение величины является тождеством";
+            else
+                formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(1.0 / multiple, 2)}";
+        }
+
         private void from_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataCalc();
+            FormulaTip();
         }
 
         private void to_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataCalc();
+            FormulaTip();
         }
 
         private void input_TextChanged(object sender, TextChangedEventArgs e)
         {
             DataCalc();
+            FormulaTip();
         }
 
         private void from_DropDownClosed(object sender, EventArgs e)
         {
             DataCalc();
+            FormulaTip();
         }
 
         private void to_DropDownClosed(object sender, EventArgs e)
         {
             DataCalc();
+            FormulaTip();
         }
     }
 }

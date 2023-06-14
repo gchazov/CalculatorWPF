@@ -153,7 +153,7 @@
             VerticalAlignment="Top"
             FontFamily="Montserrat"
             FontSize="23"
-            Text="Место для формулы"
+            Text="Для перевода градусов Цельсия в Фаренгейта умножьте исходную              величину на 1.8 и прибавьте 32"
             TextWrapping="Wrap" />
     </Grid>
 </Page>
