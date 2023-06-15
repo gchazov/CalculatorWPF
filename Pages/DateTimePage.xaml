@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:local="clr-namespace:CalcYouLate"
+    xmlns:local="clr-namespace:CalcYouLate"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="DateTimePage"
     d:DesignHeight="418"
@@ -14,50 +14,52 @@
 
 
 
-	<Grid Background="#b8b8b8">
-		<Grid.RowDefinitions>
-		</Grid.RowDefinitions>
-
-		<TextBox
-			x:Name="daysBox"
-			Margin="219,125,350,256"
+    <Grid Background="#b8b8b8">
+        <Grid.RowDefinitions />
+        <Border Grid.RowSpan="5" Grid.ColumnSpan="6">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                    <GradientStop Offset="0.4" Color="White" />
+                    <GradientStop Offset="1.5" Color="Gray" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <TextBox
+            x:Name="daysBox"
+            Margin="219,125,350,256"
             FontSize="30"
-			Text="0"
-			TextAlignment="Right"
             Style="{DynamicResource TextBoxStyle}"
-			TextChanged="DaysBox_TextChanged"
-			/>
+            Text="0"
+            TextAlignment="Right"
+            TextChanged="DaysBox_TextChanged" />
 
-		<TextBox
-			x:Name="weaksBox"
-			Margin="219,162,350,217"
+        <TextBox
+            x:Name="weaksBox"
+            Margin="219,162,350,217"
             FontSize="30"
-			Text="0"
-			TextAlignment="Right"
             Style="{DynamicResource TextBoxStyle}"
-			TextChanged="WeaksBox_TextChanged"
-			/>
+            Text="0"
+            TextAlignment="Right"
+            TextChanged="WeaksBox_TextChanged" />
 
-		<TextBox
-			x:Name="monthsBox"
-			Margin="219,198,350,182"
+        <TextBox
+            x:Name="monthsBox"
+            Margin="219,198,350,182"
             FontSize="30"
-			Text="0"
-			TextAlignment="Right"
             Style="{DynamicResource TextBoxStyle}"
-			TextChanged="MonthsBox_TextChanged"
-			/>
-		<TextBox
-			x:Name="yearsBox"
-			Margin="219,234,350,146"
+            Text="0"
+            TextAlignment="Right"
+            TextChanged="MonthsBox_TextChanged" />
+        <TextBox
+            x:Name="yearsBox"
+            Margin="219,234,350,146"
             FontSize="30"
-			Text="0"
-			TextAlignment="Right"
             Style="{DynamicResource TextBoxStyle}"
-			TextChanged="YearsBox_TextChanged"
-			/>
+            Text="0"
+            TextAlignment="Right"
+            TextChanged="YearsBox_TextChanged" />
 
-		<Calendar
+        <Calendar
             x:Name="from"
             Width="174"
             Height="168"
@@ -67,7 +69,7 @@
             FontSize="40"
             SelectedDatesChanged="FirstDate" />
 
-		<Calendar
+        <Calendar
             x:Name="to"
             Width="188"
             Height="168"
@@ -80,15 +82,15 @@
             SelectionMode="SingleDate" />
 
 
-		<TextBlock
+        <TextBlock
             x:Name="resultAppendix"
             Margin="303,125,213,146"
             FontSize="30"
-            Style="{DynamicResource TextBlockStyle}" ><Run Text="Дней"/><Run Text="&#xA;Недель"/><Run Text="&#xA;Месяцев"/><Run Text="&#xA;Лет"/></TextBlock>
+            Style="{DynamicResource TextBlockStyle}"><Run Text="Дней" /><Run Text="&#xA;Недель" /><Run Text="&#xA;Месяцев" /><Run Text="&#xA;Лет" /></TextBlock>
 
 
 
-		<TextBlock
+        <TextBlock
             Width="39"
             Height="44"
             Margin="23,59,0,0"
@@ -98,7 +100,7 @@
             Style="{DynamicResource TextBlockStyle}"
             Text="С" />
 
-		<TextBlock
+        <TextBlock
             Width="94"
             Height="50"
             Margin="435,58,0,0"
@@ -115,7 +117,7 @@
 
 
 
-		<TextBlock
+        <TextBlock
             Width="170"
             Height="49"
             Margin="213,59,0,0"
@@ -125,5 +127,5 @@
             Style="{DynamicResource TextBlockStyle}"
             Text="Разница:" />
 
-	</Grid>
+    </Grid>
 </Page>

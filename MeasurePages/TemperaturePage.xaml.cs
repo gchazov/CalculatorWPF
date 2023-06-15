@@ -38,7 +38,7 @@ namespace CalcYouLate.MeasurePages
         public void TemperatureCalc()
         {
             string textForCalculating = input.Text;
-            if (textForCalculating == "") textForCalculating += "0";
+            if (textForCalculating == "") textForCalculating += "Пустой ввод!";
             try
             {
                 textForCalculating = Evaluator.MakeCalculation(textForCalculating).ToString();
@@ -48,7 +48,7 @@ namespace CalcYouLate.MeasurePages
                 output.Text = "Недопустимый ввод!";
                 return;
             }
-            if (input.Text == string.Empty) textForCalculating = "0";
+            if (input.Text == string.Empty) textForCalculating = "Пустой ввод!";
             else textForCalculating = input.Text;
             textForCalculating = textForCalculating.Replace(".", ",");
             try

@@ -31,8 +31,8 @@
 
         <Border Grid.RowSpan="5" Grid.ColumnSpan="6">
             <Border.Background>
-                <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
-                    <GradientStop Offset="0.4" Color="AliceBlue" />
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                    <GradientStop Offset="0.4" Color="White" />
                     <GradientStop Offset="1.5" Color="Gray" />
                 </LinearGradientBrush>
             </Border.Background>
@@ -127,27 +127,34 @@
 
         <Label
             Grid.Row="4"
+            Grid.ColumnSpan="6"
+            Margin="8"
+            Background="LightGray"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Style="{DynamicResource LabelStyle}" />
+
+        <Label
+            Grid.Row="4"
             Grid.ColumnSpan="2"
-            Width="139"
-            Height="39"
-            Margin="14,4,0,0"
+            Width="159"
+            Height="33"
+            Margin="18,12,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="White"
-            BorderBrush="Black"
             BorderThickness="1"
-            Content="Формула:"
+            Content="Подсказка:"
             FontFamily="Montserrat"
             FontSize="23"
             Style="{DynamicResource LabelStyle}" />
-
         <TextBlock
             x:Name="formula"
             Grid.Row="4"
             Grid.ColumnSpan="6"
             Width="508"
             Height="83"
-            Margin="18,50,0,0"
+            Margin="18,46,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontFamily="Montserrat"

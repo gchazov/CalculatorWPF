@@ -37,11 +37,15 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-        <Border Grid.RowSpan="6" Grid.ColumnSpan="9">
+        <Border
+            Grid.RowSpan="6"
+            Grid.ColumnSpan="6"
+            Height="418"
+            VerticalAlignment="Top">
             <Border.Background>
-                <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
-                    <GradientStop Offset="0.5" Color="AliceBlue" />
-                    <GradientStop Offset="1.4" Color="Gray" />
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                    <GradientStop Offset="0.4" Color="White" />
+                    <GradientStop Offset="1.5" Color="Gray" />
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
@@ -199,7 +203,7 @@
             Grid.Column="4"
             Click="FuncBtn_Click"
             Content="ctg(x)"
-            FontSize="25"
+            FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
         <Button
             Grid.Row="2"

@@ -100,7 +100,7 @@ namespace CalcYouLate.Functionality
             "терм",
             "килограмм тротила",
             "джоуль",
-            "килоджуоль",
+            "килоджоуль",
         };
 
         public static string[] Weight

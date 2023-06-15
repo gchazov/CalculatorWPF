@@ -62,7 +62,7 @@ namespace CalcYouLate.MeasurePages
                     return;
                 }
                 double meters = CalcYouLate.Functionality.MeasureList.volumeToMeters3[from.Text] * Convert.ToDouble(inputText);
-                string result = inputText != "0" ? (meters * CalcYouLate.Functionality.MeasureList.volumeFromMeters3[to.Text]).ToString() : "Недопустимый ввод!";
+                string result = inputText != "0" ? (meters * CalcYouLate.Functionality.MeasureList.volumeFromMeters3[to.Text]).ToString() : "0";
                 output.Text = result;
             }
             catch (Exception)
@@ -83,12 +83,12 @@ namespace CalcYouLate.MeasurePages
         public void FormulaFunc(string from, string to)
         {
             double multiple = MeasureList.volumeFromMeters3[from] * MeasureList.volumeToMeters3[to];
-            if (multiple < 1)
-                formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
+            if (multiple > 1)
+                formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(multiple, 2)}";
             else if (multiple == 1)
                 formula.Text = $"Выражение величины является тождеством";
             else
-                formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(1.0 / multiple, 2)}";
+                formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(1.0 / multiple, 2)}";
         }
 
         private void to_DropDownClosed(object sender, EventArgs e)
