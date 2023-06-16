@@ -26,6 +26,7 @@ namespace CalcYouLate.MeasurePages
         public WeightPage()
         {
             InitializeComponent();
+            FocusManager.SetFocusedElement(this, input);
             DataContext = new Functionality.MeasureList();
         }
 

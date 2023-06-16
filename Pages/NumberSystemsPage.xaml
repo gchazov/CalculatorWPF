@@ -44,7 +44,6 @@
             x:Name="inputNum"
             Grid.ColumnSpan="9"
             Style="{DynamicResource TextBoxStyle}"
-            Text="0"
             TextChanged="ParametersChanged" />
         <TextBox
             x:Name="outputNum"
@@ -52,8 +51,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="9"
             IsReadOnly="True"
-            Style="{DynamicResource TextBoxStyle}"
-            Text="0" />
+            Style="{DynamicResource TextBoxStyle}" />
         <TextBox
             x:Name="TextInNumsys"
             Grid.Row="2"

@@ -12,11 +12,11 @@
     mc:Ignorable="d">
 
 
-
+    <Page.Resources />
 
     <Grid Background="#b8b8b8">
         <Grid.RowDefinitions />
-        <Border Grid.RowSpan="5" Grid.ColumnSpan="6">
+        <Border>
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
                     <GradientStop Offset="0.4" Color="White" />
@@ -26,7 +26,7 @@
         </Border>
         <TextBox
             x:Name="daysBox"
-            Margin="219,125,350,256"
+            Margin="421,113,148,268"
             FontSize="30"
             Style="{DynamicResource TextBoxStyle}"
             Text="0"
@@ -35,7 +35,7 @@
 
         <TextBox
             x:Name="weaksBox"
-            Margin="219,162,350,217"
+            Margin="421,153,148,226"
             FontSize="30"
             Style="{DynamicResource TextBoxStyle}"
             Text="0"
@@ -44,7 +44,7 @@
 
         <TextBox
             x:Name="monthsBox"
-            Margin="219,198,350,182"
+            Margin="421,196,148,184"
             FontSize="30"
             Style="{DynamicResource TextBoxStyle}"
             Text="0"
@@ -52,7 +52,7 @@
             TextChanged="MonthsBox_TextChanged" />
         <TextBox
             x:Name="yearsBox"
-            Margin="219,234,350,146"
+            Margin="421,238,148,142"
             FontSize="30"
             Style="{DynamicResource TextBoxStyle}"
             Text="0"
@@ -71,9 +71,9 @@
 
         <Calendar
             x:Name="to"
-            Width="188"
+            Width="174"
             Height="168"
-            Margin="435,104,0,0"
+            Margin="222,108,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
@@ -82,50 +82,73 @@
             SelectionMode="SingleDate" />
 
 
-        <TextBlock
-            x:Name="resultAppendix"
-            Margin="303,125,213,146"
-            FontSize="30"
-            Style="{DynamicResource TextBlockStyle}"><Run Text="Дней" /><Run Text="&#xA;Недель" /><Run Text="&#xA;Месяцев" /><Run Text="&#xA;Лет" /></TextBlock>
-
-
 
         <TextBlock
-            Width="39"
-            Height="44"
-            Margin="23,59,0,0"
+            Width="132"
+            Height="58"
+            Margin="24,65,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="40"
-            Style="{DynamicResource TextBlockStyle}"
-            Text="С" />
+            FontSize="35"
+            FontWeight="SemiBold"><Run Language="ru-ru" Text="Начало" /></TextBlock>
 
         <TextBlock
-            Width="94"
+            Width="135"
             Height="50"
-            Margin="435,58,0,0"
+            Margin="223,63,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="40"
-            Style="{DynamicResource TextBlockStyle}"
-            Text="До" />
-
-
-
-
-
-
-
+            FontSize="35"
+            FontWeight="SemiBold"
+            RenderTransformOrigin="0.489,0.74"
+            Text="Конец" />
 
         <TextBlock
-            Width="170"
-            Height="49"
-            Margin="213,59,0,0"
+            Width="201"
+            Height="50"
+            Margin="421,68,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="40"
-            Style="{DynamicResource TextBlockStyle}"
-            Text="Разница:" />
+            FontFamily="Montserrat"
+            FontSize="35"
+            FontWeight="Bold"
+            Text="Интервал:" />
+
+        <TextBlock
+            x:Name="dayTextInfo"
+            Width="133"
+            Margin="511,113,0,268"
+            HorizontalAlignment="Left"
+            FontFamily="Montserrat"
+            FontSize="27"
+            Text="Дней" />
+
+        <TextBlock
+            x:Name="weekTextInfo"
+            Width="133"
+            Margin="511,153,0,228"
+            HorizontalAlignment="Left"
+            FontFamily="Montserrat"
+            FontSize="27"
+            Text="Недель" />
+
+        <TextBlock
+            x:Name="monthTextInfo"
+            Width="133"
+            Margin="511,196,0,185"
+            HorizontalAlignment="Left"
+            FontFamily="Montserrat"
+            FontSize="27"
+            Text="Месяцев" />
+
+        <TextBlock
+            x:Name="yearsTextInfo"
+            Width="133"
+            Margin="511,239,0,142"
+            HorizontalAlignment="Left"
+            FontFamily="Montserrat"
+            FontSize="27"
+            Text="Лет" />
 
     </Grid>
 </Page>

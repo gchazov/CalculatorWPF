@@ -65,8 +65,9 @@ namespace CalcYouLate.Pages
 
 			int Years = Months / 12;
 			
-
 			int Days = (to.SelectedDate.Value - from.SelectedDate.Value).Days;
+
+			int Weeks = Days / 7;
 
 			string yearsText = "Лет";
 			if (Years < 10 || Years > 20)
@@ -95,9 +96,21 @@ namespace CalcYouLate.Pages
 				}
 			}
 
+            string weekText = "Недель";
+            if (Weeks < 10 || Weeks > 20)
+            {
+                if (Weeks % 10 == 1)
+                {
+                    weekText = "Неделя";
+                }
+                else if (Weeks % 10 > 1 && Weeks % 10 < 5)
+                {
+                    weekText = "Недели";
+                }
+            }
 
 
-			string daysText = "Дней";
+            string daysText = "Дней";
 			if (Days < 10 || Days > 20)
 			{
 				if (Days % 10 == 1)
@@ -122,7 +135,10 @@ namespace CalcYouLate.Pages
 			monthsBox.SelectionStart = monthsBox.Text.Length;
 			yearsBox.SelectionStart = yearsBox.Text.Length;
 
-			resultAppendix.Text = $"{daysText}\nНедель\n{monthText}\n{yearsText}";
+			dayTextInfo.Text = daysText;
+			weekTextInfo.Text = weekText;
+			monthTextInfo.Text = monthText;
+			yearsTextInfo.Text = yearsText;
 		}
 
 		private void DaysBox_TextChanged(object sender, TextChangedEventArgs e)

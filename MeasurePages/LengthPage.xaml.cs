@@ -26,6 +26,7 @@ namespace CalcYouLate.MeasurePages
         public LenghtPage()
         {
             InitializeComponent();
+            FocusManager.SetFocusedElement(this, input);
             DataContext = new Functionality.MeasureList();
         }
         public void OnPropertyChanged(string propertyName)

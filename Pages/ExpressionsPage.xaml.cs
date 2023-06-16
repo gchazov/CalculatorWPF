@@ -24,6 +24,7 @@ namespace CalcYouLate.Pages
         public ExpressionsPage()
         {
             InitializeComponent();
+            FocusManager.SetFocusedElement(this, input);
         }
 
         private void NumBtn_Click(object sender, RoutedEventArgs e)
@@ -67,15 +68,17 @@ namespace CalcYouLate.Pages
 				realInput= functions[function];
 			}
 			input.Text += realInput;
-			//try
-			//{
-			//	output.Text = Evaluator.MakeCalculation(input.Text).ToString();
-			//}
-			//catch (Exception ex)
-			//{
-			//	output.Text = ex.Message;
-			//}
-		}
+            FocusManager.SetFocusedElement(this, input);
+            input.ScrollToEnd();
+            //try
+            //{
+            //	output.Text = Evaluator.MakeCalculation(input.Text).ToString();
+            //}
+            //catch (Exception ex)
+            //{
+            //	output.Text = ex.Message;
+            //}
+        }
 
 		private void EqualBtn_Click(object sender, RoutedEventArgs e )
 		{

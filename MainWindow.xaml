@@ -24,8 +24,16 @@
                 <ColumnDefinition Width="88.971" />
                 <ColumnDefinition Width="15*" />
             </Grid.ColumnDefinitions>
-
-
+            <Label
+                Grid.ColumnSpan="4"
+                Width="1484"
+                Height="48"
+                Margin="0,-18,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Content="" />
 
             <ListBox
                 x:Name="sidebar"
@@ -72,7 +80,7 @@
                     NavLink="/Pages/MeasurePage.xaml"
                     Text="Единицы измерения" />
             </ListBox>
-          
+
             <Border Grid.Column="2" Margin="0,30,0,0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
@@ -93,14 +101,14 @@
                 NavigationUIVisibility="Hidden" />
             <Image
                 Grid.Column="2"
-                Margin="579,4,-16,420"
+                Margin="579,2,-16,422"
                 Cursor="Hand"
                 MouseLeftButtonDown="CloseApp"
                 Source="/Images/TopicIcons/powerButton.png" />
             <Image
                 Grid.Column="2"
                 Height="23"
-                Margin="541,0,8,420"
+                Margin="541,0,8,421"
                 VerticalAlignment="Bottom"
                 Cursor="Hand"
                 MouseLeftButtonDown="Minimize"
@@ -123,10 +131,12 @@
                 Cursor="Hand"
                 FontFamily="Montserrat"
                 FontSize="14"
+                FontWeight="SemiBold"
                 MouseLeftButtonDown="HelpButton"
                 TextWrapping="Wrap"><Run Language="ru-ru" Text="Помощь" /></TextBlock>
 
-            
+
+
 
         </Grid>
     </Border>

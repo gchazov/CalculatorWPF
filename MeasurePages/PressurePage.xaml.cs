@@ -25,6 +25,7 @@ namespace CalcYouLate.MeasurePages
         public PressurePage()
         {
             InitializeComponent();
+            FocusManager.SetFocusedElement(this, input);
             DataContext = new Functionality.MeasureList();
         }
         public void OnPropertyChanged(string propertyName)

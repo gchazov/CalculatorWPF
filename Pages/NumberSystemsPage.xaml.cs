@@ -23,6 +23,7 @@ namespace CalcYouLate.Pages
         public NumberSystemsPage()
         {
             InitializeComponent();
+            FocusManager.SetFocusedElement(this, inputNum);
         }
 
 		public static string DecToSystem(int inputNum, int newSystem)

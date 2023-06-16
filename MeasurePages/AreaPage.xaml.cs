@@ -27,6 +27,7 @@ namespace CalcYouLate.MeasurePages
         public AreaPage()
         {
             InitializeComponent();
+            FocusManager.SetFocusedElement(this, input);
             DataContext = new Functionality.MeasureList();
         }
 

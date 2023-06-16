@@ -26,6 +26,7 @@ namespace CalcYouLate.MeasurePages
         public TimePage()
         {
             InitializeComponent();
+            FocusManager.SetFocusedElement(this, input);
             DataContext = new Functionality.MeasureList();
         }
         public void OnPropertyChanged(string propertyName)

@@ -26,6 +26,7 @@ namespace CalcYouLate.MeasurePages
         public VolumePage()
         {
             InitializeComponent();
+            FocusManager.SetFocusedElement(this, input);
             DataContext = new Functionality.MeasureList();
         }
 
