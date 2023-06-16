@@ -260,9 +260,13 @@ namespace CalcYouLate.Functionality.Expressions
 
 		public static double MakeCalculation(string expression)
 		{
-			expression = expression.Replace("π", $"{Math.PI}")
-				.Replace("e", $"{Math.E}");
-			return Math.Round(Evaluate(ToPostfix(expression)), 8);
+			if (!string.IsNullOrEmpty(expression))
+			{
+				expression = expression.Replace("π", $"{Math.PI}")
+					.Replace("e", $"{Math.E}");
+				return Math.Round(Evaluate(ToPostfix(expression)), 8);
+			}
+			else { return 0;}
 		}
 	}
 }
