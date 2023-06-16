@@ -44,6 +44,7 @@ namespace CalcYouLate.Functionality.Expressions
 		}
         public event PropertyChangedEventHandler PropertyChanged;
 
+
         private static double Factorial(long num)
 		{
 			int result = 1;
@@ -65,11 +66,12 @@ namespace CalcYouLate.Functionality.Expressions
 				case "*":
 				case "/":
 					return 2;
-				case "^": // Добавляем новый оператор с приоритетом 3
+				case "^":
 					return 3;
 				case "sin":
 				case "cos":
 				case "tg":
+				case "ctg":
 				case "log":
 				case "ln":
 				case "abs":
@@ -117,6 +119,8 @@ namespace CalcYouLate.Functionality.Expressions
 					return Math.Cos(x);
 				case "tg":
 					return Math.Tan(x);
+				case "ctg":
+					return 1 / Math.Tan(x);
 				case "log":
 					return Math.Log10(x);
 				case "ln":
@@ -233,7 +237,7 @@ namespace CalcYouLate.Functionality.Expressions
                     }
 				}
 				// Если токен - унарный оператор, выталкиваем из стека одно число, вычисляем результат операции и добавляем его в стек
-				else if ((new string[] { "sin", "cos", "tg", "abs", "sqrt", "log", "ln" }).Contains(token))
+				else if ((new string[] { "sin", "cos", "tg", "ctg", "abs", "sqrt", "log", "ln" }).Contains(token))
 				{
 					if (stack.Count < 1)
 					{
