@@ -127,6 +127,11 @@ namespace CalcYouLate.Pages
 				}
                 fromSystem = Convert.ToInt32(inputNumsys.Text);
 				toSystem = Convert.ToInt32(outputNumsys.Text);
+				if (fromSystem < 1 || fromSystem > 35 || toSystem < 1 || toSystem > 35) 
+				{
+					outputNum.Text = "Недопустимая система";
+					return;
+				}
 			}
             catch
             {

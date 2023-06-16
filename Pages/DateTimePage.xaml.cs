@@ -28,19 +28,36 @@ namespace CalcYouLate.Pages
 		{
 
 			InitializeComponent();
+			from.SelectedDate = DateTime.Today;
 			to.SelectedDate = DateTime.Today;
 		}
 
 		private void FirstDate(object sender,
 	SelectionChangedEventArgs e)
 		{
-			DateTime_Result();
+			try
+			{
+				DateTime_Result();
+			}
+			catch (StackOverflowException)
+			{
+				MessageBox.Show("Недопустимая дата");
+			}
+			
 		}
 
 		private void SecondDate(object sender,
 	SelectionChangedEventArgs e)
 		{
-			DateTime_Result();
+			try
+			{
+				DateTime_Result();
+			}
+			catch (StackOverflowException)
+			{
+				MessageBox.Show("Недопустимая дата");
+				return;
+			}
 		}
 
 
@@ -196,7 +213,7 @@ namespace CalcYouLate.Pages
 
 		private void WeaksBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			if (weaksBox is null || monthsBox is null)
+			if (weaksBox is null || monthsBox is null || yearsBox is null)
 			{
 				weaksBox = new TextBox();
 				monthsBox = new TextBox();
@@ -231,7 +248,7 @@ namespace CalcYouLate.Pages
 
 		private void MonthsBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			if (weaksBox is null || monthsBox is null)
+			if (weaksBox is null || monthsBox is null || yearsBox is null)
 			{
 				weaksBox = new TextBox();
 				monthsBox = new TextBox();
@@ -265,7 +282,7 @@ namespace CalcYouLate.Pages
 
 		private void YearsBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			if (weaksBox is null || monthsBox is null)
+			if (weaksBox is null || monthsBox is null || yearsBox is null)
 			{
 				weaksBox = new TextBox();
 				monthsBox = new TextBox();
@@ -286,9 +303,17 @@ namespace CalcYouLate.Pages
 			}
 
 			DateTime currentDate = from.SelectedDate.Value;
-
-			DateTime newDate = currentDate.AddYears(newYears);
-			to.SelectedDate = newDate;
+			try
+			{
+				DateTime newDate = currentDate.AddYears(newYears);
+				to.SelectedDate = newDate;
+			}
+			catch(System.ArgumentOutOfRangeException)
+			{
+				MessageBox.Show("Недопустимая дата");
+				return;
+			}
+			
 		}
 	}
 }
