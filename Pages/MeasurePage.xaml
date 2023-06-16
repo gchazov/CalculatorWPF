@@ -89,12 +89,11 @@
 
         <Border Grid.Column="2">
             <Border.Background>
-                <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
-                    <GradientStop Offset="0.4" Color="AliceBlue" />
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                    <GradientStop Offset="0.4" Color="White" />
                     <GradientStop Offset="1.5" Color="Gray" />
                 </LinearGradientBrush>
             </Border.Background>
-
         </Border>
         <Frame
             x:Name="navMeasureFrame"

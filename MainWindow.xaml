@@ -72,14 +72,22 @@
                     NavLink="/Pages/MeasurePage.xaml"
                     Text="Единицы измерения" />
             </ListBox>
-
+          
+            <Border Grid.Column="2" Margin="0,30,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                        <GradientStop Offset="0.4" Color="White" />
+                        <GradientStop Offset="1.5" Color="Gray" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
             <Frame
                 x:Name="navFrame"
                 Grid.Column="2"
                 Grid.ColumnSpan="3"
                 Margin="0,30,0,0"
                 AllowDrop="False"
-                Background="#b8b8b8"
+                Background="Transparent"
                 BorderBrush="DimGray"
                 BorderThickness="0"
                 NavigationUIVisibility="Hidden" />
@@ -118,7 +126,7 @@
                 MouseLeftButtonDown="HelpButton"
                 TextWrapping="Wrap"><Run Language="ru-ru" Text="Помощь" /></TextBlock>
 
-
+            
 
         </Grid>
     </Border>

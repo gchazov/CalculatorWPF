@@ -80,7 +80,7 @@ namespace CalcYouLate.MeasurePages
         public void FormulaFunc(string from, string to)
         {
             double multiple = MeasureList.dataToByte[from] * MeasureList.dataFromByte[to];
-            if (multiple < 1)
+            if (multiple > 1)
                 formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
             else if (multiple == 1)
                 formula.Text = $"Выражение величины является тождеством";

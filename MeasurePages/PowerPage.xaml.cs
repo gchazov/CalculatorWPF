@@ -80,12 +80,12 @@ namespace CalcYouLate.MeasurePages
         public void FormulaFunc(string from, string to)
         {
             double multiple = MeasureList.powerFromWatt[from] * MeasureList.powerToWatt[to];
-            if (multiple < 1)
-                formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(multiple, 2)}";
+            if (multiple > 1)
+                formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(multiple, 2)}";
             else if (multiple == 1)
                 formula.Text = $"Выражение величины является тождеством";
             else
-                formula.Text = $"Для самостоятельного перевода поделите исходную величину на {Math.Round(1.0 / multiple, 2)}";
+                formula.Text = $"Для самостоятельного перевода умножьте исходную величину на {Math.Round(1.0 / multiple, 2)}";
         }
 
         private void from_DropDownClosed(object sender, EventArgs e)

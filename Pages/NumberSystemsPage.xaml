@@ -32,22 +32,28 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-
+        <Border Grid.RowSpan="6" Grid.ColumnSpan="6">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                    <GradientStop Offset="0.4" Color="White" />
+                    <GradientStop Offset="1.5" Color="Gray" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
         <TextBox
             x:Name="inputNum"
             Grid.ColumnSpan="9"
             Style="{DynamicResource TextBoxStyle}"
             Text="0"
-			TextChanged="ParametersChanged"
-			/>
+            TextChanged="ParametersChanged" />
         <TextBox
             x:Name="outputNum"
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="9"
-            Style="{DynamicResource TextBoxStyle}"
             IsReadOnly="True"
-            Text="0"/>
+            Style="{DynamicResource TextBoxStyle}"
+            Text="0" />
         <TextBox
             x:Name="TextInNumsys"
             Grid.Row="2"
@@ -69,8 +75,7 @@
             FontSize="30"
             Style="{DynamicResource TextBoxStyle}"
             Text="В СЧ"
-            TextAlignment="Center"
-			/>
+            TextAlignment="Center" />
         <TextBox
             x:Name="inputNumsys"
             Grid.Row="3"
@@ -78,9 +83,8 @@
             Grid.ColumnSpan="4"
             Style="{DynamicResource TextBoxStyle}"
             Text="10"
-            TextAlignment="Center" 
-			TextChanged="ParametersChanged"
-			/>
+            TextAlignment="Center"
+            TextChanged="ParametersChanged" />
         <TextBox
             x:Name="outputNumsys"
             Grid.Row="3"
@@ -88,7 +92,7 @@
             Grid.ColumnSpan="4"
             Style="{DynamicResource TextBoxStyle}"
             Text="10"
-            TextAlignment="Center" 
-			TextChanged="ParametersChanged"/>
+            TextAlignment="Center"
+            TextChanged="ParametersChanged" />
     </Grid>
 </Page>
