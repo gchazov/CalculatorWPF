@@ -276,7 +276,7 @@ namespace CalcYouLate.Functionality.Expressions
 
 		public static double MakeCalculation(string expression)
 		{
-			if (!string.IsNullOrEmpty(expression))
+			if (expression != null && expression != string.Empty)
 			{
 				expression = expression.Replace("π", $"{Math.PI}")
 					.Replace("e", $"{Math.E}");

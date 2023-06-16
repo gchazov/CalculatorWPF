@@ -98,17 +98,7 @@ namespace CalcYouLate.Pages
             output.Text = String.Empty;
         }
 
-        private void input_TextChanged(object sender, TextChangedEventArgs e)
-        {
-			try
-			{
-				output.Text = Evaluator.MakeCalculation(input.Text).ToString();
-			}
-			catch (Exception ex)
-			{
-				output.Text = ex.Message;
-			}
-		}
+       
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -121,6 +111,18 @@ namespace CalcYouLate.Pages
 			{
 				input.Text = input.Text.Remove(input.Text.Length - 1, 1);
 			}
+        }
+
+        private void input_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                output.Text = Evaluator.MakeCalculation(input.Text).ToString();
+            }
+            catch (Exception ex)
+            {
+                output.Text = ex.Message;
+            }
         }
     }
 }

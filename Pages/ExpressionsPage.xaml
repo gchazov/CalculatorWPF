@@ -11,60 +11,60 @@
     Tag="21"
     mc:Ignorable="d">
 
-	<Page.Resources>
-		<local:Evaluator x:Key="eval" />
-	</Page.Resources>
-	<Grid Background="#b8b8b8" DataContext="{StaticResource eval}">
+    <Page.Resources>
+        <local:Evaluator x:Key="eval" />
+    </Page.Resources>
+    <Grid Background="#b8b8b8" DataContext="{StaticResource eval}">
 
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-		<Grid.RowDefinitions>
+        <Grid.RowDefinitions>
 
-			<RowDefinition Height="2*" />
-			<RowDefinition Height="3*" />
-			<RowDefinition Height="2*" />
-			<RowDefinition Height="2*" />
-			<RowDefinition Height="2*" />
-			<RowDefinition Height="2*" />
-		</Grid.RowDefinitions>
-		<Border
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Border
             Grid.RowSpan="6"
             Grid.ColumnSpan="6"
             Height="418"
             VerticalAlignment="Top">
-			<Border.Background>
-				<LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
-					<GradientStop Offset="0.4" Color="White" />
-					<GradientStop Offset="1.5" Color="Gray" />
-				</LinearGradientBrush>
-			</Border.Background>
-		</Border>
-		<TextBox
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                    <GradientStop Offset="0.4" Color="White" />
+                    <GradientStop Offset="1.5" Color="Gray" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <TextBox
             x:Name="input"
             Grid.ColumnSpan="9"
             FontSize="25"
             Style="{DynamicResource TextBoxStyle}"
             Text="{Binding InputValue}"
             TextChanged="input_TextChanged" />
-		<TextBox
+        <TextBox
             x:Name="output"
             Grid.Row="1"
             Grid.ColumnSpan="9"
             IsReadOnly="True"
             Style="{DynamicResource TextBoxStyle}"
-            Text="{Binding OutputValue, UpdateSourceTrigger=PropertyChanged}" />
+            Text="0" />
 
-		<Button
+        <Button
             Grid.Row="2"
             Grid.Column="5"
             Background="#d60001"
@@ -74,7 +74,7 @@
             FontSize="40"
             Foreground="#ffffff"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="3"
             Grid.Column="5"
             Background="#8a8284"
@@ -84,54 +84,54 @@
             FontSize="40"
             Foreground="#ffffff"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="2"
             Grid.Column="1"
             Click="FuncBtn_Click"
             Content="x"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="3"
             Grid.Column="1"
             Click="FuncBtn_Click"
             Content="х²"
             FontSize="35"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="3"
             Grid.Column="3"
             Click="FuncBtn_Click"
             Content="("
             FontSize="35"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="3"
             Grid.Column="4"
             Click="FuncBtn_Click"
             Content=")"
             FontSize="35"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="4"
             Grid.Column="1"
             Click="FuncBtn_Click"
             Content="sin(x)"
             FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="5"
             Grid.Column="1"
             Click="FuncBtn_Click"
             Content="1/x"
             FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="2"
             Grid.Column="2"
             Click="FuncBtn_Click"
             Content="÷"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="3"
             Grid.Column="2"
             Click="FuncBtn_Click"
@@ -139,7 +139,7 @@
             FontSize="35"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="4"
             Grid.Column="2"
             Click="FuncBtn_Click"
@@ -147,20 +147,20 @@
             FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="5"
             Grid.Column="2"
             Click="FuncBtn_Click"
             Content="|x|"
             FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="2"
             Grid.Column="3"
             Click="FuncBtn_Click"
             Content="-"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="6"
             Grid.Column="0"
             Click="FuncBtn_Click"
@@ -168,7 +168,7 @@
             FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="4"
             Grid.Column="3"
             Click="FuncBtn_Click"
@@ -176,7 +176,7 @@
             FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="4"
             Grid.Column="0"
             Margin="3,3,3,3"
@@ -184,13 +184,13 @@
             Content="ln(x)"
             FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="2"
             Grid.Column="4"
             Click="FuncBtn_Click"
             Content="+"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="6"
             Grid.Column="3"
             Click="FuncBtn_Click"
@@ -198,107 +198,107 @@
             FontSize="25"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="4"
             Grid.Column="4"
             Click="FuncBtn_Click"
             Content="ctg(x)"
             FontSize="21"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="5"
             Grid.Column="4"
             Click="FuncBtn_Click"
             Content="xʸ"
             FontSize="21"
-            Style="{DynamicResource ButtonStyle}"/>
-		<Button
+            Style="{DynamicResource ButtonStyle}" />
+        <Button
             Grid.Row="2"
             Click="FuncBtn_Click"
             Content="π"
             FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="3"
             Click="FuncBtn_Click"
             Content="e"
             FontSize="27"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="2"
             Grid.Column="6"
             Click="NumBtn_Click"
             Content="1"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="3"
             Grid.Column="6"
             Click="NumBtn_Click"
             Content="4"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="4"
             Grid.Column="6"
             Click="NumBtn_Click"
             Content="7"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="5"
             Grid.Column="6"
             Click="EqualBtn_Click"
             Content="="
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="2"
             Grid.Column="7"
             Click="NumBtn_Click"
             Content="2"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="3"
             Grid.Column="7"
             Click="NumBtn_Click"
             Content="5"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="4"
             Grid.Column="7"
             Click="NumBtn_Click"
             Content="8"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="5"
             Grid.Column="7"
             Click="NumBtn_Click"
             Content="0"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="2"
             Grid.Column="8"
             Click="NumBtn_Click"
             Content="3"
             Style="{DynamicResource ButtonStyle}" />
-		<Button
+        <Button
             Grid.Row="3"
             Grid.Column="8"
             Click="NumBtn_Click"
             Content="6"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="4"
             Grid.Column="8"
             Click="NumBtn_Click"
             Content="9"
             Style="{DynamicResource ButtonStyle}" />
 
-		<Button
+        <Button
             Grid.Row="5"
             Grid.Column="8"
             Click="Button_Click_1"
@@ -306,5 +306,5 @@
             Style="{DynamicResource ButtonStyle}" />
 
 
-	</Grid>
+    </Grid>
 </Page>
