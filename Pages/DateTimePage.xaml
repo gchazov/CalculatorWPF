@@ -67,7 +67,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            SelectedDatesChanged="FirstDate" />
+            SelectedDatesChanged="DateTime_Result" />
 
         <Calendar
             x:Name="to"
@@ -78,8 +78,7 @@
             VerticalAlignment="Top"
             FontSize="40"
             RenderTransformOrigin="3.113,1.518"
-            SelectedDatesChanged="SecondDate"
-            SelectionMode="SingleDate" />
+            SelectedDatesChanged="DateTime_Result" />
 
 
 

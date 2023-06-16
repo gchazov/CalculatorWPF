@@ -26,42 +26,38 @@ namespace CalcYouLate.Pages
 
 		public DateTimePage()
 		{
-
 			InitializeComponent();
 			from.SelectedDate = DateTime.Today;
 			to.SelectedDate = DateTime.Today;
 		}
 
-		private void FirstDate(object sender,
-	SelectionChangedEventArgs e)
+		private int[] GetDelta (DateTime fromDate, DateTime toDate)
 		{
-			try
-			{
-				DateTime_Result();
-			}
-			catch (StackOverflowException)
-			{
-				MessageBox.Show("Недопустимая дата");
-			}
-			
-		}
+			int Months = (toDate.Year - fromDate.Year) * 12 + (toDate.Month - fromDate.Month);
 
-		private void SecondDate(object sender,
-	SelectionChangedEventArgs e)
-		{
-			try
+			// Если день первой даты меньше дня второй даты, то вычитаем один месяц
+			if (toDate.Day < fromDate.Day && toDate > fromDate)
 			{
-				DateTime_Result();
+				--Months;
 			}
-			catch (StackOverflowException)
+
+			if (toDate.Day > fromDate.Day && toDate < fromDate)
 			{
-				MessageBox.Show("Недопустимая дата");
-				return;
+				++Months;
 			}
+
+			int Years = Months / 12;
+
+			int Days = (toDate - fromDate).Days;
+
+			int Weeks = Days / 7;
+
+			return new[] {Days, Weeks, Months, Years};
 		}
 
 
-		private void DateTime_Result()
+		private void DateTime_Result(object sender,
+	SelectionChangedEventArgs e)
 		{
 			if (to.SelectedDate is null)
 			{
@@ -72,19 +68,12 @@ namespace CalcYouLate.Pages
 				from.SelectedDate = DateTime.Today;
 			}
 
-			int Months = (to.SelectedDate.Value.Year - from.SelectedDate.Value.Year) * 12 + (to.SelectedDate.Value.Month - from.SelectedDate.Value.Month);
+			int[] delta = GetDelta(from.SelectedDate.Value, to.SelectedDate.Value);
+			int Days = delta[0];
+			int Weeks = delta[1];
+			int Months = delta[2];
+			int Years = delta[3];
 
-			// Если день первой даты меньше дня второй даты, то вычитаем один месяц
-			if (to.SelectedDate.Value.Day < from.SelectedDate.Value.Day && to.SelectedDate.Value > from.SelectedDate.Value) 
-			{
-				--Months;
-			}
-
-			int Years = Months / 12;
-			
-			int Days = (to.SelectedDate.Value - from.SelectedDate.Value).Days;
-
-			int Weeks = Days / 7;
 
 			string yearsText = "Лет";
 			if (Years < 10 || Years > 20)
@@ -241,9 +230,17 @@ namespace CalcYouLate.Pages
 			{
 				return;
 			}
-
-			DateTime newDate = from.SelectedDate.Value.AddDays(newWeeks*7);
-			to.SelectedDate= newDate;
+			try
+			{
+				DateTime newDate = from.SelectedDate.Value.AddDays(newWeeks * 7);
+			}
+			catch (System.ArgumentOutOfRangeException)
+			{
+				MessageBox.Show("Недопустимая дата");
+				return;
+			}
+			
+			daysBox.Text = (newWeeks*7).ToString();
 		}
 
 		private void MonthsBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -272,11 +269,18 @@ namespace CalcYouLate.Pages
 			{
 				return;
 			}
-			
-			DateTime currentDate = from.SelectedDate.Value;
+			try
+			{
+				DateTime currentDate = from.SelectedDate.Value;
 
-			DateTime newDate = currentDate.AddMonths(newMonths);
-			to.SelectedDate = newDate;
+				DateTime newDate = currentDate.AddMonths(newMonths);
+				daysBox.Text = (newDate - currentDate).Days.ToString();
+			}
+			catch (System.ArgumentOutOfRangeException)
+			{
+				MessageBox.Show("Недопустимая дата");
+			}
+			
 		}
 
 
@@ -305,8 +309,7 @@ namespace CalcYouLate.Pages
 			DateTime currentDate = from.SelectedDate.Value;
 			try
 			{
-				DateTime newDate = currentDate.AddYears(newYears);
-				to.SelectedDate = newDate;
+				daysBox.Text = (currentDate.AddYears(newYears)-currentDate).Days.ToString();
 			}
 			catch(System.ArgumentOutOfRangeException)
 			{
