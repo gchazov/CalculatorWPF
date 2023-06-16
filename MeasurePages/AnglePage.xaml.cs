@@ -119,6 +119,5 @@ namespace CalcYouLate.MeasurePages
             FormulaTip();
         }
 
-
     }
 }

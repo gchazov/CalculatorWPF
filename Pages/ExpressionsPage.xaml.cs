@@ -29,16 +29,16 @@ namespace CalcYouLate.Pages
 
         private void NumBtn_Click(object sender, RoutedEventArgs e)
         {
-            input.Text += ((Button)sender).Content.ToString();
-			//try
-			//{
-			//	output.Text = Evaluator.MakeCalculation(input.Text).ToString();
-			//}
-			//catch (Exception ex)
-			//{
-			//	output.Text = ex.Message;
-			//}
-		}
+            input.Focus();
+            int caretIndex = input.CaretIndex == 0 ? input.Text.Length : input.CaretIndex;
+            input.SelectionStart = caretIndex;
+            input.SelectionLength = 0;
+
+            input.Text = input.Text.Insert(input.CaretIndex, ((Button)sender).Content.ToString());
+            input.Focus();
+            input.SelectionStart = caretIndex + ((Button)sender).Content.ToString().Length;
+            input.SelectionLength = 0;
+        }
 
 		private void FuncBtn_Click(object sender, RoutedEventArgs e)
 		{
@@ -59,7 +59,7 @@ namespace CalcYouLate.Pages
 			{"ln(x)", "ln("},
 			{"π", $"π"},
 			{"e", "e" },
-			{"x", "*" },
+			{"×", "×" },
 			{"÷", "/" },
 			{"xʸ", "^" }
 			};
@@ -67,17 +67,15 @@ namespace CalcYouLate.Pages
 			{ 
 				realInput= functions[function];
 			}
-			input.Text += realInput;
-            FocusManager.SetFocusedElement(this, input);
-            input.ScrollToEnd();
-            //try
-            //{
-            //	output.Text = Evaluator.MakeCalculation(input.Text).ToString();
-            //}
-            //catch (Exception ex)
-            //{
-            //	output.Text = ex.Message;
-            //}
+			input.Focus();
+			int caretIndex = input.CaretIndex == 0 ? input.Text.Length : input.CaretIndex;
+            input.SelectionStart = caretIndex;
+            input.SelectionLength = 0;
+
+            input.Text = input.Text.Insert(input.CaretIndex, realInput);
+            input.Focus();
+            input.SelectionStart = caretIndex + realInput.Length;
+            input.SelectionLength = 0;
         }
 
 		private void EqualBtn_Click(object sender, RoutedEventArgs e )
@@ -90,27 +88,48 @@ namespace CalcYouLate.Pages
 			{
 				output.Text = ex.Message;
 			}
-		}
+            input.Focus();
+			input.SelectionStart = input.Text.Length;
+            input.SelectionLength = 0;
+        }
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			input.Text = String.Empty;
-            output.Text = String.Empty;
+            output.Text = "0";
+            input.Focus();
         }
 
        
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-			input.Text += ",";
+            input.Focus();
+            int caretIndex = input.CaretIndex == 0 ? input.Text.Length : input.CaretIndex;
+            input.SelectionStart = caretIndex;
+            input.SelectionLength = 0;
+
+            input.Text = input.Text.Insert(input.CaretIndex, ",");
+            input.Focus();
+            input.SelectionStart = caretIndex + 1;
+            input.SelectionLength = 0;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-			if (input.Text.Length > 0)
+            if (input.Text.Length == 0)
+            {
+                input.Focus();
+                return;
+            }
+            if (input.Text.Length > 0)
 			{
-				input.Text = input.Text.Remove(input.Text.Length - 1, 1);
-			}
+                int caretIndex = input.CaretIndex == 0 ? input.Text.Length : input.CaretIndex;
+                input.Text = input.Text.Remove(input.CaretIndex -1 , 1);
+                input.Focus();
+                input.SelectionStart = caretIndex - 1;
+                input.SelectionLength = 0;
+            }
         }
 
         private void input_TextChanged(object sender, TextChangedEventArgs e)

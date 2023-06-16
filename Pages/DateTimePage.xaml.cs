@@ -315,5 +315,13 @@ namespace CalcYouLate.Pages
 			}
 			
 		}
-	}
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+			daysBox.Text = "0";
+            weaksBox.Text = "0";
+            monthsBox.Text = "0";
+			yearsBox.Text = "0";
+        }
+    }
 }

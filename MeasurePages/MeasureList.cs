@@ -187,8 +187,10 @@ namespace CalcYouLate.Functionality
 
         public static string[] Angle
         {
-            get { return angle; }
-            set { }
+            get
+            {
+                return angle;
+            }
         }
         public static string[] angle =
         {

@@ -279,7 +279,8 @@ namespace CalcYouLate.Functionality.Expressions
 			if (expression != null && expression != string.Empty)
 			{
 				expression = expression.Replace("π", $"{Math.PI}")
-					.Replace("e", $"{Math.E}");
+					.Replace("e", $"{Math.E}")
+					.Replace("×", "*");
 				return Math.Round(Evaluate(ToPostfix(expression)), 8);
 			}
 			else { return 0;}
