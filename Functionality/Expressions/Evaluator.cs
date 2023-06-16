@@ -45,6 +45,7 @@ namespace CalcYouLate.Functionality.Expressions
         public event PropertyChangedEventHandler PropertyChanged;
 
 
+
         private static double Factorial(long num)
 		{
 			int result = 1;
@@ -117,10 +118,11 @@ namespace CalcYouLate.Functionality.Expressions
 					return Math.Sin(x);
 				case "cos":
 					return Math.Cos(x);
+				// Костыль чтобы хотя бы иногда получался табличный ноль
 				case "tg":
-					return Math.Tan(x);
+					return Math.Round(Math.Tan(x), 14);
 				case "ctg":
-					return 1 / Math.Tan(x);
+					return 1 / Math.Round(Math.Tan(x), 14);
 				case "log":
 					return Math.Log10(x);
 				case "ln":
@@ -228,12 +230,17 @@ namespace CalcYouLate.Functionality.Expressions
 					{
                         var y = stack.Pop();
                         var x = stack.Pop();
+						
                         var result = Calculate(x, y, token);
-                        stack.Push(result);
+						if (Math.Round(result, 14) == 0.0)
+						{
+							result = 0;
+						}
+						stack.Push(result);
                     }
 					catch(Exception e)
 					{
-                        throw new ArgumentException("Неоконченное выражение");
+						throw new ArgumentException("Ошибка в выражении");
                     }
 				}
 				// Если токен - унарный оператор, выталкиваем из стека одно число, вычисляем результат операции и добавляем его в стек
@@ -243,8 +250,14 @@ namespace CalcYouLate.Functionality.Expressions
 					{
 						throw new ArgumentException("Ошибка в выражении");
 					}
+					
 					var x = stack.Pop();
+					
 					var result = Calculate(x, token);
+					if (Math.Round(result, 14) == 0.0)
+					{
+						result = 0;
+					}
 					stack.Push(result);
 				}
 				else
@@ -258,12 +271,13 @@ namespace CalcYouLate.Functionality.Expressions
 			{
 				throw new ArgumentException("Ошибка в выражении");
 			}
-
 			return stack.Pop();
 		}
 
 		public static double MakeCalculation(string expression)
 		{
+			if (expression == null)
+				{ return 0.0; }	
 			expression = expression.Replace("π", $"{Math.PI}")
 				.Replace("e", $"{Math.E}");
 			return Math.Round(Evaluate(ToPostfix(expression)), 8);
