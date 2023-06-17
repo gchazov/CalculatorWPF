@@ -364,7 +364,6 @@
     </EmbeddedResource>
     <None Include="ClassDiagram2.cd" />
     <None Include="Functionality\Help\Help.chm" />
-    <None Include="Functionality\Help\Helpidr.chm" />
     <None Include="Functionality\Help\Help_old.chm" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -440,6 +439,7 @@
     <Resource Include="Images\MeasureIcons\ruler.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\icon.png" />
     <Content Include="Functionality\Help\helpid.h" />
     <Content Include="Functionality\Help\helpidr.h" />
   </ItemGroup>

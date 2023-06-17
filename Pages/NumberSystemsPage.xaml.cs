@@ -26,7 +26,7 @@ namespace CalcYouLate.Pages
             FocusManager.SetFocusedElement(this, inputNum);
         }
 
-		public static string DecToSystem(int inputNum, int newSystem)
+		public static string DecToSystem(long inputNum, long newSystem)
 		{
 			string result = "";
 			string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -36,7 +36,7 @@ namespace CalcYouLate.Pages
 					result = inputNum % newSystem + result;
 				else
 				{
-					string temp = alphabet[inputNum % newSystem-10].ToString();
+					string temp = alphabet[(int)(inputNum % newSystem)-10].ToString();
 
 					result = temp + result;
 				}
@@ -47,13 +47,13 @@ namespace CalcYouLate.Pages
 			return result;
 		}
 
-		public static int SystemToDec(string inputNum, int fromSystem)
+		public static long SystemToDec(string inputNum, long fromSystem)
 		{
-			int result = 0;
-			int count = inputNum.Length - 1;
+			long result = 0;
+			long count = inputNum.Length - 1;
 			for (int i = 0; i < inputNum.Length; i++)
 			{
-				int temp = 0;
+				long temp = 0;
 				switch (inputNum[i])
 				{
                     case 'A': temp = 10; break;
@@ -82,20 +82,20 @@ namespace CalcYouLate.Pages
                     case 'X': temp = 33; break;
                     case 'Y': temp = 34; break;
                     case 'Z': temp = 35; break;
-                    default: temp = -48 + (int) inputNum[i]; break; // -48 because of ASCII
+                    default: temp = -48 + (long) inputNum[i]; break; // -48 because of ASCII
 				}
 
-				result += temp * (int) (Math.Pow(fromSystem, count));
+				result += temp * (long) (Math.Pow(fromSystem, count));
 				count--;
 			}
 
 			return result;
 		}
 
-		public static bool IsSuitableSystem(string inputNum, int system)
+		public static bool IsSuitableSystem(string inputNum, long system)
 		{
 			char[] alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-			char[] sysAlphabet = alphabet.Take(system).ToArray();
+			char[] sysAlphabet = alphabet.Take((int)system).ToArray();
 			foreach (char letter in inputNum)
 			{
 				if (!sysAlphabet.Contains(letter))
@@ -109,7 +109,7 @@ namespace CalcYouLate.Pages
 
 		private void ParametersChanged(object sender, RoutedEventArgs e)
 		{
-			int fromSystem, toSystem;
+			long fromSystem, toSystem;
 			string fromSystemNum;
 
 			try
@@ -147,6 +147,11 @@ namespace CalcYouLate.Pages
 				outputNum.Text = "Число не в заданной системе";
 			}
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+			(inputNumsys.Text, outputNumsys.Text) = (outputNumsys.Text, inputNumsys.Text);
         }
     }
 }

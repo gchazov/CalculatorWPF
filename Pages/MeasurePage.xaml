@@ -95,6 +95,68 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
+        <TextBlock
+            Grid.Column="2"
+            Width="492"
+            Height="32"
+            Margin="0,29,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"
+            FontSize="25"
+            FontWeight="Bold"
+            Text="Уважаемый Пользователь!"
+            TextWrapping="Wrap" />
+
+        <TextBlock
+            Grid.Column="2"
+            Width="492"
+            Height="90"
+            Margin="0,76,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"
+            FontSize="22"
+            Text="В разделе физических величин присутствует 12 блоков для перевода единиц измерения."
+            TextWrapping="Wrap" />
+
+        <TextBlock
+            Grid.Column="2"
+            Width="492"
+            Height="102"
+            Margin="0,166,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"
+            FontSize="22"
+            Text="В каждом из них Вы можете перевести одни физические величины в другие."
+            TextWrapping="Wrap" />
+
+        <TextBlock
+            Grid.Column="2"
+            Width="492"
+            Height="89"
+            Margin="0,236,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"
+            FontSize="22"
+            Text="Кроме того, в разделе присутствуют подсказки для самостоятельного перевода выбранных величин."
+            TextWrapping="Wrap" />
+
+        <TextBlock
+            Grid.Column="2"
+            Width="492"
+            Height="89"
+            Margin="0,330,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"
+            FontSize="22"
+            Text="Для навигации используйте левое боковое подменю."
+            TextWrapping="Wrap" />
+
+
         <Frame
             x:Name="navMeasureFrame"
             Grid.Column="2"

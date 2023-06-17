@@ -11,6 +11,7 @@
     AllowDrop="True"
     AllowsTransparency="True"
     Background="LightGray"
+    Icon="/Images/icon.png"
     Keyboard.KeyDown="OpenHelpidr"
     MouseDown="Drag"
     ResizeMode="NoResize"
@@ -89,6 +90,68 @@
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
+            <TextBlock
+                Grid.Column="2"
+                Width="492"
+                Height="80"
+                Margin="28,54,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Montserrat"
+                FontSize="25"
+                FontWeight="Bold"
+                Text="Здравствуйте, уважаемый Пользователь!"
+                TextWrapping="Wrap" />
+
+            <TextBlock
+                Grid.Column="2"
+                Width="562"
+                Height="80"
+                Margin="28,127,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Montserrat"
+                FontSize="22"
+                Text="Спасибо Вам за то, что выбрали именно этот калькулятор для достижения своих целей."
+                TextWrapping="Wrap" />
+
+            <TextBlock
+                Grid.Column="2"
+                Width="562"
+                Height="80"
+                Margin="28,199,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Montserrat"
+                FontSize="22"
+                Text="Мы надеемся, что данный инженерный калькулятор станет для Вас удобной и практичной утилитой."
+                TextWrapping="Wrap" />
+
+            <TextBlock
+                Grid.Column="2"
+                Width="562"
+                Height="80"
+                Margin="28,296,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Montserrat"
+                FontSize="22"
+                Text="В случае возникновения трудностей, воспользуйтесь кнопкой помощи в левом верхнем углу экрана."
+                TextWrapping="Wrap" />
+
+            <TextBlock
+                Grid.Column="2"
+                Width="610"
+                Height="42"
+                Margin="0,420,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontFamily="Montserrat"
+                FontSize="15"
+                Foreground="Gray"
+                Text="А.Д. Акст, В.С. Большагин, Д.В. Караваев, Г.А. Чазов, НИУ ВШЭ - Пермь, 2023"
+                TextWrapping="Wrap" />
+
             <Frame
                 x:Name="navFrame"
                 Grid.Column="2"
@@ -99,6 +162,7 @@
                 BorderBrush="DimGray"
                 BorderThickness="0"
                 NavigationUIVisibility="Hidden" />
+
             <Image
                 Grid.Column="2"
                 Margin="579,2,-16,422"

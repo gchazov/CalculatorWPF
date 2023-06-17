@@ -6,11 +6,26 @@
     xmlns:local="clr-namespace:CalcYouLate.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="NumberSystemsPage"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="418"
+    d:DesignWidth="648"
     Tag="23"
     mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="buttonStyleGradient" StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0.2" Color="white" />
+                <GradientStop Offset="1" Color="RosyBrown" />
+            </LinearGradientBrush>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="FontFamily" Value="Vrinda" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="Padding" Value="8,4" />
+                <Setter Property="Margin" Value="0" />
+            </Style>
 
+
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid Background="#b8b8b8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -25,7 +40,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
@@ -40,9 +55,30 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
+        <Label
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="6"
+            Margin="10,21,23,28"
+            Background="AliceBlue"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Style="{DynamicResource LabelStyle}" />
+
+        <Label
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="6"
+            Margin="10,56,23,62"
+            Background="AliceBlue"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Style="{DynamicResource LabelStyle}" />
         <TextBox
             x:Name="inputNum"
             Grid.ColumnSpan="9"
+            FontSize="25"
+            MaxLength="18"
             Style="{DynamicResource TextBoxStyle}"
             TextChanged="ParametersChanged" />
         <TextBox
@@ -52,33 +88,38 @@
             Grid.ColumnSpan="9"
             IsReadOnly="True"
             Style="{DynamicResource TextBoxStyle}" />
-        <TextBox
+        <TextBlock
             x:Name="TextInNumsys"
             Grid.Row="2"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            Background="#b8b8b8"
-            BorderThickness="0"
-            FontSize="30"
-            Style="{DynamicResource TextBoxStyle}"
-            Text="Из СЧ"
-            TextAlignment="Center" />
-        <TextBox
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="4"
+            Margin="22,31,25,30"
+            FontFamily="Montserrat"
+            FontSize="23"
+            TextAlignment="Left"
+            TextWrapping="Wrap"><Run Language="ru-ru" Text="Исходная система счисления" /></TextBlock>
+
+
+        <TextBlock
             x:Name="TextOutNumsys"
-            Grid.Row="2"
-            Grid.Column="6"
-            Grid.ColumnSpan="2"
-            Background="#b8b8b8"
-            BorderThickness="0"
-            FontSize="30"
-            Style="{DynamicResource TextBoxStyle}"
-            Text="В СЧ"
-            TextAlignment="Center" />
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="4"
+            Margin="22,63,55,63"
+            FontFamily="Montserrat"
+            FontSize="23"
+            TextAlignment="Left"
+            TextWrapping="Wrap"><Run Language="ru-ru" Text="Искомая система счисления" /></TextBlock>
         <TextBox
             x:Name="inputNumsys"
-            Grid.Row="3"
-            Grid.Column="0"
-            Grid.ColumnSpan="4"
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Grid.Column="3"
+            Grid.ColumnSpan="3"
+            Width="144"
+            Margin="34,31,0,38"
+            HorizontalAlignment="Left"
+            MaxLength="2"
             Style="{DynamicResource TextBoxStyle}"
             Text="10"
             TextAlignment="Center"
@@ -86,11 +127,31 @@
         <TextBox
             x:Name="outputNumsys"
             Grid.Row="3"
-            Grid.Column="5"
-            Grid.ColumnSpan="4"
+            Grid.RowSpan="2"
+            Grid.Column="3"
+            Grid.ColumnSpan="3"
+            Width="144"
+            Margin="34,63,0,5"
+            HorizontalAlignment="Left"
+            MaxLength="2"
             Style="{DynamicResource TextBoxStyle}"
             Text="10"
             TextAlignment="Center"
             TextChanged="ParametersChanged" />
+        <Button
+            Grid.Row="2"
+            Grid.RowSpan="3"
+            Grid.Column="6"
+            Width="62"
+            Height="99"
+            Margin="1,58,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="{DynamicResource buttonStyleGradient}"
+            Click="Button_Click"
+            Content="⇅"
+            Foreground="Black"
+            Style="{DynamicResource ButtonStyle}" />
+
     </Grid>
 </Page>
