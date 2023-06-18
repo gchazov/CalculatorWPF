@@ -48,7 +48,7 @@ namespace CalcYouLate.Functionality.Expressions
 
         private static double Factorial(long num)
 		{
-			int result = 1;
+			double result = 1;
 			for (int i = 1; i <= num; i++)
 			{
 				result *= i;
