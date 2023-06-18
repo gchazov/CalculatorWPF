@@ -46,8 +46,12 @@ namespace CalcYouLate.Functionality.Expressions
 
 
 
-        private static double Factorial(long num)
+        private static double Factorial(double num)
 		{
+			if ((long)num != num)
+			{
+				throw new ArgumentException("Неверный аргумент");
+			}
 			double result = 1;
 			for (int i = 1; i <= num; i++)
 			{
@@ -100,9 +104,7 @@ namespace CalcYouLate.Functionality.Expressions
 				case "^": // Добавляем новый оператор для возведения в степень
 					return Math.Pow(x, y);
 				case "!":
-					return Factorial(Convert.ToInt64(x));
-
-
+					return Factorial(x);
 
 				default:
 					throw new ArgumentException("Неверный оператор");
