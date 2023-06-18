@@ -254,10 +254,15 @@ namespace CalcYouLate.Functionality.Expressions
 					var x = stack.Pop();
 					
 					var result = Calculate(x, token);
+					if (result is double.NaN)
+					{
+						throw new ArgumentException("Ошибка в аргументе функции");
+					}
 					if (Math.Round(result, 14) == 0.0)
 					{
 						result = 0;
 					}
+
 					stack.Push(result);
 				}
 				else
